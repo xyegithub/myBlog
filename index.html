@@ -93,8 +93,7 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p>这是一篇关于强化学习的入门介绍，主要有一下3点内容</p>
-<h3 id="1，什么是强化学习，关于强化学习的几点疑问"><a href="#1，什么是强化学习，关于强化学习的几点疑问" class="headerlink" title="1，什么是强化学习，关于强化学习的几点疑问"></a>1，什么是强化学习，关于强化学习的几点疑问</h3><h3 id="2，-介绍两个强化学习算法：策略网络-Policy-Network-和估值网络-Value-Network"><a href="#2，-介绍两个强化学习算法：策略网络-Policy-Network-和估值网络-Value-Network" class="headerlink" title="2， 介绍两个强化学习算法：策略网络(Policy Network)和估值网络(Value Network)"></a>2， 介绍两个强化学习算法：策略网络(Policy Network)和估值网络(Value Network)</h3><h3 id="3，了解完以上两种算法之后，对强化学习的一些感悟"><a href="#3，了解完以上两种算法之后，对强化学习的一些感悟" class="headerlink" title="3，了解完以上两种算法之后，对强化学习的一些感悟"></a>3，了解完以上两种算法之后，对强化学习的一些感悟</h3><h1 id="1，-什么是强化学习，关于强化学习的几点疑问"><a href="#1，-什么是强化学习，关于强化学习的几点疑问" class="headerlink" title="1， 什么是强化学习，关于强化学习的几点疑问"></a>1， 什么是强化学习，关于强化学习的几点疑问</h1><h2 id="a-深度学习解决的是可导的问题，强化学习解决的是离散的问题，是这样吗？"><a href="#a-深度学习解决的是可导的问题，强化学习解决的是离散的问题，是这样吗？" class="headerlink" title="a, 深度学习解决的是可导的问题，强化学习解决的是离散的问题，是这样吗？"></a>a, 深度学习解决的是可导的问题，强化学习解决的是离散的问题，是这样吗？</h2><h2 id="b-深度学习用梯度下降的算法实现模型的优化，强化学习无法求导，甚至连学习目标都是模糊的如何优化模型参数？"><a href="#b-深度学习用梯度下降的算法实现模型的优化，强化学习无法求导，甚至连学习目标都是模糊的如何优化模型参数？" class="headerlink" title="b, 深度学习用梯度下降的算法实现模型的优化，强化学习无法求导，甚至连学习目标都是模糊的如何优化模型参数？"></a>b, 深度学习用梯度下降的算法实现模型的优化，强化学习无法求导，甚至连学习目标都是模糊的如何优化模型参数？</h2><h2 id="c-区别于深度学习，强化学习的本质特点是什么？是离散性？是策略性？对于它的分类，是和深度学习并列的吗？还是说它其实是属于监督学习，半监督学习，无监督学习这一维度的？"><a href="#c-区别于深度学习，强化学习的本质特点是什么？是离散性？是策略性？对于它的分类，是和深度学习并列的吗？还是说它其实是属于监督学习，半监督学习，无监督学习这一维度的？" class="headerlink" title="c, 区别于深度学习，强化学习的本质特点是什么？是离散性？是策略性？对于它的分类，是和深度学习并列的吗？还是说它其实是属于监督学习，半监督学习，无监督学习这一维度的？"></a>c, 区别于深度学习，强化学习的本质特点是什么？是离散性？是策略性？对于它的分类，是和深度学习并列的吗？还是说它其实是属于监督学习，半监督学习，无监督学习这一维度的？</h2><p>对强化学习的直观影响来源与围棋以及各种策略游戏。</p>
-<p>就用围棋来说，如何设计一种会下围棋的机器。</p>
+<h3 id="1，什么是强化学习，关于强化学习的几点疑问"><a href="#1，什么是强化学习，关于强化学习的几点疑问" class="headerlink" title="1，什么是强化学习，关于强化学习的几点疑问"></a>1，什么是强化学习，关于强化学习的几点疑问</h3><h3 id="2，-介绍两个强化学习算法：策略网络-Policy-Network-和估值网络-Value-Network"><a href="#2，-介绍两个强化学习算法：策略网络-Policy-Network-和估值网络-Value-Network" class="headerlink" title="2， 介绍两个强化学习算法：策略网络(Policy Network)和估值网络(Value Network)"></a>2， 介绍两个强化学习算法：策略网络(Policy Network)和估值网络(Value Network)</h3><h3 id="3，了解完以上两种算法之后，对强化学习的一些感悟"><a href="#3，了解完以上两种算法之后，对强化学习的一些感悟" class="headerlink" title="3，了解完以上两种算法之后，对强化学习的一些感悟"></a>3，了解完以上两种算法之后，对强化学习的一些感悟</h3><h1 id="1，-什么是强化学习，关于强化学习的几点疑问"><a href="#1，-什么是强化学习，关于强化学习的几点疑问" class="headerlink" title="1， 什么是强化学习，关于强化学习的几点疑问"></a>1， 什么是强化学习，关于强化学习的几点疑问</h1><h2 id="a-深度学习解决的是可导的问题，强化学习解决的是离散的问题，是这样吗？"><a href="#a-深度学习解决的是可导的问题，强化学习解决的是离散的问题，是这样吗？" class="headerlink" title="a, 深度学习解决的是可导的问题，强化学习解决的是离散的问题，是这样吗？"></a>a, 深度学习解决的是可导的问题，强化学习解决的是离散的问题，是这样吗？</h2><h2 id="b-深度学习用梯度下降的算法实现模型的优化，强化学习无法求导，甚至连学习目标都是模糊的如何优化模型参数？"><a href="#b-深度学习用梯度下降的算法实现模型的优化，强化学习无法求导，甚至连学习目标都是模糊的如何优化模型参数？" class="headerlink" title="b, 深度学习用梯度下降的算法实现模型的优化，强化学习无法求导，甚至连学习目标都是模糊的如何优化模型参数？"></a>b, 深度学习用梯度下降的算法实现模型的优化，强化学习无法求导，甚至连学习目标都是模糊的如何优化模型参数？</h2><h2 id="c-区别于深度学习，强化学习的本质特点是什么？是离散性？是策略性？对于它的分类，是和深度学习并列的吗？还是说它其实是属于监督学习，半监督学习，无监督学习这一维度的？"><a href="#c-区别于深度学习，强化学习的本质特点是什么？是离散性？是策略性？对于它的分类，是和深度学习并列的吗？还是说它其实是属于监督学习，半监督学习，无监督学习这一维度的？" class="headerlink" title="c, 区别于深度学习，强化学习的本质特点是什么？是离散性？是策略性？对于它的分类，是和深度学习并列的吗？还是说它其实是属于监督学习，半监督学习，无监督学习这一维度的？"></a>c, 区别于深度学习，强化学习的本质特点是什么？是离散性？是策略性？对于它的分类，是和深度学习并列的吗？还是说它其实是属于监督学习，半监督学习，无监督学习这一维度的？</h2><p>对强化学习的直观影响来源与围棋以及各种策略游戏。就用围棋来说，如何设计一种会下围棋的机器。</p>
 <p>对于只有深度学习背景的我来说，机器是死的，要使得机器会下围棋，那么必须有足够多的数据集，并且由大师级别的专家制作标签，在每种局面之下，下出“标准答案”。然而，这样会遇到两个问题。</p>
 <p>1，围棋变化多端，数据量非常之大，很难制作出这么大数据量的数据集</p>
 <p>2，这样训练出来的机器是“死的”，对环境毫无探索，不太可能超越“标签”即人类</p>
@@ -123,7 +122,7 @@
 </a>
     
   <div class="article-category">
-    <a class="article-category-link" href="/myBlog/categories/Blog/">Blog</a>►<a class="article-category-link" href="/myBlog/categories/Blog/Hexo/">Hexo</a>
+    <a class="article-category-link" href="/myBlog/categories/Hexo/">Hexo</a>
   </div>
 
   </div>
@@ -181,7 +180,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Categories</h3>
     <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/myBlog/categories/Blog/">Blog</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/myBlog/categories/Blog/Hexo/">Hexo</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/myBlog/categories/RL/">RL</a></li></ul>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/myBlog/categories/Hexo/">Hexo</a></li><li class="category-list-item"><a class="category-list-link" href="/myBlog/categories/RL/">RL</a></li></ul>
     </div>
   </div>
 
