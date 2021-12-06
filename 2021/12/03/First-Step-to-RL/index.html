@@ -7,15 +7,15 @@
   
   <title>First Step to RL | Ye, Xiang&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="强化学习的入门介绍 1，什么是强化学习，关于强化学习的几点疑问2， 介绍两个强化学习算法：策略网络(Policy Network)和估值网络(Value Network)3，了解完以上两种算法之后，对强化学习的一些感悟1， 什么是强化学习，关于强化学习的几点疑问强化学习三要素：环境状态，行动，奖励 目标：尽量多的获得奖励 本质：连续决策 基本的强化学习模型包括：  环境状态的集合S 动作的集合A">
+  <meta name="description" content="强化学习的入门介绍 1，什么是强化学习，关于强化学习的几点疑问2， 深度强化学习算法：策略网络(Policy Network)和估值网络(Value Network)3，对Policy Based和 Value Based的一些分析和对比1， 什么是强化学习，关于强化学习的几点疑问强化学习三要素：环境状态，行动，奖励 目标：尽量多的获得奖励 本质：连续决策 基本的强化学习模型包括：  环境状态的集">
 <meta property="og:type" content="article">
 <meta property="og:title" content="First Step to RL">
 <meta property="og:url" content="https://xyegithub.github.io/myBlog/2021/12/03/First-Step-to-RL/index.html">
 <meta property="og:site_name" content="Ye, Xiang&#39;s Blog">
-<meta property="og:description" content="强化学习的入门介绍 1，什么是强化学习，关于强化学习的几点疑问2， 介绍两个强化学习算法：策略网络(Policy Network)和估值网络(Value Network)3，了解完以上两种算法之后，对强化学习的一些感悟1， 什么是强化学习，关于强化学习的几点疑问强化学习三要素：环境状态，行动，奖励 目标：尽量多的获得奖励 本质：连续决策 基本的强化学习模型包括：  环境状态的集合S 动作的集合A">
+<meta property="og:description" content="强化学习的入门介绍 1，什么是强化学习，关于强化学习的几点疑问2， 深度强化学习算法：策略网络(Policy Network)和估值网络(Value Network)3，对Policy Based和 Value Based的一些分析和对比1， 什么是强化学习，关于强化学习的几点疑问强化学习三要素：环境状态，行动，奖励 目标：尽量多的获得奖励 本质：连续决策 基本的强化学习模型包括：  环境状态的集">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2021-12-03T08:48:41.000Z">
-<meta property="article:modified_time" content="2021-12-06T06:44:59.397Z">
+<meta property="article:modified_time" content="2021-12-06T12:42:00.628Z">
 <meta property="article:author" content="Xiang Ye">
 <meta property="article:tag" content="RL">
 <meta name="twitter:card" content="summary">
@@ -96,7 +96,7 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p>强化学习的入门介绍</p>
-<h3 id="1，什么是强化学习，关于强化学习的几点疑问"><a href="#1，什么是强化学习，关于强化学习的几点疑问" class="headerlink" title="1，什么是强化学习，关于强化学习的几点疑问"></a>1，什么是强化学习，关于强化学习的几点疑问</h3><h3 id="2，-介绍两个强化学习算法：策略网络-Policy-Network-和估值网络-Value-Network"><a href="#2，-介绍两个强化学习算法：策略网络-Policy-Network-和估值网络-Value-Network" class="headerlink" title="2， 介绍两个强化学习算法：策略网络(Policy Network)和估值网络(Value Network)"></a>2， 介绍两个强化学习算法：策略网络(Policy Network)和估值网络(Value Network)</h3><h3 id="3，了解完以上两种算法之后，对强化学习的一些感悟"><a href="#3，了解完以上两种算法之后，对强化学习的一些感悟" class="headerlink" title="3，了解完以上两种算法之后，对强化学习的一些感悟"></a>3，了解完以上两种算法之后，对强化学习的一些感悟</h3><h1 id="1，-什么是强化学习，关于强化学习的几点疑问"><a href="#1，-什么是强化学习，关于强化学习的几点疑问" class="headerlink" title="1， 什么是强化学习，关于强化学习的几点疑问"></a>1， 什么是强化学习，关于强化学习的几点疑问</h1><p><font color="green" size="6">强化学习三要素：环境状态，行动，奖励</font></p>
+<h3 id="1，什么是强化学习，关于强化学习的几点疑问"><a href="#1，什么是强化学习，关于强化学习的几点疑问" class="headerlink" title="1，什么是强化学习，关于强化学习的几点疑问"></a>1，什么是强化学习，关于强化学习的几点疑问</h3><h3 id="2，-深度强化学习算法：策略网络-Policy-Network-和估值网络-Value-Network"><a href="#2，-深度强化学习算法：策略网络-Policy-Network-和估值网络-Value-Network" class="headerlink" title="2， 深度强化学习算法：策略网络(Policy Network)和估值网络(Value Network)"></a>2， 深度强化学习算法：策略网络(Policy Network)和估值网络(Value Network)</h3><h3 id="3，对Policy-Based和-Value-Based的一些分析和对比"><a href="#3，对Policy-Based和-Value-Based的一些分析和对比" class="headerlink" title="3，对Policy Based和 Value Based的一些分析和对比"></a>3，对Policy Based和 Value Based的一些分析和对比</h3><h1 id="1，-什么是强化学习，关于强化学习的几点疑问"><a href="#1，-什么是强化学习，关于强化学习的几点疑问" class="headerlink" title="1， 什么是强化学习，关于强化学习的几点疑问"></a>1， 什么是强化学习，关于强化学习的几点疑问</h1><p><font color="green" size="6">强化学习三要素：环境状态，行动，奖励</font></p>
 <p><font color="green" size="6">目标：尽量多的获得奖励</font></p>
 <p><font color="green" size="6">本质：连续决策</font></p>
 <p>基本的强化学习模型包括：</p>
@@ -126,13 +126,15 @@
 <p>而强化学习，正由于它的目标是模糊和不确定的。使得算法在设计上必须具有随机性和探索性，它能够探索出人类从来没有到过的领域。就像在围棋上，下出人类完全无法理解的棋，人从来没有想过的一些下法。这就是强化学习算法探索出来的知识。所以我觉得它是活着的，拥有智能的算法。</p>
 <p><font color="blue">从感性的层面，强化学习算法很接近人脑的行为：感知环境，探索环境，强化有益行为</font></p>
 <h1 id="2，-策略网络-Policy-Network-和估值网络-Value-Network"><a href="#2，-策略网络-Policy-Network-和估值网络-Value-Network" class="headerlink" title="2， 策略网络(Policy Network)和估值网络(Value Network)"></a>2， 策略网络(Policy Network)和估值网络(Value Network)</h1><p>AlphaGo 使用了快速走子，策略网络，估值网络和蒙特卡洛搜索树等技术。</p>
+<p>强化学习算法的一个关键是<font color="blue">随机性和探索性</font>，我们需要让算法通过试验样本自己学习什么才是某个环境状态下比较好的Action，而不是像有监督学习一样，告诉模型什么是好的Action，因为我们也不知道什么是好的Action.</p>
 <p>深度强化学习模型的本质是神经网络，神经网络是工具，根据问题转化以及建模的不同，主要分为策略网络和估值网络。</p>
 <p>强化学习中最重要的两类方法<strong>Policy-based,Value-based</strong>。第一种直接预测在某个环境下应该采取的行动（直接输出改采取Action的概率）。第二种预测在某个环境下所有行动的期望价值，然后通过选择q值最高的行动执行策略。</p>
 <p>他们都能完成决策，但由于建模的不同，估值网络包含有更多的信息，它不仅能提供决策，还预测了决策带来的收益。</p>
+<p><font color="red">策略网络是隐式的学习了某一Action所带来的全部获益（当前获益+后续获益），而估值网络直接显示的学习Action所带来的全部获益。</font>强化学习算法做出最佳抉择只需要知道哪个Action全部获益最大，策略网络就是这样做的，估值网络不仅学习了哪个Action全部获益最大，还把每个Action的全部获益给计算出来了</p>
 <p><font color="blue">相对来说，策略网络的性能会比估值网络好一些。</font></p>
 <p><font color="blue">Value Based方法适合仅有少量Action的环境，而Policy Based方法更通用，适合Action种类非常多，或者具有连续取值的Action的环境。结合了深度学习之后，Policy Based方法就变成了策略网络，Value Based方法就变成了估值网络。</font></p>
 <h2 id="2-1-策略网络-Policy-Network"><a href="#2-1-策略网络-Policy-Network" class="headerlink" title="2.1 策略网络(Policy Network)"></a>2.1 策略网络(Policy Network)</h2><p>直接看一个例子，<a target="_blank" rel="noopener" href="https://github.com/xyegithub/myBlog/blob/main/2021/12/03/First-Step-to-RL/policy_network.py">Policy_Network.py</a></p>
-<h2 id="2-2-估值网络-Value-Network"><a href="#2-2-估值网络-Value-Network" class="headerlink" title="2.2 估值网络(Value Network)"></a>2.2 估值网络(Value Network)</h2><h1 id="3-对强化学习的感悟"><a href="#3-对强化学习的感悟" class="headerlink" title="3, 对强化学习的感悟"></a>3, 对强化学习的感悟</h1>
+<h2 id="2-2-估值网络-Value-Network"><a href="#2-2-估值网络-Value-Network" class="headerlink" title="2.2 估值网络(Value Network)"></a>2.2 估值网络(Value Network)</h2><h1 id="3-对Policy-Based和-Value-Based的一些分析和对比"><a href="#3-对Policy-Based和-Value-Based的一些分析和对比" class="headerlink" title="3, 对Policy Based和 Value Based的一些分析和对比"></a>3, 对Policy Based和 Value Based的一些分析和对比</h1>
       
     </div>
     <footer class="article-footer">
