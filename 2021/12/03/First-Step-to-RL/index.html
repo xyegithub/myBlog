@@ -1,85 +1,26 @@
 <!DOCTYPE html>
-
-
-
-  
-
-
-<html class="theme-next muse use-motion" lang="en">
+<html lang="en">
 <head>
-  <meta charset="UTF-8"/>
-<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/myBlog/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/myBlog/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/myBlog/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/myBlog/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/myBlog/css/main.css">
 
 
+<link rel="stylesheet" href="/myBlog/lib/font-awesome/css/all.min.css">
 
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"xyegithub.github.io","root":"/myBlog/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+  </script>
 
-
-
-
-
-
-<meta http-equiv="Cache-Control" content="no-transform" />
-<meta http-equiv="Cache-Control" content="no-siteapp" />
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-  
-  <link href="/myBlog/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
-
-
-
-
-
-
-
-<link href="/myBlog/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
-
-<link href="/myBlog/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
-
-
-  <link rel="apple-touch-icon" sizes="180x180" href="/myBlog/images/apple-touch-icon-next.png?v=5.1.4">
-
-
-  <link rel="icon" type="image/png" sizes="32x32" href="/myBlog/images/ye_32.ico?v=5.1.4">
-
-
-  <link rel="icon" type="image/png" sizes="16x16" href="/myBlog/images/ye_16.ico?v=5.1.4">
-
-
-  <link rel="mask-icon" href="/myBlog/images/logo.svg?v=5.1.4" color="#222">
-
-
-
-
-
-  <meta name="keywords" content="RL," />
-
-
-
-
-
-
-
-
-
-
-<meta name="description" content="强化学习的入门介绍 什么是强化学习，关于强化学习的几点疑问 深度强化学习算法：策略网络(Policy Network)和估值网络(Value Network) 对Policy Based和 Value Based的一些分析和对比">
+  <meta name="description" content="强化学习的入门介绍 什么是强化学习，关于强化学习的几点疑问 深度强化学习算法：策略网络(Policy Network)和估值网络(Value Network) 对Policy Based和 Value Based的一些分析和对比">
 <meta property="og:type" content="article">
 <meta property="og:title" content="First Step to RL">
 <meta property="og:url" content="https://xyegithub.github.io/myBlog/2021/12/03/First-Step-to-RL/index.html">
@@ -92,39 +33,18 @@
 <meta property="article:tag" content="RL">
 <meta name="twitter:card" content="summary">
 
+<link rel="canonical" href="https://xyegithub.github.io/myBlog/2021/12/03/First-Step-to-RL/">
 
 
-<script type="text/javascript" id="hexo.configurations">
-  var NexT = window.NexT || {};
-  var CONFIG = {
-    root: '',
-    scheme: 'Muse',
-    version: '5.1.4',
-    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
-    fancybox: true,
-    tabs: true,
-    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
-    duoshuo: {
-      userId: '0',
-      author: 'Author'
-    },
-    algolia: {
-      applicationID: '',
-      apiKey: '',
-      indexName: '',
-      hits: {"per_page":10},
-      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
-    }
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'en'
   };
 </script>
-
-
-
-  <link rel="canonical" href="https://xyegithub.github.io/myBlog/2021/12/03/First-Step-to-RL/"/>
-
-
-
-
 
   <title>First Step to RL | Ye, Xiang's Blog</title>
   
@@ -134,192 +54,154 @@
 
 
 
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
 
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
 
-<meta name="generator" content="Hexo 5.4.0"></head>
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
 
-<body itemscope itemtype="http://schema.org/WebPage" lang="en">
+</head>
 
-  
-  
-    
-  
-
-  <div class="container sidebar-position-left page-post-detail">
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
     <div class="headband"></div>
 
-    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
-      <div class="header-inner"><div class="site-brand-wrapper">
-  <div class="site-meta ">
-    
-
-    <div class="custom-logo-site-title">
-      <a href="/myBlog/"  class="brand" rel="start">
-        <span class="logo-line-before"><i></i></span>
-        <span class="site-title">Ye, Xiang's Blog</span>
-        <span class="logo-line-after"><i></i></span>
-      </a>
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
     </div>
-      
-        <p class="site-subtitle"></p>
-      
   </div>
 
-  <div class="site-nav-toggle">
-    <button>
-      <span class="btn-bar"></span>
-      <span class="btn-bar"></span>
-      <span class="btn-bar"></span>
-    </button>
+  <div class="site-meta">
+
+    <a href="/myBlog/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">Ye, Xiang's Blog</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
   </div>
 </div>
 
+
+
+
 <nav class="site-nav">
-  
-
-  
-    <ul id="menu" class="menu">
-      
-        
+  <ul id="menu" class="main-menu menu">
         <li class="menu-item menu-item-home">
-          <a href="/myBlog/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
-            
-            Home
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-categories">
-          <a href="/myBlog/categories/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
-            
-            Categories
-          </a>
-        </li>
-      
 
-      
-    </ul>
-  
+    <a href="/myBlog/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a>
 
-  
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/myBlog/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a>
+
+  </li>
+  </ul>
 </nav>
 
 
 
- </div>
+
+</div>
     </header>
 
-    <main id="main" class="main">
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
       <div class="main-inner">
         <div class="content-wrap">
-          <div id="content" class="content">
+          
+
+          <div class="content post posts-expand">
             
 
-  <div id="posts" class="posts-expand">
     
-
-  
-
   
   
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://xyegithub.github.io/myBlog/myBlog/2021/12/03/First-Step-to-RL/">
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://xyegithub.github.io/myBlog/2021/12/03/First-Step-to-RL/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="">
-      <meta itemprop="description" content="">
       <meta itemprop="image" content="/myBlog/images/avatar.gif">
+      <meta itemprop="name" content="Xiang Ye">
+      <meta itemprop="description" content="">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="Ye, Xiang's Blog">
     </span>
-
-    
       <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">First Step to RL</h1>
-        
+        <h1 class="post-title" itemprop="name headline">
+          First Step to RL
+        </h1>
 
         <div class="post-meta">
-          <span class="post-time">
-            
+            <span class="post-meta-item">
               <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
+                <i class="far fa-calendar"></i>
               </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2021-12-03T16:48:41+08:00">
-                2021-12-03
-              </time>
-            
+              <span class="post-meta-item-text">Posted on</span>
 
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/myBlog/categories/RL/" itemprop="url" rel="index">
-                    <span itemprop="name">RL</span>
-                  </a>
-                </span>
-
-                
-                
-              
+              <time title="Created: 2021-12-03 16:48:41" itemprop="dateCreated datePublished" datetime="2021-12-03T16:48:41+08:00">2021-12-03</time>
             </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2021-12-08 09:17:30" itemprop="dateModified" datetime="2021-12-08T09:17:30+08:00">2021-12-08</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/myBlog/categories/RL/" itemprop="url" rel="index"><span itemprop="name">RL</span></a>
+                </span>
+            </span>
 
           
 
         </div>
       </header>
-    
 
     
     
     
     <div class="post-body" itemprop="articleBody">
-
-      
-      
 
       
         <p>强化学习的入门介绍</p>
@@ -328,7 +210,7 @@
 <p>对Policy Based和 Value Based的一些分析和对比</p>
 <span id="more"></span>
 
-<h1 id="什么是强化学习，关于强化学习的几点疑问"><span class="post-title-index">1. </span><a href="#什么是强化学习，关于强化学习的几点疑问" class="headerlink" title="什么是强化学习，关于强化学习的几点疑问"></a>什么是强化学习，关于强化学习的几点疑问</h1><p><font color="green" size="3">强化学习三要素：环境状态，行动，奖励</font></p>
+<h1 id="什么是强化学习，关于强化学习的几点疑问"><a href="#什么是强化学习，关于强化学习的几点疑问" class="headerlink" title="什么是强化学习，关于强化学习的几点疑问"></a>什么是强化学习，关于强化学习的几点疑问</h1><p><font color="green" size="3">强化学习三要素：环境状态，行动，奖励</font></p>
 <p><font color="green" size="3">目标：尽量多的获得奖励</font></p>
 <p><font color="green" size="3">本质：连续决策</font></p>
 <p>基本的强化学习模型包括：</p>
@@ -340,7 +222,7 @@
 <li>描述主体（智能体）能够观察到什么的规则（是环境的一部分）</li>
 <li>能够做出决策/动作的主体（智能体）</li>
 </ul>
-<h2 id="区别于深度学习，强化学习的本质特点是什么？深度学习解决的是可导的问题，强化学习解决的是离散的问题，是这样吗？"><span class="post-title-index">1.1. </span><a href="#区别于深度学习，强化学习的本质特点是什么？深度学习解决的是可导的问题，强化学习解决的是离散的问题，是这样吗？" class="headerlink" title="区别于深度学习，强化学习的本质特点是什么？深度学习解决的是可导的问题，强化学习解决的是离散的问题，是这样吗？"></a>区别于深度学习，强化学习的本质特点是什么？深度学习解决的是可导的问题，强化学习解决的是离散的问题，是这样吗？</h2><p><strong>两个定义</strong></p>
+<h2 id="区别于深度学习，强化学习的本质特点是什么？深度学习解决的是可导的问题，强化学习解决的是离散的问题，是这样吗？"><a href="#区别于深度学习，强化学习的本质特点是什么？深度学习解决的是可导的问题，强化学习解决的是离散的问题，是这样吗？" class="headerlink" title="区别于深度学习，强化学习的本质特点是什么？深度学习解决的是可导的问题，强化学习解决的是离散的问题，是这样吗？"></a>区别于深度学习，强化学习的本质特点是什么？深度学习解决的是可导的问题，强化学习解决的是离散的问题，是这样吗？</h2><p><strong>两个定义</strong></p>
 <p>1，强化学习是机器学习的一个重要分支，主要用来解决连续决策问题。</p>
 <p>2，强化学习又称 再励学习，评价学习或增强学习，是机器学习的范式和方法论之一，用于描述和解决智能体（agent）在于环境交互过程中通过学习策略以达成回报最大或实现特定目标的问题。</p>
 <p>强化学习的本质是<font color="red"> 描述和解决智能体（agent）在于环境交互过程中通过学习策略以达成回报最大或实现特定目标的问题。</font>它本质是这样一种场景，在这种场景中它为了达到某种目的，做出连续的决策。这样符合这种场景，那就是强化学习。</p>
@@ -349,22 +231,22 @@
 <p><font color="red">强化学习的本质在于目标给定的形式，不像无监督学习那样完全没有学习目标，也不像监督学习那样有非常明确的目标（label），强化学习的目标一般是变化的，不明确的，甚至可能不存在绝对正确的目标。，强化学习的问题都可以抽象成，环境状态，行动和奖励。应该说只要能抽象为这三个要素，目标是获得最大奖励的模型，就是强化学习的模型。</font></p>
 <p>强化学习的最大的特点是“试错”，是尝试各种可能，而强化结果好的可能。（策略网络的特点，估值网络的特点是修正和预测获益）</p>
 <p>由于强化学习是一种决策学习，这个问题的特点就是离散型。但是离散并不就是强化学习（连续的决策才是，目标的模糊和不确定性是决策问题的特点）。深度学习本质是函数的拟合，所以连续可微是它的特点。并不能说连续可微的问题就是深度学习，离散的问题就是强化学习。 </p>
-<h2 id="深度学习用梯度下降的算法实现模型的优化，强化学习无法求导，甚至连学习目标都是模糊的如何优化模型参数？"><span class="post-title-index">1.2. </span><a href="#深度学习用梯度下降的算法实现模型的优化，强化学习无法求导，甚至连学习目标都是模糊的如何优化模型参数？" class="headerlink" title="深度学习用梯度下降的算法实现模型的优化，强化学习无法求导，甚至连学习目标都是模糊的如何优化模型参数？"></a>深度学习用梯度下降的算法实现模型的优化，强化学习无法求导，甚至连学习目标都是模糊的如何优化模型参数？</h2><p>这个问题要了解下一节，具体的强化学习方法。</p>
-<h2 id="强化学习与弱监督学习？"><span class="post-title-index">1.3. </span><a href="#强化学习与弱监督学习？" class="headerlink" title="强化学习与弱监督学习？"></a>强化学习与弱监督学习？</h2><p>弱监督是属于有监督学习，只是它学习的目标不是被给予的标签，而是比被给予标签更强的标签（强弱是指标签做含有的信息量），也就是说弱监督是根据少量信息的标签，推测出更多的信息。</p>
+<h2 id="深度学习用梯度下降的算法实现模型的优化，强化学习无法求导，甚至连学习目标都是模糊的如何优化模型参数？"><a href="#深度学习用梯度下降的算法实现模型的优化，强化学习无法求导，甚至连学习目标都是模糊的如何优化模型参数？" class="headerlink" title="深度学习用梯度下降的算法实现模型的优化，强化学习无法求导，甚至连学习目标都是模糊的如何优化模型参数？"></a>深度学习用梯度下降的算法实现模型的优化，强化学习无法求导，甚至连学习目标都是模糊的如何优化模型参数？</h2><p>这个问题要了解下一节，具体的强化学习方法。</p>
+<h2 id="强化学习与弱监督学习？"><a href="#强化学习与弱监督学习？" class="headerlink" title="强化学习与弱监督学习？"></a>强化学习与弱监督学习？</h2><p>弱监督是属于有监督学习，只是它学习的目标不是被给予的标签，而是比被给予标签更强的标签（强弱是指标签做含有的信息量），也就是说弱监督是根据少量信息的标签，推测出更多的信息。</p>
 <p>强化学习的本质是连续决策。连续决策的特点是目标的模糊和不确定性。</p>
 <p>所以，虽然弱监督和强化学习都没有给出最终准确的目标，但是他们任然很不同的</p>
-<h2 id="深度学习是死的，没有智能的机器学习算法，强化学习是“活的”，有智能的机器学习算法"><span class="post-title-index">1.4. </span><a href="#深度学习是死的，没有智能的机器学习算法，强化学习是“活的”，有智能的机器学习算法" class="headerlink" title="深度学习是死的，没有智能的机器学习算法，强化学习是“活的”，有智能的机器学习算法"></a>深度学习是死的，没有智能的机器学习算法，强化学习是“活的”，有智能的机器学习算法</h2><p>深度学习大部分我们用作有监督的学习算法。其实说深度学习是死的，不如说有监督学习是死的。</p>
+<h2 id="深度学习是死的，没有智能的机器学习算法，强化学习是“活的”，有智能的机器学习算法"><a href="#深度学习是死的，没有智能的机器学习算法，强化学习是“活的”，有智能的机器学习算法" class="headerlink" title="深度学习是死的，没有智能的机器学习算法，强化学习是“活的”，有智能的机器学习算法"></a>深度学习是死的，没有智能的机器学习算法，强化学习是“活的”，有智能的机器学习算法</h2><p>深度学习大部分我们用作有监督的学习算法。其实说深度学习是死的，不如说有监督学习是死的。</p>
 <p>有监督学习其实是完全的复刻标签里面含有的知识，它的本质就是一个函数拟合的问题，它无法摆脱对绝对的标签的依赖，无法超越标签。</p>
 <p>而强化学习，正由于它的目标是模糊和不确定的。使得算法在设计上必须具有随机性和探索性，它能够探索出人类从来没有到过的领域。就像在围棋上，下出人类完全无法理解的棋，人从来没有想过的一些下法。这就是强化学习算法探索出来的知识。所以我觉得它是活着的，拥有智能的算法。</p>
 <p><font color="blue">从感性的层面，强化学习算法很接近人脑的行为：感知环境，探索环境，强化有益行为</font></p>
-<h2 id="关于深度学习，强化学习，连续可导性和离散不可导性的讨论"><span class="post-title-index">1.5. </span><a href="#关于深度学习，强化学习，连续可导性和离散不可导性的讨论" class="headerlink" title="关于深度学习，强化学习，连续可导性和离散不可导性的讨论"></a>关于深度学习，强化学习，连续可导性和离散不可导性的讨论</h2><p>举一个下棋的例子，下棋可以用强化学习算法，下棋这个问题是离散的吗？</p>
+<h2 id="关于深度学习，强化学习，连续可导性和离散不可导性的讨论"><a href="#关于深度学习，强化学习，连续可导性和离散不可导性的讨论" class="headerlink" title="关于深度学习，强化学习，连续可导性和离散不可导性的讨论"></a>关于深度学习，强化学习，连续可导性和离散不可导性的讨论</h2><p>举一个下棋的例子，下棋可以用强化学习算法，下棋这个问题是离散的吗？</p>
 <p>其实它不是离散的，如果说它是离散的那么图像分类也是离散的。</p>
 <p>所以强化学习和离散，深度学习和连续可导的关系究竟是什么样的？</p>
 <p>深度学习必须有标签（如果作为无监督学习的工具，标签是其自身）。从函数的角度，输入到标签的函数必须是连续可导的。深度学习其实就是函数的拟合，而拟合的函数必须是连续可导的。</p>
 <p>那么强化学习呢？强化学习要学习到的环境状态与Action之间的函数关系，一定也是连续可导的，或者说一定是可以用连续可导的函数拟合的，不然无法用深度学习模型作为智能体。</p>
 <p>所以强化学习和离散性有什么关系？</p>
 <p>强化学习给人离散的感觉，是源于神经架构搜索。深度学习只能优化参数，不能自动优化网络结构，因为网络结构是不可导的，网络结构中某一模块的选用和丢弃是离散的。强化学习可以做 这件事情，所以把强化学习和离散，不可导问题挂上钩。</p>
-<h1 id="策略网络-Policy-Network-和估值网络-Value-Network"><span class="post-title-index">2. </span><a href="#策略网络-Policy-Network-和估值网络-Value-Network" class="headerlink" title="策略网络(Policy Network)和估值网络(Value Network)"></a>策略网络(Policy Network)和估值网络(Value Network)</h1><p>AlphaGo 使用了快速走子，策略网络，估值网络和蒙特卡洛搜索树等技术。</p>
+<h1 id="策略网络-Policy-Network-和估值网络-Value-Network"><a href="#策略网络-Policy-Network-和估值网络-Value-Network" class="headerlink" title="策略网络(Policy Network)和估值网络(Value Network)"></a>策略网络(Policy Network)和估值网络(Value Network)</h1><p>AlphaGo 使用了快速走子，策略网络，估值网络和蒙特卡洛搜索树等技术。</p>
 <p>强化学习算法的一个关键是<font color="blue">随机性和探索性</font>，我们需要让算法通过试验样本自己学习什么才是某个环境状态下比较好的Action，而不是像有监督学习一样，告诉模型什么是好的Action，因为我们也不知道什么是好的Action.</p>
 <p>深度强化学习模型的本质是神经网络，神经网络是工具，根据问题转化以及建模的不同，主要分为策略网络和估值网络。</p>
 <p>强化学习中最重要的两类方法<strong>Policy-based,Value-based</strong>。第一种直接预测在某个环境下应该采取的行动（直接输出改采取Action的概率）。第二种预测在某个环境下所有行动的期望价值，然后通过选择q值最高的行动执行策略。</p>
@@ -372,267 +254,186 @@
 <p><font color="red">策略网络是隐式的学习了某一Action所带来的全部获益（当前获益+后续获益），而估值网络直接显示的学习Action所带来的全部获益。</font>强化学习算法做出最佳抉择只需要知道哪个Action全部获益最大，策略网络就是这样做的，估值网络不仅学习了哪个Action全部获益最大，还把每个Action的全部获益给计算出来了</p>
 <p><font color="blue">相对来说，策略网络的性能会比估值网络好一些。</font></p>
 <p><font color="blue">Value Based方法适合仅有少量Action的环境，而Policy Based方法更通用，适合Action种类非常多，或者具有连续取值的Action的环境。结合了深度学习之后，Policy Based方法就变成了策略网络，Value Based方法就变成了估值网络。</font></p>
-<h2 id="策略网络-Policy-Network"><span class="post-title-index">2.1. </span><a href="#策略网络-Policy-Network" class="headerlink" title="策略网络(Policy Network)"></a>策略网络(Policy Network)</h2><p>直接看一个例子，<a target="_blank" rel="noopener" href="https://github.com/xyegithub/myBlog/blob/main/2021/12/03/First-Step-to-RL/policy_network.py">Policy_Network.py</a></p>
+<h2 id="策略网络-Policy-Network"><a href="#策略网络-Policy-Network" class="headerlink" title="策略网络(Policy Network)"></a>策略网络(Policy Network)</h2><p>直接看一个例子，<a target="_blank" rel="noopener" href="https://github.com/xyegithub/myBlog/blob/main/2021/12/03/First-Step-to-RL/policy_network.py">Policy_Network.py</a></p>
 <p>关键代码</p>
  <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line">score = tf.matmul(layer1,W2)</span><br><span class="line">probability = tf.nn.sigmoid(score)<span class="comment">#网络输出采取Action 1的概率。</span></span><br><span class="line">input_y = tf.placeholder(tf.float32,[<span class="literal">None</span>,<span class="number">1</span>], \\</span><br><span class="line">                         name=<span class="string">&quot;input_y&quot;</span>)<span class="comment"># 输入采取过的行为，这个行为是随机生成的。</span></span><br><span class="line">advantages = tf.placeholder(tf.float32,name=<span class="string">&quot;reward_signal&quot;</span>) </span><br><span class="line"><span class="comment"># 输入获益</span></span><br><span class="line">loglik = tf.log(input_y*(input_y - probability) + \\</span><br><span class="line">                (<span class="number">1</span> - input_y)*(input_y + probability)) </span><br><span class="line"><span class="comment"># 损失函数，如果行为是1，则增大</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#概率，如果行为是 0，则减小概率（相当于也是增加0的概率），也就是说这个损</span></span><br><span class="line"><span class="comment">#失函数无论当前行为是什么都会增大当前行为的概率。</span></span><br><span class="line">loss = -tf.reduce_mean(loglik * advantages) <span class="comment"># 这行代码很关键，</span></span><br><span class="line"><span class="comment">#相当于给损失函数成了一个权重advantages，得到最终的损失函数。</span></span><br><span class="line"><span class="comment">#advantages是当前试验的全部获益。如果全部获益大，将以更大的权重，增加 </span></span><br><span class="line"><span class="comment">#当前行为的概率。</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#所以，策略网络其实也是一个对抗学习的过程，增加所有采取过行为的概率，只是</span></span><br><span class="line"><span class="comment">#获益多的行为以更大的权重增加。</span></span><br><span class="line"></span><br><span class="line"><span class="comment">## 一个试验： 由初始状态开始，随机采取一连串的行为</span></span><br><span class="line"><span class="comment">#（Policy_Network.py 中是根据当前模型输出的概率,来生成随机的行为，但</span></span><br><span class="line"><span class="comment">#是我感觉直接用0.5的概率随机生成一连串的0和1的行为也是可以的，下面将实</span></span><br><span class="line"><span class="comment">#验一下），直到任务结束。</span></span><br><span class="line"></span><br><span class="line"><span class="comment">## 由于每个试验，都可以一直行为到任务结束，所以每个action，我们都可以得</span></span><br><span class="line"><span class="comment">#到它在该试验中的全部获益（当前获益 + 之后所有行为的获益）</span></span><br><span class="line"></span><br><span class="line"><span class="comment">## 随机生成了n个试验，其中又各种各样的决策（随机探索），全部获益大的</span></span><br><span class="line"><span class="comment">#action，它的advantages也大，那么它的概率就增大的多，它被强化的厉害。</span></span><br><span class="line"></span><br><span class="line"><span class="comment">## 试验生成的过程，实际上就是数据集构建的过程。策略网络的数据集是由环境</span></span><br><span class="line"><span class="comment">#和一系列随机的行为构成的。它提供了环境在各种行为下的反应（获益）。模型</span></span><br><span class="line"><span class="comment">#学习为环境带来高获益的行为的规律。</span></span><br></pre></td></tr></table></figure>
 
 <p>由上面的代码可知，从策略网络的角度看强化学习的话，强化学习的关键其实是对数据集的构建—如何构建数据集。</p>
 <p>在构建数据集的时候，随机探索肯定是必要的。随机探索的结果会得到一系列好的行为，也会得到一系列不好的行为。如何强化好的行为就是算法设计的时候需要注意的。</p>
 <p>上面的代码在探索阶段借用了当前的模型，即根据当前模型输出的概率随机生成行为，从而形成数据集。如果完全的随机（一直使用0.5的概率随机的生成Action）会什么样呢？</p>
-<h3 id="数据集是否可以和模型无关（不随着模型变化）？"><span class="post-title-index">2.1.1. </span><a href="#数据集是否可以和模型无关（不随着模型变化）？" class="headerlink" title="数据集是否可以和模型无关（不随着模型变化）？"></a>数据集是否可以和模型无关（不随着模型变化）？</h3><p>关键修改代码</p>
+<h3 id="数据集是否可以和模型无关（不随着模型变化）？"><a href="#数据集是否可以和模型无关（不随着模型变化）？" class="headerlink" title="数据集是否可以和模型无关（不随着模型变化）？"></a>数据集是否可以和模型无关（不随着模型变化）？</h3><p>关键修改代码</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#基于当前模型，根据当前的状态x，生成Action 1的概率</span></span><br><span class="line">tfprob = sess.run(probability,feed_dict=&#123;observations: x&#125;)</span><br><span class="line"><span class="comment"># 基于预测概率，随机生成行为，并试探环境。生成数据集。</span></span><br><span class="line">action = <span class="number">1</span> <span class="keyword">if</span> np.random.uniform() &lt; tfprob <span class="keyword">else</span> <span class="number">0</span></span><br></pre></td></tr></table></figure>
 
 <p>修改之后</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 注释掉这句，并不需要根据当前模型生成概率</span></span><br><span class="line"><span class="comment"># tfprob = sess.run(probability,feed_dict=&#123;observations: x&#125;)</span></span><br><span class="line"><span class="comment"># 直接设置概率为0.5，随机完全随机探索生成数据集。</span></span><br><span class="line">tfprob = <span class="number">0.5</span></span><br><span class="line">action = <span class="number">1</span> <span class="keyword">if</span> np.random.uniform() &lt; tfprob <span class="keyword">else</span> <span class="number">0</span></span><br></pre></td></tr></table></figure>
 
-<h2 id="估值网络-Value-Network"><span class="post-title-index">2.2. </span><a href="#估值网络-Value-Network" class="headerlink" title="估值网络(Value Network)"></a>估值网络(Value Network)</h2><h1 id="对Policy-Based和-Value-Based的一些分析和对比"><span class="post-title-index">3. </span><a href="#对Policy-Based和-Value-Based的一些分析和对比" class="headerlink" title="对Policy Based和 Value Based的一些分析和对比"></a>对Policy Based和 Value Based的一些分析和对比</h1>
-      
+<h2 id="估值网络-Value-Network"><a href="#估值网络-Value-Network" class="headerlink" title="估值网络(Value Network)"></a>估值网络(Value Network)</h2><h1 id="对Policy-Based和-Value-Based的一些分析和对比"><a href="#对Policy-Based和-Value-Based的一些分析和对比" class="headerlink" title="对Policy Based和 Value Based的一些分析和对比"></a>对Policy Based和 Value Based的一些分析和对比</h1>
     </div>
+
     
     
     
 
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-        <div class="post-tags">
-          
-            <a href="/myBlog/tags/RL/" rel="tag"># RL</a>
-          
-        </div>
-      
-
-      
-      
-      
-
-      
-        <div class="post-nav">
-          <div class="post-nav-next post-nav-item">
-            
-              <a href="/myBlog/2021/11/24/Construct-Your-Blog-with-Hexo-and-Github/" rel="next" title="Construct Your Blog with Hexo and Github">
-                <i class="fa fa-chevron-left"></i> Construct Your Blog with Hexo and Github
-              </a>
-            
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/myBlog/tags/RL/" rel="tag"># RL</a>
           </div>
 
-          <span class="post-nav-divider"></span>
+        
 
-          <div class="post-nav-prev post-nav-item">
-            
-          </div>
-        </div>
-      
 
-      
-      
-    </footer>
-  </div>
-  
-  
-  
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/myBlog/2021/11/24/Construct-Your-Blog-with-Hexo-and-Github/" rel="prev" title="Construct Your Blog with Hexo and Github">
+      <i class="fa fa-chevron-left"></i> Construct Your Blog with Hexo and Github
+    </a></div>
+      <div class="post-nav-item"></div>
+    </div>
+      </footer>
+    
   </article>
+  
+  
+  
 
-
-
-    <div class="post-spread">
-      
-    </div>
-  </div>
 
 
           </div>
           
 
-
-          
-
-  
-
-
-
-        </div>
-        
-          
-  
-  <div class="sidebar-toggle">
-    <div class="sidebar-toggle-line-wrap">
-      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
-      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
-      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
-    </div>
-  </div>
-
-  <aside id="sidebar" class="sidebar">
-    
-    <div class="sidebar-inner">
-
-      
-
-      
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
-            Table of Contents
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
-            Overview
-          </li>
-        </ul>
-      
-
-      <section class="site-overview-wrap sidebar-panel">
-        <div class="site-overview">
-          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-            
-              <p class="site-author-name" itemprop="name"></p>
-              <p class="site-description motion-element" itemprop="description"></p>
-          </div>
-
-          <nav class="site-state motion-element">
-
-            
-              <div class="site-state-item site-state-posts">
-              
-                <a href="/myBlog/archives">
-              
-                  <span class="site-state-item-count">2</span>
-                  <span class="site-state-item-name">posts</span>
-                </a>
-              </div>
-            
-
-            
-              
-              
-              <div class="site-state-item site-state-categories">
-                <a href="/myBlog/categories/index.html">
-                  <span class="site-state-item-count">2</span>
-                  <span class="site-state-item-name">categories</span>
-                </a>
-              </div>
-            
-
-            
-              
-              
-              <div class="site-state-item site-state-tags">
-                
-                  <span class="site-state-item-count">2</span>
-                  <span class="site-state-item-name">tags</span>
-                
-              </div>
-            
-
-          </nav>
-
-          
-
-          
-
-          
-          
-
-          
-          
-
-          
-
-        </div>
-      </section>
-
-      
-      <!--noindex-->
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-              
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%BB%80%E4%B9%88%E6%98%AF%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0%EF%BC%8C%E5%85%B3%E4%BA%8E%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0%E7%9A%84%E5%87%A0%E7%82%B9%E7%96%91%E9%97%AE"><span class="nav-text">1. 什么是强化学习，关于强化学习的几点疑问</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8C%BA%E5%88%AB%E4%BA%8E%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%EF%BC%8C%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0%E7%9A%84%E6%9C%AC%E8%B4%A8%E7%89%B9%E7%82%B9%E6%98%AF%E4%BB%80%E4%B9%88%EF%BC%9F%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E8%A7%A3%E5%86%B3%E7%9A%84%E6%98%AF%E5%8F%AF%E5%AF%BC%E7%9A%84%E9%97%AE%E9%A2%98%EF%BC%8C%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0%E8%A7%A3%E5%86%B3%E7%9A%84%E6%98%AF%E7%A6%BB%E6%95%A3%E7%9A%84%E9%97%AE%E9%A2%98%EF%BC%8C%E6%98%AF%E8%BF%99%E6%A0%B7%E5%90%97%EF%BC%9F"><span class="nav-text">1.1. 区别于深度学习，强化学习的本质特点是什么？深度学习解决的是可导的问题，强化学习解决的是离散的问题，是这样吗？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E7%94%A8%E6%A2%AF%E5%BA%A6%E4%B8%8B%E9%99%8D%E7%9A%84%E7%AE%97%E6%B3%95%E5%AE%9E%E7%8E%B0%E6%A8%A1%E5%9E%8B%E7%9A%84%E4%BC%98%E5%8C%96%EF%BC%8C%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0%E6%97%A0%E6%B3%95%E6%B1%82%E5%AF%BC%EF%BC%8C%E7%94%9A%E8%87%B3%E8%BF%9E%E5%AD%A6%E4%B9%A0%E7%9B%AE%E6%A0%87%E9%83%BD%E6%98%AF%E6%A8%A1%E7%B3%8A%E7%9A%84%E5%A6%82%E4%BD%95%E4%BC%98%E5%8C%96%E6%A8%A1%E5%9E%8B%E5%8F%82%E6%95%B0%EF%BC%9F"><span class="nav-text">1.2. 深度学习用梯度下降的算法实现模型的优化，强化学习无法求导，甚至连学习目标都是模糊的如何优化模型参数？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0%E4%B8%8E%E5%BC%B1%E7%9B%91%E7%9D%A3%E5%AD%A6%E4%B9%A0%EF%BC%9F"><span class="nav-text">1.3. 强化学习与弱监督学习？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E6%98%AF%E6%AD%BB%E7%9A%84%EF%BC%8C%E6%B2%A1%E6%9C%89%E6%99%BA%E8%83%BD%E7%9A%84%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%AE%97%E6%B3%95%EF%BC%8C%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0%E6%98%AF%E2%80%9C%E6%B4%BB%E7%9A%84%E2%80%9D%EF%BC%8C%E6%9C%89%E6%99%BA%E8%83%BD%E7%9A%84%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%AE%97%E6%B3%95"><span class="nav-text">1.4. 深度学习是死的，没有智能的机器学习算法，强化学习是“活的”，有智能的机器学习算法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%85%B3%E4%BA%8E%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%EF%BC%8C%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0%EF%BC%8C%E8%BF%9E%E7%BB%AD%E5%8F%AF%E5%AF%BC%E6%80%A7%E5%92%8C%E7%A6%BB%E6%95%A3%E4%B8%8D%E5%8F%AF%E5%AF%BC%E6%80%A7%E7%9A%84%E8%AE%A8%E8%AE%BA"><span class="nav-text">1.5. 关于深度学习，强化学习，连续可导性和离散不可导性的讨论</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%AD%96%E7%95%A5%E7%BD%91%E7%BB%9C-Policy-Network-%E5%92%8C%E4%BC%B0%E5%80%BC%E7%BD%91%E7%BB%9C-Value-Network"><span class="nav-text">2. 策略网络(Policy Network)和估值网络(Value Network)</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AD%96%E7%95%A5%E7%BD%91%E7%BB%9C-Policy-Network"><span class="nav-text">2.1. 策略网络(Policy Network)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E9%9B%86%E6%98%AF%E5%90%A6%E5%8F%AF%E4%BB%A5%E5%92%8C%E6%A8%A1%E5%9E%8B%E6%97%A0%E5%85%B3%EF%BC%88%E4%B8%8D%E9%9A%8F%E7%9D%80%E6%A8%A1%E5%9E%8B%E5%8F%98%E5%8C%96%EF%BC%89%EF%BC%9F"><span class="nav-text">2.1.1. 数据集是否可以和模型无关（不随着模型变化）？</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BC%B0%E5%80%BC%E7%BD%91%E7%BB%9C-Value-Network"><span class="nav-text">2.2. 估值网络(Value Network)</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%AF%B9Policy-Based%E5%92%8C-Value-Based%E7%9A%84%E4%B8%80%E4%BA%9B%E5%88%86%E6%9E%90%E5%92%8C%E5%AF%B9%E6%AF%94"><span class="nav-text">3. 对Policy Based和 Value Based的一些分析和对比</span></a></li></ol></div>
-            
-
-          </div>
-        </section>
-      <!--/noindex-->
-      
-
-      
-
-    </div>
-  </aside>
-
-
-        
-      </div>
-    </main>
-
-    <footer id="footer" class="footer">
-      <div class="footer-inner">
-        <div class="copyright">&copy; <span itemprop="copyrightYear">2021</span>
-  <span class="with-love">
-    <i class="fa fa-user"></i>
-  </span>
-  <span class="author" itemprop="copyrightHolder">Xiang Ye</span>
-
-  
-</div>
-
-
-  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
-
-
-
-  <span class="post-meta-divider">|</span>
-
-
-
-  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.4</div>
-
-
-
-
-        
-
-
-
-
-
-
-
-        
-      </div>
-    </footer>
-
-    
-      <div class="back-to-top">
-        <i class="fa fa-arrow-up"></i>
-        
-      </div>
-    
-
-    
-
-  </div>
-
-  
-
-<script type="text/javascript">
-  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
-    window.Promise = null;
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
   }
 </script>
 
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%BB%80%E4%B9%88%E6%98%AF%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0%EF%BC%8C%E5%85%B3%E4%BA%8E%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0%E7%9A%84%E5%87%A0%E7%82%B9%E7%96%91%E9%97%AE"><span class="nav-number">1.</span> <span class="nav-text">什么是强化学习，关于强化学习的几点疑问</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8C%BA%E5%88%AB%E4%BA%8E%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%EF%BC%8C%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0%E7%9A%84%E6%9C%AC%E8%B4%A8%E7%89%B9%E7%82%B9%E6%98%AF%E4%BB%80%E4%B9%88%EF%BC%9F%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E8%A7%A3%E5%86%B3%E7%9A%84%E6%98%AF%E5%8F%AF%E5%AF%BC%E7%9A%84%E9%97%AE%E9%A2%98%EF%BC%8C%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0%E8%A7%A3%E5%86%B3%E7%9A%84%E6%98%AF%E7%A6%BB%E6%95%A3%E7%9A%84%E9%97%AE%E9%A2%98%EF%BC%8C%E6%98%AF%E8%BF%99%E6%A0%B7%E5%90%97%EF%BC%9F"><span class="nav-number">1.1.</span> <span class="nav-text">区别于深度学习，强化学习的本质特点是什么？深度学习解决的是可导的问题，强化学习解决的是离散的问题，是这样吗？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E7%94%A8%E6%A2%AF%E5%BA%A6%E4%B8%8B%E9%99%8D%E7%9A%84%E7%AE%97%E6%B3%95%E5%AE%9E%E7%8E%B0%E6%A8%A1%E5%9E%8B%E7%9A%84%E4%BC%98%E5%8C%96%EF%BC%8C%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0%E6%97%A0%E6%B3%95%E6%B1%82%E5%AF%BC%EF%BC%8C%E7%94%9A%E8%87%B3%E8%BF%9E%E5%AD%A6%E4%B9%A0%E7%9B%AE%E6%A0%87%E9%83%BD%E6%98%AF%E6%A8%A1%E7%B3%8A%E7%9A%84%E5%A6%82%E4%BD%95%E4%BC%98%E5%8C%96%E6%A8%A1%E5%9E%8B%E5%8F%82%E6%95%B0%EF%BC%9F"><span class="nav-number">1.2.</span> <span class="nav-text">深度学习用梯度下降的算法实现模型的优化，强化学习无法求导，甚至连学习目标都是模糊的如何优化模型参数？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0%E4%B8%8E%E5%BC%B1%E7%9B%91%E7%9D%A3%E5%AD%A6%E4%B9%A0%EF%BC%9F"><span class="nav-number">1.3.</span> <span class="nav-text">强化学习与弱监督学习？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E6%98%AF%E6%AD%BB%E7%9A%84%EF%BC%8C%E6%B2%A1%E6%9C%89%E6%99%BA%E8%83%BD%E7%9A%84%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%AE%97%E6%B3%95%EF%BC%8C%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0%E6%98%AF%E2%80%9C%E6%B4%BB%E7%9A%84%E2%80%9D%EF%BC%8C%E6%9C%89%E6%99%BA%E8%83%BD%E7%9A%84%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%AE%97%E6%B3%95"><span class="nav-number">1.4.</span> <span class="nav-text">深度学习是死的，没有智能的机器学习算法，强化学习是“活的”，有智能的机器学习算法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%85%B3%E4%BA%8E%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%EF%BC%8C%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0%EF%BC%8C%E8%BF%9E%E7%BB%AD%E5%8F%AF%E5%AF%BC%E6%80%A7%E5%92%8C%E7%A6%BB%E6%95%A3%E4%B8%8D%E5%8F%AF%E5%AF%BC%E6%80%A7%E7%9A%84%E8%AE%A8%E8%AE%BA"><span class="nav-number">1.5.</span> <span class="nav-text">关于深度学习，强化学习，连续可导性和离散不可导性的讨论</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%AD%96%E7%95%A5%E7%BD%91%E7%BB%9C-Policy-Network-%E5%92%8C%E4%BC%B0%E5%80%BC%E7%BD%91%E7%BB%9C-Value-Network"><span class="nav-number">2.</span> <span class="nav-text">策略网络(Policy Network)和估值网络(Value Network)</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AD%96%E7%95%A5%E7%BD%91%E7%BB%9C-Policy-Network"><span class="nav-number">2.1.</span> <span class="nav-text">策略网络(Policy Network)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E9%9B%86%E6%98%AF%E5%90%A6%E5%8F%AF%E4%BB%A5%E5%92%8C%E6%A8%A1%E5%9E%8B%E6%97%A0%E5%85%B3%EF%BC%88%E4%B8%8D%E9%9A%8F%E7%9D%80%E6%A8%A1%E5%9E%8B%E5%8F%98%E5%8C%96%EF%BC%89%EF%BC%9F"><span class="nav-number">2.1.1.</span> <span class="nav-text">数据集是否可以和模型无关（不随着模型变化）？</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BC%B0%E5%80%BC%E7%BD%91%E7%BB%9C-Value-Network"><span class="nav-number">2.2.</span> <span class="nav-text">估值网络(Value Network)</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%AF%B9Policy-Based%E5%92%8C-Value-Based%E7%9A%84%E4%B8%80%E4%BA%9B%E5%88%86%E6%9E%90%E5%92%8C%E5%AF%B9%E6%AF%94"><span class="nav-number">3.</span> <span class="nav-text">对Policy Based和 Value Based的一些分析和对比</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">Xiang Ye</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/myBlog/archives/">
+        
+          <span class="site-state-item-count">2</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/myBlog/categories/">
+        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-name">tags</span>
+      </div>
+  </nav>
+</div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Xiang Ye</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://muse.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a>
+  </div>
+
+        
 
 
 
 
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/myBlog/lib/anime.min.js"></script>
+  <script src="/myBlog/lib/velocity/velocity.min.js"></script>
+  <script src="/myBlog/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/myBlog/js/utils.js"></script>
+
+<script src="/myBlog/js/motion.js"></script>
+
+
+<script src="/myBlog/js/schemes/muse.js"></script>
+
+
+<script src="/myBlog/js/next-boot.js"></script>
 
 
 
@@ -650,111 +451,8 @@
 
 
 
-  
-  
-    <script type="text/javascript" src="/myBlog/lib/jquery/index.js?v=2.1.3"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/myBlog/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/myBlog/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/myBlog/lib/velocity/velocity.min.js?v=1.2.1"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/myBlog/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/myBlog/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
-  
 
 
-  
-
-
-  <script type="text/javascript" src="/myBlog/js/src/utils.js?v=5.1.4"></script>
-
-  <script type="text/javascript" src="/myBlog/js/src/motion.js?v=5.1.4"></script>
-
-
-
-  
-  
-
-  
-  <script type="text/javascript" src="/myBlog/js/src/scrollspy.js?v=5.1.4"></script>
-<script type="text/javascript" src="/myBlog/js/src/post-details.js?v=5.1.4"></script>
-
-
-
-  
-
-
-  <script type="text/javascript" src="/myBlog/js/src/bootstrap.js?v=5.1.4"></script>
-
-
-
-  
-
-
-  
-
-
-
-
-	
-
-
-
-
-
-  
-
-
-
-
-
-  
-
-
-
-
-
-
-
-
-
-
-
-
-  
-
-
-
-
-
-  
-
-  
-
-  
-
-  
-  
-
-  
 
   
 
