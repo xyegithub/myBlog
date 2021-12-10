@@ -2,14 +2,14 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://xyegithub.github.io/myBlog/tags/index.html</loc>
+    <loc>https://xyegithub.github.io/myBlog/2021/12/03/First-Step-to-RL/</loc>
     
-    <lastmod>2021-12-08</lastmod>
+    <lastmod>2021-12-10</lastmod>
     
   </url>
   
   <url>
-    <loc>https://xyegithub.github.io/myBlog/2021/12/03/First-Step-to-RL/</loc>
+    <loc>https://xyegithub.github.io/myBlog/tags/index.html</loc>
     
     <lastmod>2021-12-08</lastmod>
     
@@ -32,7 +32,7 @@
 
   <url>
     <loc>https://xyegithub.github.io/myBlog</loc>
-    <lastmod>2021-12-08</lastmod>
+    <lastmod>2021-12-10</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
@@ -40,14 +40,14 @@
   
   <url>
     <loc>https://xyegithub.github.io/myBlog/tags/Hexo/</loc>
-    <lastmod>2021-12-08</lastmod>
+    <lastmod>2021-12-10</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://xyegithub.github.io/myBlog/tags/RL/</loc>
-    <lastmod>2021-12-08</lastmod>
+    <lastmod>2021-12-10</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
@@ -56,14 +56,14 @@
   
   <url>
     <loc>https://xyegithub.github.io/myBlog/categories/Hexo/</loc>
-    <lastmod>2021-12-08</lastmod>
+    <lastmod>2021-12-10</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://xyegithub.github.io/myBlog/categories/RL/</loc>
-    <lastmod>2021-12-08</lastmod>
+    <lastmod>2021-12-10</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
