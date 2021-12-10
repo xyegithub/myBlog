@@ -1,10 +1,10 @@
 ---
-title: First Step to RL
+title: First Step to Reinforcement Learing
 date: 2021-12-03 16:48:41
 tags:
-- RL
+- Reinforcement Learning
 categories:
-- RL
+- Reinforcement Learning
 
 
 ---
