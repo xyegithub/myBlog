@@ -148,7 +148,7 @@ AlphaGo 使用了快速走子，策略网络，估值网络和蒙特卡洛搜索
 
 ## 策略网络(Policy Network)
 
-直接看一个例子，学习的目标是，左右用力使得木棍不倒地，[Policy_Network.py](https://github.com/xyegithub/myBlog/blob/main/2021/12/03/First-Step-to-RL/policy_network.py)
+直接看一个例子，学习的目标是，左右用力使得木棍不倒地，[Policy_Network.py](https://github.com/xyegithub/myBlog/blob/main/2021/12/03/First-Step-to-RL/policy_network.py) [Policy_Network.py](policy_network.py)
 
 关键代码
 
