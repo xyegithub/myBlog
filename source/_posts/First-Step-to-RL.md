@@ -1,5 +1,5 @@
 ---
-title: First Step to Reinforcement Learing
+title: First Step to Reinforcement Learning
 date: 2021-12-03 16:48:41
 tags:
 - Reinforcement Learning
