@@ -1,6 +1,7 @@
 ---
 title: Construct Your Blog with Hexo and Github
 date: 2021-11-24 16:20:43
+description:  Hexo, Next等的使用和介绍
 tags: 
 - Hexo
 categories:
@@ -18,8 +19,6 @@ https://godweiyang.com/2018/04/13/hexo-blog/
 https://blog.guaoxiaohei.com/posts/Hexo-Level/
 
 # 实现的时候也遇到了一些问题
-
-<!-- more -->
 
 ## 本地显示没问题，hexo d之后 在GitHub无法显示主题样式
 

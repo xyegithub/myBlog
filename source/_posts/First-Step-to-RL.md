@@ -1,6 +1,7 @@
 ---
 title: First Step to Reinforcement Learning
 date: 2021-12-03 16:48:41
+description: 强化学习的入门介绍；什么是强化学习；深度强化学习算法：策略网络(Policy Network)和估值网络(Value Network)。
 tags:
 - Reinforcement Learning
 categories:
@@ -10,14 +11,6 @@ categories:
 ---
 
 
-
-强化学习的入门介绍
-
-什么是强化学习
-
-深度强化学习算法：策略网络(Policy Network)和估值网络(Value Network)
-
-<!-- more -->
 
 # 什么是强化学习，关于强化学习的几点疑问
 
