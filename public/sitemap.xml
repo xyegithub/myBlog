@@ -2,7 +2,21 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://xyegithub.github.io/myBlog/2021/12/10/An-Introduction-to-Git/</loc>
+    <loc>https://xyegithub.github.io/myBlog/2021/12/15/Personal-Thought/</loc>
+    
+    <lastmod>2021-12-16</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://xyegithub.github.io/myBlog/2021/12/03/First-Step-to-RL/</loc>
+    
+    <lastmod>2021-12-16</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://xyegithub.github.io/myBlog/2021/12/14/Tips-in-Papers/</loc>
     
     <lastmod>2021-12-15</lastmod>
     
@@ -16,14 +30,7 @@
   </url>
   
   <url>
-    <loc>https://xyegithub.github.io/myBlog/2021/12/03/First-Step-to-RL/</loc>
-    
-    <lastmod>2021-12-15</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://xyegithub.github.io/myBlog/2021/12/14/Tips-in-Papers/</loc>
+    <loc>https://xyegithub.github.io/myBlog/2021/12/10/An-Introduction-to-Git/</loc>
     
     <lastmod>2021-12-15</lastmod>
     
@@ -53,7 +60,7 @@
 
   <url>
     <loc>https://xyegithub.github.io/myBlog</loc>
-    <lastmod>2021-12-15</lastmod>
+    <lastmod>2021-12-16</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
@@ -61,28 +68,42 @@
   
   <url>
     <loc>https://xyegithub.github.io/myBlog/tags/Git/</loc>
-    <lastmod>2021-12-15</lastmod>
+    <lastmod>2021-12-16</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://xyegithub.github.io/myBlog/tags/Hexo/</loc>
-    <lastmod>2021-12-15</lastmod>
+    <lastmod>2021-12-16</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>https://xyegithub.github.io/myBlog/tags/Reinforcement-Learning/</loc>
-    <lastmod>2021-12-15</lastmod>
+    <loc>https://xyegithub.github.io/myBlog/tags/Personal-Thought/</loc>
+    <lastmod>2021-12-16</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://xyegithub.github.io/myBlog/tags/Papers/</loc>
-    <lastmod>2021-12-15</lastmod>
+    <lastmod>2021-12-16</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://xyegithub.github.io/myBlog/tags/private/</loc>
+    <lastmod>2021-12-16</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://xyegithub.github.io/myBlog/tags/Reinforcement-Learning/</loc>
+    <lastmod>2021-12-16</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
@@ -91,35 +112,35 @@
   
   <url>
     <loc>https://xyegithub.github.io/myBlog/categories/Little-Things/</loc>
-    <lastmod>2021-12-15</lastmod>
+    <lastmod>2021-12-16</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>https://xyegithub.github.io/myBlog/categories/Reinforcement-Learning/</loc>
-    <lastmod>2021-12-15</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://xyegithub.github.io/myBlog/categories/Things-About-Papers/</loc>
-    <lastmod>2021-12-15</lastmod>
+    <loc>https://xyegithub.github.io/myBlog/categories/About-Papers/</loc>
+    <lastmod>2021-12-16</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://xyegithub.github.io/myBlog/categories/Little-Things/Git/</loc>
-    <lastmod>2021-12-15</lastmod>
+    <lastmod>2021-12-16</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://xyegithub.github.io/myBlog/categories/Reinforcement-Learning/</loc>
+    <lastmod>2021-12-16</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://xyegithub.github.io/myBlog/categories/Little-Things/Hexo/</loc>
-    <lastmod>2021-12-15</lastmod>
+    <lastmod>2021-12-16</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>

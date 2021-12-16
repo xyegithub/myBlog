@@ -1,7 +1,7 @@
 ---
 title: Construct Your Blog with Hexo and Github
 date: 2021-11-24 16:20:43
-description:  Hexo, Next等的使用和介绍
+description:  Hexo, Next等的使用和介绍。
 tags: 
 - Hexo
 categories:
