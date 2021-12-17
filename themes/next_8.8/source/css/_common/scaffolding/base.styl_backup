@@ -71,9 +71,10 @@ iframe, img, video, embed {
 }
 
 hr {
-    border: 0;
-    padding-top: 1px;
-    background: linear-gradient(to right, transparent, #d0d0d5, transparent);
+  background-image: repeating-linear-gradient(-45deg, $grey-lighter, $grey-lighter 4px, transparent 4px, transparent 8px);
+  border: 0;
+  height: 3px;
+  margin: 40px 0;
 }
 
 blockquote {

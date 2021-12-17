@@ -31,3 +31,11 @@ These models operate by generating many region proposals and then applying a cla
 Unlike our work, these approaches use ground-truth bounding boxes to train the classification model, and modern architectures also use bounding boxes to supervise the proposal generator.
 
 **目标检测和Hard Attention的相似之处在于，他们都同时关注目标的位置和类别。相比于目标检测，Hard Attention可以做的更精细, i.e., 它可以像目标检测一样在图像域上挑选特征，它还可以在任意一个特征域里挑选特征；它不仅可以像目标检测一样，挑选空域的特征，还可以挑选通道域的特征。**
+
+# Regularization 
+
+## ADCM: Attentnion Dropout Convolutional Module
+
+![ADCM](ADCM.jpg)
+
+在CBAM的基础上加入了正则化，把CBAM产生的attention weights作为Drop的概率引导，来对feature map进行drop。是一种对attention机制的正则化方法，很容以把它误解为hard attention。

@@ -10,7 +10,7 @@ categories:
 ---
 
 
-# 主要参考了四篇博客
+# 主要参考博客
 
 https://segmentfault.com/a/1190000017986794
 
@@ -19,6 +19,8 @@ https://godweiyang.com/2018/04/13/hexo-blog/
 https://blog.guaoxiaohei.com/posts/Hexo-Level/
 
 https://www.itfanr.cc/2021/04/16/hexo-blog-article-encryption/
+
+https://www.zhangxinxu.com/wordpress/2021/05/css-html-hr/
 
 # 实现的时候也遇到了一些问题
 
