@@ -11,21 +11,20 @@ I major in deep learning, computer vision, natural language processing, and rein
 
 I am also interested in high performance computing.
 
+<br/>
 
+<br/>
 
 ---
 
+<br/>
 
+<br/>
 
 > ​     *There is a pleasure in the pathless woods;*
->
-> ​    *there is a rapture on the lonely shore;*
->
-> ​    there is society, where none intrudes,
->
-> ​    *by the deep sea, and music in its roar;*
->
-> ​    *I love not man the less, but nature more...*
->
+> ​     *there is a rapture on the lonely shore;*
+> ​     *there is society, where none intrudes,*
+> ​     *by the deep sea, and music in its roar;*
+> ​     *I love not man the less, but nature more...*
 > ​                          *by George Gordon Byron* 
 
