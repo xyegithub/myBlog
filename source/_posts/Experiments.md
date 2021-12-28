@@ -101,4 +101,14 @@ dataset: Caltech101
 | ------------------------------------------------------------ | -------- |
 | ` out = (self.bn_s(self.shortcut(x)).sigmoid()) * self.bn(out).sigmoid()` | 86.23    |
 | `self.bn.bias.data[:]=0`<br>`out = (self.bn_s(self.shortcut(x)).sigmoid()) * self.bn(out).sigmoid()` | 86.41    |
+| `self.bn.bias.data[:]=0`<br>`out = (self.bn_s(self.shortcut(x)).sigmoid()) * (self.bn(out).sigmoid() + 1)` | 85.83    |
+| `self.bn.bias.data[:]=0`<br>`out = (self.bn_s(self.shortcut(x)).sigmoid()) * (self.bn(out).sigmoid() + 0.5)` | 86.23    |
+| `self.bn.bias.data[:]=0`<br>`self.bn_s.bias.data[:]=0`<br/>`out = (self.bn_s(self.shortcut(x)).sigmoid()) * self.bn(out).sigmoid()` | 86.52    |
+| `self.bn.bias.data[:]=0`<br/>`self.bn_s.bias.data[:]=0`<br/>`self.bn_s.weight.data[:]=1`<br>`out = (self.bn_s(self.shortcut(x)).sigmoid()) * self.bn(out).sigmoid()` | 82.49    |
+| `self.bn.bias.data[:]=0`<br/>`self.bn.weight.data[:]=1`<br/>`self.bn_s.bias.data[:]=0`<br>`out = (self.bn_s(self.shortcut(x)).sigmoid()) * self.bn(out).sigmoid()` | 83.47    |
+| `self.bn.bias.data[:]=0`<br>`self.bn_s.bias.data[:]=0`<br>`out = (self.bn_s(self.shortcut(x)).sigmoid()) * (self.bn(out).sigmoid() + 0.5)` | 84.91    |
+| `self.bn.bias.data[:]=0`<br/>`self.bn_s.bias.data[:]=0`<br/>`out = (self.bn_s(self.shortcut(x)).sigmoid() + 0.5) * self.bn(out).sigmoid())` | 86.92    |
+| `self.bn.bias.data[:]=0`<br/>`self.bn_s.bias.data[:]=0`<br/>`out = (self.bn_s(self.shortcut(x)).sigmoid() + 0.5) * (self.bn(out).sigmoid() + 0.5)` | 84.79    |
+| `self.bn.weight.data[:]=1`<br>`out = (self.bn_s(self.shortcut(x)).sigmoid()) * self.bn(out).sigmoid()` | 81.91    |
+| `self.bn_s.weight.data[:]=1`<br>`out = (self.bn_s(self.shortcut(x)).sigmoid()) * self.bn(out).sigmoid()` | 80.93    |
 
