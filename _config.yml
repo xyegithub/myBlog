@@ -123,3 +123,13 @@ encrypt: # hexo-blog-encrypt
     #wrong_pass_message: 抱歉，您输入的密码错误，请检查后重新输入。
     #wrong_hash_message: 抱歉, 当前文章不能被校验, 不过您还是可以看看解密后的内容。
 
+# hexo-hide-posts
+hide_posts:
+  enable: true
+  # Change the filter name to fit your need
+  filter: hidden
+  # Generators which you want to expose all posts (include hidden ones) to.
+  # Common generators: index, tag, category, archive, sitemap, feed, etc.
+  public_generators: []
+  # Add "noindex" meta tag to prevent hidden posts from being indexed by search engines
+  noindex: true

@@ -2,6 +2,20 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://yexiang.ml/2021/12/10/An-Introduction-to-Git/</loc>
+    
+    <lastmod>2021-12-28</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yexiang.ml/2021/12/15/Personal-Thought/</loc>
+    
+    <lastmod>2021-12-28</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://yexiang.ml/2021/12/14/Tips-in-Papers/</loc>
     
     <lastmod>2021-12-28</lastmod>
@@ -16,30 +30,9 @@
   </url>
   
   <url>
-    <loc>http://yexiang.ml/2021/11/24/Construct-Your-Blog-with-Hexo-and-Github/</loc>
-    
-    <lastmod>2021-12-28</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://yexiang.ml/2021/12/15/Personal-Thought/</loc>
-    
-    <lastmod>2021-12-22</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://yexiang.ml/2021/12/18/Transformer-and-BERT/</loc>
     
     <lastmod>2021-12-18</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://yexiang.ml/2021/12/10/An-Introduction-to-Git/</loc>
-    
-    <lastmod>2021-12-17</lastmod>
     
   </url>
   
@@ -103,13 +96,6 @@
   
   <url>
     <loc>http://yexiang.ml/tags/Git/</loc>
-    <lastmod>2021-12-28</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>http://yexiang.ml/tags/Hexo/</loc>
     <lastmod>2021-12-28</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -202,21 +188,14 @@
   </url>
   
   <url>
-    <loc>http://yexiang.ml/categories/Little-Things/Git/</loc>
-    <lastmod>2021-12-28</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>http://yexiang.ml/categories/Little-Things/Hexo/</loc>
-    <lastmod>2021-12-28</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>http://yexiang.ml/categories/About-Papers/</loc>
+    <lastmod>2021-12-28</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://yexiang.ml/categories/Little-Things/Git/</loc>
     <lastmod>2021-12-28</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
