@@ -108,7 +108,15 @@ dataset: Caltech101
 | `self.bn.bias.data[:]=0`<br/>`self.bn.weight.data[:]=1`<br/>`self.bn_s.bias.data[:]=0`<br>`out = (self.bn_s(self.shortcut(x)).sigmoid()) * self.bn(out).sigmoid()` | 83.47    |
 | `self.bn.bias.data[:]=0`<br>`self.bn_s.bias.data[:]=0`<br>`out = (self.bn_s(self.shortcut(x)).sigmoid()) * (self.bn(out).sigmoid() + 0.5)` | 84.91    |
 | `self.bn.bias.data[:]=0`<br/>`self.bn_s.bias.data[:]=0`<br/>`out = (self.bn_s(self.shortcut(x)).sigmoid() + 0.5) * self.bn(out).sigmoid())` | 86.92    |
+| `self.bn.bias.data[:]=0`<br/>`self.bn_s.bias.data[:]=0`<br/>`out = (self.bn_s(self.shortcut(x)).sigmoid() + 1) * self.bn(out).sigmoid())` | 86.75    |
 | `self.bn.bias.data[:]=0`<br/>`self.bn_s.bias.data[:]=0`<br/>`out = (self.bn_s(self.shortcut(x)).sigmoid() + 0.5) * (self.bn(out).sigmoid() + 0.5)` | 84.79    |
 | `self.bn.weight.data[:]=1`<br>`out = (self.bn_s(self.shortcut(x)).sigmoid()) * self.bn(out).sigmoid()` | 81.91    |
 | `self.bn_s.weight.data[:]=1`<br>`out = (self.bn_s(self.shortcut(x)).sigmoid()) * self.bn(out).sigmoid()` | 80.93    |
+
+在Resdual 分支内部使用乘法
+
+| 配置                                                         | Accuracy |
+| ------------------------------------------------------------ | -------- |
+| `out_1 = F.relu(self.bn2(out_1))`<br>`out *= self.adap(out_1)` | 86.06    |
+| `out_1 = F.relu(self.bn2(out_1))`<br>`out *= self.adap(out_1).sigmoid()` | 87.33    |
 

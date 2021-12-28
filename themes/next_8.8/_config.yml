@@ -165,6 +165,7 @@ links_settings:
   layout: block
 
 links:
+  My Github : https://github.com/xyegithub
   #Title: https://example.com
 
 # Table of Contents in the Sidebar

@@ -22,6 +22,10 @@ https://www.itfanr.cc/2021/04/16/hexo-blog-article-encryption/
 
 https://www.zhangxinxu.com/wordpress/2021/05/css-html-hr/
 
+typora标题和大纲编号
+
+https://zhuanlan.zhihu.com/p/110257979
+
 # 实现的时候也遇到了一些问题
 
 ## 本地显示没问题，hexo d之后 在GitHub无法显示主题样式

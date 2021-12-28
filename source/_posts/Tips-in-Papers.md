@@ -147,6 +147,10 @@ ordered logits policy的缺陷在于，只关注了最重要的少数的特征�
 
 ### 这篇文章使用和实现了Saccader
 
+# Soft Attention
+
+## NAM, Normalization-based Attention Module
+
 # Regularization 
 
 ## ADCM: Attentnion Dropout Convolutional Module
