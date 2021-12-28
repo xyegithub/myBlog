@@ -60,3 +60,9 @@ https://juejin.cn/post/6844904193170341896
 参考博客
 
 https://mizeri.github.io/2021/04/18/hexo-sitemap-google/
+
+## 绑定自己的域名
+
+1. 用freenom申请一个免费的域名，如yexiang.ml
+2. 用腾讯云的DNSpod为域名添加服务器，设置A记录，具体方法，参见github page的教程
+

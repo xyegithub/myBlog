@@ -7,7 +7,7 @@ mathjax: true
 date: 2021-12-14 16:33:03
 password:
 summary:
-description: 读过的论文记录，记录读过论文里面，新获取的信息。
+description: 记录阅读论文过程中，新获取的信息。
 categories:
 - About Papers
 tags:
