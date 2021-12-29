@@ -133,3 +133,17 @@ hide_posts:
   public_generators: []
   # Add "noindex" meta tag to prevent hidden posts from being indexed by search engines
   noindex: true
+
+
+# hexo-renderer-pandoc (https://github.com/wzpan/hexo-renderer-pandoc)
+pandoc:
+  extra:
+    - toc: # will be passed as `--toc`. Note the colon，如果不需要自动生成目录无需添加此行
+  extensions:
+    - '+hard_line_breaks'
+    - '+emoji'
+    - '-implicit_figures'
+      #  template:
+      #./pandoc_template.html # 如果不需要自动生成目录无需添加此行
+
+

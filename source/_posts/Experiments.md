@@ -22,11 +22,15 @@ tags:
 
 ## Feature Map Multiplication
 
+### dataset: Caltech101
+
 [source code](https://github.com/xyegithub/Featrue-map-multiplication)
 
-dataset: Caltech101
+3号服务器
 
-**shortcut使用bn，而Res分支使用sigmoid的情况。**
+/media/new_2t/yexiang/image_classification/multiply/from_#1/ffmnst/Caltech101
+
+#### bn，sig
 
 | 配置                                                         | accuracy |
 | ------------------------------------------------------------ | -------- |
@@ -44,7 +48,7 @@ dataset: Caltech101
 2. Res分支的sigmoid不需要加0.5或者1，性能提高了。乘以sigmoid本身有恒等的特性。sigmoid分支输出都为0时，sigmoid输入都是0.5。
 3. 在Res分支的sigmoid之前，先对out进行bn归一化，会优化的更好，而且让归一化的均值为0，会优化的更好。但是如果同时也控制归一化的方差，效果变差。无参的bn限制了表达能力。
 
-**shortcut使用bn，而Res分支使用sigmoid的情况。**
+#### sig, bn
 
 | 配置                                                         | accuracy |
 | ------------------------------------------------------------ | -------- |
@@ -58,7 +62,9 @@ dataset: Caltech101
 | `self.bn.bias.data[:]=0`<br>`self.bn_s.bias.data[:]=1`<br>`out = (self.bn(self.shortcut(x)).sigmoid()) * self.bn_s(out)` | 84.39    |
 | `self.bn.bias.data[:]=0`<br>`self.bn.weight.data[:]=1`<br>`self.bn_s.bias.data[:]=1`<br>`out = (self.bn(self.shortcut(x)).sigmoid()) * self.bn_s(out)` | 84.91    |
 
-**shortcut使用bn，而Res分支使用bn的情况。**
+**sig, bn比bn, sig的效果好。原因可能是，sig本来就有梯度的问题，然而，shortcut分支没有需要优化的参数，所以把sigmoid放在shortcut分支更好？**
+
+#### bn, bn
 
 | 配置                                                         | Accuracy |
 | ------------------------------------------------------------ | -------- |
@@ -72,7 +78,7 @@ dataset: Caltech101
 
 均值为1的话，一般来说还是会获益。但是bn的效果不是很好。
 
-**shortcut使用sigmoid，而Res分支使用sigmoid的情况。**
+#### sig, sig
 
 | 配置                                                         | Accuracy |
 | ------------------------------------------------------------ | -------- |
@@ -113,10 +119,32 @@ dataset: Caltech101
 | `self.bn.weight.data[:]=1`<br>`out = (self.bn_s(self.shortcut(x)).sigmoid()) * self.bn(out).sigmoid()` | 81.91    |
 | `self.bn_s.weight.data[:]=1`<br>`out = (self.bn_s(self.shortcut(x)).sigmoid()) * self.bn(out).sigmoid()` | 80.93    |
 
-在Resdual 分支内部使用乘法
+#### Resdual 分支内部使用乘法
 
 | 配置                                                         | Accuracy |
 | ------------------------------------------------------------ | -------- |
 | `out_1 = F.relu(self.bn2(out_1))`<br>`out *= self.adap(out_1)` | 86.06    |
 | `out_1 = F.relu(self.bn2(out_1))`<br>`out *= self.adap(out_1).sigmoid()` | 87.33    |
+| `out_1 = self.bn2(out_1)`<br>`out = self.conv2(out_1)`<br>`out *= self.adap(out_1).sigmoid()` | 85.71    |
+| `self.bn2.bias.data[:]=0`<br>`out_1 = self.bn2(out_1)`<br>`out = self.conv2(out_1)`<br>`out *= self.adap(out_1).sigmoid()` | 86.64    |
+| `out_1 = F.relu(self.bn2(out_1))`<br>`out = self.conv2(out_1).sigmoid()`<br>`out = self.adap(out_1) * out` | 84.22    |
+|                                                              |          |
 
+#### 借鉴NAM
+
+1. 用了sigmoid乘以原矩阵
+2. sigmoid之前用了bn
+3. 还在每个通道上乘以了和为1的数
+
+{% raw %}
+
+
+$$
+\begin{align}
+att &= norm(x) \\
+att &= att * \gamma + \delta \\
+att &= att * \frac\gamma{sum(\gamma)} \\
+out &= att.sigmoid() * x
+\end{align}
+$$
+{% endraw%}
