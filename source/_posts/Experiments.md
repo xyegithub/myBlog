@@ -126,7 +126,10 @@ tags:
 | `out_1 = F.relu(self.bn2(out_1))`<br>`out *= self.adap(out_1)` | 86.06    |
 | `out_1 = F.relu(self.bn2(out_1))`<br>`out *= self.adap(out_1).sigmoid()` | 87.33    |
 | `out_1 = self.bn2(out_1)`<br>`out = self.conv2(out_1)`<br>`out *= self.adap(out_1).sigmoid()` | 85.71    |
+| `out_1 = self.bn2(out_1)`<br/>`out = self.conv2(out_1.relu())`<br/>`out *= self.adap(out_1).sigmoid()` | 87.85    |
 | `self.bn2.bias.data[:]=0`<br>`out_1 = self.bn2(out_1)`<br>`out = self.conv2(out_1)`<br>`out *= self.adap(out_1).sigmoid()` | 86.64    |
+| `self.bn2.bias.data[:]=0`<br/>`out_1 = self.bn2(out_1)`<br/>`out = self.conv2(out_1.relu())`<br/>`out *= self.adap(out_1).sigmoid()` | 81.51    |
+| `self.bn2.bias.data[:]=0`<br/>`out_1 = self.bn2(out_1)`<br/>`out = self.conv2(out_1.sigmoid())`<br/>`out *= self.adap(out_1).sigmoid()` | 82.66    |
 | `out_1 = F.relu(self.bn2(out_1))`<br>`out = self.conv2(out_1).sigmoid()`<br>`out = self.adap(out_1) * out` | 84.22    |
 |                                                              |          |
 
@@ -136,15 +139,17 @@ tags:
 2. sigmoid之前用了bn
 3. 还在每个通道上乘以了和为1的数
 
-{% raw %}
-
 
 $$
 \begin{align}
 att &= norm(x) \\
-att &= att * \gamma + \delta \\
-att &= att * \frac\gamma{sum(\gamma)} \\
-out &= att.sigmoid() * x
+att &= att \times \gamma + \delta \\
+att &= att \times \frac\gamma{sum(\gamma)} \\
+out &= att.sigmoid() \times x
 \end{align}
 $$
-{% endraw%}
+
+| 配置                                 | Accuracy |
+| ------------------------------------ | -------- |
+| `out = self.nam(x) + self.bn_s(out)` | 86.41    |
+
