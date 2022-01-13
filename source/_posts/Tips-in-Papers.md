@@ -21,9 +21,21 @@ tags:
 
 ### Attention Mechanisms in CV: A Survey
 
+## Gumbel-Softmax Hard Attention
 
+### Categorical Reparameterization with Gumbel-Softmax
 
-## Hard Attention
+#### 文章引出了一类神经网络，Stochastic Neural Networks with discrete random variables。
+
+具有离散随机变量的随机神经网络
+
+#### 文章引出了一个方向，Stochastic Gradient Estimation
+
+随机梯度估计，主要的方法就有dumbel-softmax, score function estimator, biased path derivative estimator。
+
+> However, no existing gradient estimator has been formulated specifically for categorical variables.
+
+## Reinforce Learnning Hard Attention
 
 ### 2019 Scacader: Improving Accuracy of Hard Attention Models for Vision
 
