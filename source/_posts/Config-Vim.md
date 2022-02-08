@@ -49,7 +49,8 @@ ln -s libXtst.so.6 libXtst.so
 https://www.jianshu.com/p/aa5ea81bbc72
 https://toutiao.io/posts/runvgs/preview
 尽量多的保留特性，最终得到的config 命令是
-```
+
+```python
 ./configure --with-features=huge \
     --enable-multibyte \
     --enable-rubyinterp=yes \
@@ -61,16 +62,12 @@ https://toutiao.io/posts/runvgs/preview
     --enable-fail-if-missing \
     --prefix=/path-to-install
 ```
+
 `--enable-fail-if-missing` 用于显示错误信息。
 
-# 有点搞笑的是编译了很久没有成功，最后apt安装解决了
+## 有点搞笑的是编译了很久没有成功，最后apt安装解决了
 
 编译的时候feature 用了hug，但是还是没有增加+clientserver。
 我估计是缺少库。查src/auto/cofig.log也没有发现很相关的信息。
 最后`sudo apt-get install vim-gtk`成功安装了+clientserver的vim。
-
-
-
-
-
 
