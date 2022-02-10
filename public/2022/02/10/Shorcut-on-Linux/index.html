@@ -29,7 +29,7 @@
 <meta property="og:description" content="Describe the shortcuts of linux and how to set them">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2022-02-10T01:22:15.000Z">
-<meta property="article:modified_time" content="2022-02-10T09:24:10.988Z">
+<meta property="article:modified_time" content="2022-02-10T11:13:53.305Z">
 <meta property="article:author" content="Xiang Ye">
 <meta property="article:tag" content="Linux">
 <meta name="twitter:card" content="summary">
@@ -120,7 +120,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#stty"><span class="nav-text">1. stty ()</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#gun-readline---get-a-line-from-a-user-with-editing"><span class="nav-text">2. gun readline - get a line from a user with editing</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#synopsis"><span class="nav-text">2.1. Synopsis</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#description"><span class="nav-text">2.2. Description</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#return-value"><span class="nav-text">2.3. Return Value</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#initialization-file"><span class="nav-text">2.4. Initialization file</span></a></li></ol></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#stty-set-tty-set-teletypewriter"><span class="nav-text">1. stty (set tty, set teletypewriter)</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#the-difference-between-shell-terminal-and-tty"><span class="nav-text">1.1. The difference between shell, terminal and tty</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#gun-readline---get-a-line-from-a-user-with-editing"><span class="nav-text">2. gun readline - get a line from a user with editing</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#synopsis"><span class="nav-text">2.1. Synopsis</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#description"><span class="nav-text">2.2. Description</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#return-value"><span class="nav-text">2.3. Return Value</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#initialization-file"><span class="nav-text">2.4. Initialization file</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#the-difference-of-help-and-man-on-linux"><span class="nav-text">3. The difference of help and man on linux</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -220,7 +220,7 @@
       <span class="post-meta-item-text">Posted on</span>
       
 
-      <time title="Created: 2022-02-10 09:22:15 / Modified: 17:24:10" itemprop="dateCreated datePublished" datetime="2022-02-10T09:22:15+08:00">2022-02-10</time>
+      <time title="Created: 2022-02-10 09:22:15 / Modified: 19:13:53" itemprop="dateCreated datePublished" datetime="2022-02-10T09:22:15+08:00">2022-02-10</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -247,7 +247,21 @@
     
     
     <div class="post-body" itemprop="articleBody">
-        <html><head></head><body><h1 id="stty"><span class="post-title-index">1. </span>stty ()</h1>
+        <html><head></head><body><p>There may be two kinds of shortcuts, in practice.<br>
+* stty shortcuts<br>
+* readline shortcuts</p>
+<h1 id="stty-set-tty-set-teletypewriter"><span class="post-title-index">1. </span>stty (set tty, set teletypewriter)</h1>
+<h2 id="the-difference-between-shell-terminal-and-tty"><span class="post-title-index">1.1. </span>The difference between shell, terminal and tty</h2>
+<p>tty: Print the file name of the terminal connected to standard input.</p>
+<p>stty: change or print terminal characteristics, change and print terminal line settings.</p>
+<p>They are related to terminal.</p>
+<ul>
+<li>terminal = tty = text input/output environment</li>
+<li>console = physical terminal</li>
+<li>shell = command line interpreter</li>
+</ul>
+<p>The input of terminal or tty will used by readline, but not always<br>
+readline.</p>
 <h1 id="gun-readline---get-a-line-from-a-user-with-editing"><span class="post-title-index">2. </span>gun readline - get a line from a user with editing</h1>
 <h2 id="synopsis"><span class="post-title-index">2.1. </span>Synopsis</h2>
 <figure class="highlight c"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;readline/readline.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;readline/history.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">char</span> *</span></span><br><span class="line"><span class="function"><span class="title">readline</span> <span class="params">(<span class="keyword">const</span> <span class="keyword">char</span> *prompt)</span></span></span><br><span class="line"><span class="function"></span></span><br></pre></td></tr></tbody></table></figure>
@@ -283,6 +297,15 @@ file is read, and the key bindings and variables are set.</p>
 </p><figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">M-Control-u: universal-argment</span><br></pre></td></tr></tbody></table></figure><br>
 into the <code>inputrc</code> would make <code>M-C-u</code> execute the readline command<br>
 <code>universal-argument</code>.<p></p>
+<h1 id="the-difference-of-help-and-man-on-linux"><span class="post-title-index">3. </span>The difference of <code>help</code> and <code>man</code> on linux</h1>
+<p><code>help</code> displays information about builtin shell commands.</p>
+<p><code>man</code> is s system-wide documentation system that provides short<br>
+reference manuals for individual commands, API functions, concepts,<br>
+configuration file syntax, file formats. It is the traditional Unix<br>
+documentation system.</p>
+<p>We can get the information of <code>cd</code> by <code>help cd</code>, but not by <code>man cd</code>.<br>
+We can get the information of <code>git/nvim/stty</code> by <code>man git/nvim/stty</code>, but not by <code>help git/nvim/stty</code>.<br>
+<code>cd</code> is a shell command and <code>git/nvim/stty</code> is linux projects.</p>
 </body></html>
     </div>
 

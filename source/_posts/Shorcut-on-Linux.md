@@ -15,8 +15,26 @@ tags:
 - Linux
 ---
 
+There may be two kinds of shortcuts, in practice.
+* stty shortcuts
+* readline shortcuts
 
-# stty () #
+# stty (set tty, set teletypewriter) #
+
+## The difference between shell, terminal and tty ##
+
+tty: Print the file name of the terminal connected to standard input.
+
+stty: change or print terminal characteristics, change and print terminal line settings.
+
+They are related to terminal.
+
+* terminal = tty = text input/output environment
+* console = physical terminal
+* shell = command line interpreter
+
+The input of terminal or tty will used by readline, but not always
+readline.
 
 # gun readline - get a line from a user with editing #
 
@@ -81,3 +99,15 @@ M-Control-u: universal-argment
 into the `inputrc` would make `M-C-u` execute the readline command
 `universal-argument`.
 
+# The difference of `help` and `man` on linux #
+
+`help` displays information about builtin shell commands.
+
+`man` is s system-wide documentation system that provides short
+reference manuals for individual commands, API functions, concepts,
+configuration file syntax, file formats. It is the traditional Unix
+documentation system.
+
+We can get the information of `cd` by `help cd`, but not by `man cd`.
+We can get the information of `git/nvim/stty` by `man git/nvim/stty`, but not by `help git/nvim/stty`.
+`cd` is a shell command and `git/nvim/stty` is linux projects. 
