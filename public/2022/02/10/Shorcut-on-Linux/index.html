@@ -120,7 +120,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#stty-set-tty-set-teletypewriter"><span class="nav-text">1. stty (set tty, set teletypewriter)</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#the-difference-between-shell-terminal-and-tty"><span class="nav-text">1.1. The difference between shell, terminal and tty</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#gun-readline---get-a-line-from-a-user-with-editing"><span class="nav-text">2. gun readline - get a line from a user with editing</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#synopsis"><span class="nav-text">2.1. Synopsis</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#description"><span class="nav-text">2.2. Description</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#return-value"><span class="nav-text">2.3. Return Value</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#initialization-file"><span class="nav-text">2.4. Initialization file</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#the-difference-of-help-and-man-on-linux"><span class="nav-text">3. The difference of help and man on linux</span></a></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-text">1. stty (set tty, set teletypewriter)</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#The-difference-between-shell-terminal-and-tty"><span class="nav-text">1.1. The difference between shell, terminal and tty</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-text">2. gun readline - get a line from a user with editing</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Synopsis"><span class="nav-text">2.1. Synopsis</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Description"><span class="nav-text">2.2. Description</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Return-Value"><span class="nav-text">2.3. Return Value</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Initialization-file"><span class="nav-text">2.4. Initialization file</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-text">3. The difference of help and man on linux</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -247,11 +247,13 @@
     
     
     <div class="post-body" itemprop="articleBody">
-        <html><head></head><body><p>There may be two kinds of shortcuts, in practice.<br>
-* stty shortcuts<br>
-* readline shortcuts</p>
-<h1 id="stty-set-tty-set-teletypewriter"><span class="post-title-index">1. </span>stty (set tty, set teletypewriter)</h1>
-<h2 id="the-difference-between-shell-terminal-and-tty"><span class="post-title-index">1.1. </span>The difference between shell, terminal and tty</h2>
+        <html><head></head><body><p>There may be two kinds of shortcuts, in practice.</p>
+<ul>
+<li>stty shortcuts</li>
+<li>readline shortcuts</li>
+</ul>
+<h1><span class="post-title-index">1. </span>stty (set tty, set teletypewriter)</h1>
+<h2 id="The-difference-between-shell-terminal-and-tty"><span class="post-title-index">1.1. </span>The difference between shell, terminal and tty</h2>
 <p>tty: Print the file name of the terminal connected to standard input.</p>
 <p>stty: change or print terminal characteristics, change and print terminal line settings.</p>
 <p>They are related to terminal.</p>
@@ -260,51 +262,51 @@
 <li>console = physical terminal</li>
 <li>shell = command line interpreter</li>
 </ul>
-<p>The input of terminal or tty will used by readline, but not always<br>
+<p>The input of terminal or tty will used by readline, but not always
 readline.</p>
-<h1 id="gun-readline---get-a-line-from-a-user-with-editing"><span class="post-title-index">2. </span>gun readline - get a line from a user with editing</h1>
-<h2 id="synopsis"><span class="post-title-index">2.1. </span>Synopsis</h2>
+<h1><span class="post-title-index">2. </span>gun readline - get a line from a user with editing</h1>
+<h2 id="Synopsis"><span class="post-title-index">2.1. </span>Synopsis</h2>
 <figure class="highlight c"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;readline/readline.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;readline/history.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">char</span> *</span></span><br><span class="line"><span class="function"><span class="title">readline</span> <span class="params">(<span class="keyword">const</span> <span class="keyword">char</span> *prompt)</span></span></span><br><span class="line"><span class="function"></span></span><br></pre></td></tr></tbody></table></figure>
-<h2 id="description"><span class="post-title-index">2.2. </span>Description</h2>
-<p><strong>readline will read a line from the terminal and return it, using<br>
+<h2 id="Description"><span class="post-title-index">2.2. </span>Description</h2>
+<p><strong>readline will read a line from the terminal and return it, using
 <em>prompt</em> as a prompt.</strong></p>
-<p>If prompt is NULL or the empty string, no prompt is issued.<br>
-The line returned is allocated with <code>malloc</code>; the caller must<br>
-free it when finished. The line returned has the final newline removed,<br>
+<p>If prompt is NULL or the empty string, no prompt is issued.
+The line returned is allocated with <code>malloc</code>; the caller must
+free it when finished. The line returned has the final newline removed,
 so only the text of the line remains.</p>
-<h2 id="return-value"><span class="post-title-index">2.3. </span>Return Value</h2>
-<p>readline returns the text of the line read. A black line returns the empty<br>
-string. If EOF is encountered while reading a line, and the line is empty,<br>
-NULL is returned. If an EOF is read with a non-empty line, it is treated<br>
+<h2 id="Return-Value"><span class="post-title-index">2.3. </span>Return Value</h2>
+<p>readline returns the text of the line read. A black line returns the empty
+string. If EOF is encountered while reading a line, and the line is empty,
+NULL is returned. If an EOF is read with a non-empty line, it is treated
 as a newline.</p>
-<h2 id="initialization-file"><span class="post-title-index">2.4. </span>Initialization file</h2>
-<p>Readline is customized by putting commands in an initialization file<br>
-(the <code>inputrc</code> file). The name of this file is taken from the value of<br>
-the INPUTRC environment variable. If that variable is unset, the default<br>
-is <code>~/.inputrc</code>. If that file does not exist or cannot be read, the<br>
+<h2 id="Initialization-file"><span class="post-title-index">2.4. </span>Initialization file</h2>
+<p>Readline is customized by putting commands in an initialization file
+(the <code>inputrc</code> file). The name of this file is taken from the value of
+the INPUTRC environment variable. If that variable is unset, the default
+is <code>~/.inputrc</code>. If that file does not exist or cannot be read, the
 ultimate default is <code>/etc/inputrc</code>.</p>
-<p>When a program which uses the readline library starts up, the init<br>
+<p>When a program which uses the readline library starts up, the init
 file is read, and the key bindings and variables are set.</p>
 <p>There are only a few basic constructs allowed in the readline init file.</p>
-<ol type="1">
+<ol>
 <li>Black lines are ignored.</li>
 <li>Lines beginning with a <code>#</code> are comments.</li>
 <li>Lines beginning with a <code>$</code> indicate conditional constructs.</li>
 <li>Other lines denote key bindings and variable settings.</li>
 </ol>
 <p>Each program using this library may add its own commands and bindings.</p>
-<p>For example, placing<br>
-</p><figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">M-Control-u: universal-argment</span><br></pre></td></tr></tbody></table></figure><br>
-into the <code>inputrc</code> would make <code>M-C-u</code> execute the readline command<br>
-<code>universal-argument</code>.<p></p>
-<h1 id="the-difference-of-help-and-man-on-linux"><span class="post-title-index">3. </span>The difference of <code>help</code> and <code>man</code> on linux</h1>
+<p>For example, placing</p>
+<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">M-Control-u: universal-argment</span><br></pre></td></tr></tbody></table></figure>
+<p>into the <code>inputrc</code> would make <code>M-C-u</code> execute the readline command
+<code>universal-argument</code>.</p>
+<h1><span class="post-title-index">3. </span>The difference of <code>help</code> and <code>man</code> on linux</h1>
 <p><code>help</code> displays information about builtin shell commands.</p>
-<p><code>man</code> is s system-wide documentation system that provides short<br>
-reference manuals for individual commands, API functions, concepts,<br>
-configuration file syntax, file formats. It is the traditional Unix<br>
+<p><code>man</code> is s system-wide documentation system that provides short
+reference manuals for individual commands, API functions, concepts,
+configuration file syntax, file formats. It is the traditional Unix
 documentation system.</p>
-<p>We can get the information of <code>cd</code> by <code>help cd</code>, but not by <code>man cd</code>.<br>
-We can get the information of <code>git/nvim/stty</code> by <code>man git/nvim/stty</code>, but not by <code>help git/nvim/stty</code>.<br>
+<p>We can get the information of <code>cd</code> by <code>help cd</code>, but not by <code>man cd</code>.
+We can get the information of <code>git/nvim/stty</code> by <code>man git/nvim/stty</code>, but not by <code>help git/nvim/stty</code>.
 <code>cd</code> is a shell command and <code>git/nvim/stty</code> is linux projects.</p>
 </body></html>
     </div>

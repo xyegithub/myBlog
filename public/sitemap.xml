@@ -86,14 +86,14 @@
   </url>
   
   <url>
-    <loc>http://yexiang.ml/2021/12/17/Algorithm/</loc>
+    <loc>http://yexiang.ml/2021/12/10/An-Introduction-to-Git/</loc>
     
     <lastmod>2022-01-17</lastmod>
     
   </url>
   
   <url>
-    <loc>http://yexiang.ml/2021/12/10/An-Introduction-to-Git/</loc>
+    <loc>http://yexiang.ml/2021/12/17/Algorithm/</loc>
     
     <lastmod>2022-01-17</lastmod>
     
@@ -107,27 +107,6 @@
     <priority>1.0</priority>
   </url>
 
-  
-  <url>
-    <loc>http://yexiang.ml/tags/Algorithm/</loc>
-    <lastmod>2022-02-10</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>http://yexiang.ml/tags/Programming/</loc>
-    <lastmod>2022-02-10</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>http://yexiang.ml/tags/Git/</loc>
-    <lastmod>2022-02-10</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
   
   <url>
     <loc>http://yexiang.ml/tags/vim/</loc>
@@ -145,6 +124,27 @@
   
   <url>
     <loc>http://yexiang.ml/tags/vimtex/</loc>
+    <lastmod>2022-02-10</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://yexiang.ml/tags/Git/</loc>
+    <lastmod>2022-02-10</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://yexiang.ml/tags/Algorithm/</loc>
+    <lastmod>2022-02-10</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://yexiang.ml/tags/Programming/</loc>
     <lastmod>2022-02-10</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -172,14 +172,14 @@
   </url>
   
   <url>
-    <loc>http://yexiang.ml/tags/Topological-Data-Analysis/</loc>
+    <loc>http://yexiang.ml/tags/Reinforcement-Learning/</loc>
     <lastmod>2022-02-10</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>http://yexiang.ml/tags/Reinforcement-Learning/</loc>
+    <loc>http://yexiang.ml/tags/Topological-Data-Analysis/</loc>
     <lastmod>2022-02-10</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -230,14 +230,14 @@
 
   
   <url>
-    <loc>http://yexiang.ml/categories/Programming/</loc>
+    <loc>http://yexiang.ml/categories/Little-Things/</loc>
     <lastmod>2022-02-10</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>http://yexiang.ml/categories/Little-Things/</loc>
+    <loc>http://yexiang.ml/categories/Programming/</loc>
     <lastmod>2022-02-10</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -251,7 +251,7 @@
   </url>
   
   <url>
-    <loc>http://yexiang.ml/categories/Topological-Data-Analysis/</loc>
+    <loc>http://yexiang.ml/categories/Reinforcement-Learning/</loc>
     <lastmod>2022-02-10</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -265,7 +265,7 @@
   </url>
   
   <url>
-    <loc>http://yexiang.ml/categories/Reinforcement-Learning/</loc>
+    <loc>http://yexiang.ml/categories/Topological-Data-Analysis/</loc>
     <lastmod>2022-02-10</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
