@@ -27,7 +27,7 @@ There may be two kinds of shortcuts, in practice,
 
 # stty (set tty, set teletypewriter) #
 
-## The difference between shell, terminal and tty ##
+The difference between shell, terminal and tty 
 
 tty: Print the file name of the terminal connected to standard input.
 
