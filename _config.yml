@@ -158,15 +158,15 @@ markdown:
     quotes: '“”‘’'
   enable_rules:
   disable_rules:
-  plugins:
-  anchors:
-    level: 2
-    collisionSuffix: ''
-    permalink: false
-    permalinkClass: 'header-anchor'
-    permalinkSide: 'left'
-    permalinkSymbol: '¶'
-    case: 0
-    separator: '-'
+    #  plugins:
+    #  anchors:
+    #    level: 2
+    #    collisionSuffix: ''
+    #    permalink: false
+    #    permalinkClass: 'header-anchor'
+    #    permalinkSide: 'left'
+    #    permalinkSymbol: '¶'
+    #    case: 0
+    #    separator: '-'
 
 
