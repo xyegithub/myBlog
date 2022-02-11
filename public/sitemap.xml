@@ -72,13 +72,6 @@
   </url>
   
   <url>
-    <loc>http://yexiang.ml/2021/12/17/Experiments/</loc>
-    
-    <lastmod>2022-01-17</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://yexiang.ml/2021/12/03/First-Step-to-RL/</loc>
     
     <lastmod>2022-01-17</lastmod>
@@ -86,7 +79,7 @@
   </url>
   
   <url>
-    <loc>http://yexiang.ml/2021/12/17/Algorithm/</loc>
+    <loc>http://yexiang.ml/2021/12/17/Experiments/</loc>
     
     <lastmod>2022-01-17</lastmod>
     
@@ -94,6 +87,13 @@
   
   <url>
     <loc>http://yexiang.ml/2021/12/10/An-Introduction-to-Git/</loc>
+    
+    <lastmod>2022-01-17</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yexiang.ml/2021/12/17/Algorithm/</loc>
     
     <lastmod>2022-01-17</lastmod>
     
@@ -109,14 +109,7 @@
 
   
   <url>
-    <loc>http://yexiang.ml/tags/Algorithm/</loc>
-    <lastmod>2022-02-11</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>http://yexiang.ml/tags/Programming/</loc>
+    <loc>http://yexiang.ml/tags/Git/</loc>
     <lastmod>2022-02-11</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -144,7 +137,21 @@
   </url>
   
   <url>
-    <loc>http://yexiang.ml/tags/Git/</loc>
+    <loc>http://yexiang.ml/tags/Algorithm/</loc>
+    <lastmod>2022-02-11</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://yexiang.ml/tags/Programming/</loc>
+    <lastmod>2022-02-11</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://yexiang.ml/tags/Reinforcement-Learning/</loc>
     <lastmod>2022-02-11</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -180,13 +187,6 @@
   
   <url>
     <loc>http://yexiang.ml/tags/Multi-Task-Training/</loc>
-    <lastmod>2022-02-11</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>http://yexiang.ml/tags/Reinforcement-Learning/</loc>
     <lastmod>2022-02-11</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -230,6 +230,13 @@
 
   
   <url>
+    <loc>http://yexiang.ml/categories/Little-Things/</loc>
+    <lastmod>2022-02-11</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>http://yexiang.ml/categories/Programming/</loc>
     <lastmod>2022-02-11</lastmod>
     <changefreq>daily</changefreq>
@@ -237,7 +244,14 @@
   </url>
   
   <url>
-    <loc>http://yexiang.ml/categories/Little-Things/</loc>
+    <loc>http://yexiang.ml/categories/Little-Things/Git/</loc>
+    <lastmod>2022-02-11</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://yexiang.ml/categories/Reinforcement-Learning/</loc>
     <lastmod>2022-02-11</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -252,20 +266,6 @@
   
   <url>
     <loc>http://yexiang.ml/categories/Topological-Data-Analysis/</loc>
-    <lastmod>2022-02-11</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>http://yexiang.ml/categories/Reinforcement-Learning/</loc>
-    <lastmod>2022-02-11</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>http://yexiang.ml/categories/Little-Things/Git/</loc>
     <lastmod>2022-02-11</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
