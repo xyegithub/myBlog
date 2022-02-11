@@ -136,37 +136,25 @@ hide_posts:
 
 
 # hexo-renderer-pandoc (https://github.com/wzpan/hexo-renderer-pandoc)
-pandoc:
-  extra:
-    - toc: # will be passed as `--toc`. Note the colon，如果不需要自动生成目录无需添加此行
-  extensions:
-    - '+hard_line_breaks'
-    - '+emoji'
-    - '-implicit_figures'
-      #  template:
-      #./pandoc_template.html # 如果不需要自动生成目录无需添加此行
+#pandoc:
+#  extra:
+#    - toc: # will be passed as `--toc`. Note the colon，如果不需要自动生成目录无需添加此行
+#  extensions:
+#    - '+hard_line_breaks'
+#    - '+emoji'
+#    - '-implicit_figures'
+#      #  template:
+#      #./pandoc_template.html # 如果不需要自动生成目录无需添加此行
 
-markdown:
-  preset: 'default'
-  render:
+
+markdown_it_plus:
+    highlight: true
     html: true
-    xhtmlOut: false
-    langPrefix: 'language-'
+    xhtmlOut: true
     breaks: false
+    langPrefix:
     linkify: true
-    typographer: true
-    quotes: '“”‘’'
-  enable_rules:
-  disable_rules:
-    #  plugins:
-    #  anchors:
-    #    level: 2
-    #    collisionSuffix: ''
-    #    permalink: false
-    #    permalinkClass: 'header-anchor'
-    #    permalinkSide: 'left'
-    #    permalinkSymbol: '¶'
-    #    case: 0
-    #    separator: '-'
-
+    typographer:
+    quotes: “”‘’
+    pre_class: highlight
 

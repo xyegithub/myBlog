@@ -18,9 +18,8 @@ tags:
 *Root in: I want to find out where the "kill shortcut", ctrl C, defined.
 I use `bind 
 -P` to check the shortcuts. However, do not find ctrl C. Thus, I learned
-something about the shortcuts on linux.*
-*ctrl C is a shortcut of stty. However, `bind -P` lists the shortcuts
-of readline.*
+something about the shortcuts on linux. ctrl C is a shortcut of stty. 
+However, `bind -P` lists the shortcuts of readline.*
 
 There may be two kinds of shortcuts, in practice,
 * stty shortcuts

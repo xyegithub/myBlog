@@ -122,7 +122,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-text">1. 安装anaconda</span></a></li><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-text">2. 一些碎的Linux知识</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9F%A5%E6%89%BE%E5%8C%85%E7%9A%84%E5%AE%89%E8%A3%85%E4%BD%8D%E7%BD%AE"><span class="nav-text">2.1. 查找包的安装位置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BC%96%E8%AF%91%E9%94%99%E8%AF%AF%E5%AE%9A%E4%BD%8D"><span class="nav-text">2.2. 编译错误定位</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#linux-%E7%9A%84%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F%E5%8F%AF%E8%83%BD%E6%98%AF%E4%B8%A4%E4%B8%AA"><span class="nav-text">2.3. linux 的环境变量可能是两个</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%81%87%E5%88%B0%E4%B8%80%E4%B8%AA%E9%97%AE%E9%A2%98%E6%98%8E%E6%98%8E%E5%86%8D%E6%90%9C%E7%B4%A2%E8%B7%AF%E5%BE%84%E4%B8%8B%E6%9C%89%E5%8A%A8%E6%80%81%E5%BA%93%EF%BC%8C%E5%8D%B4%E6%8A%A5%E9%94%99%E6%89%80%E6%97%A0%E6%B3%95%E6%89%BE%E5%88%B0"><span class="nav-text">2.4. 遇到一个问题明明再搜索路径下有动态库，却报错所无法找到</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-text">3. 编译vim</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9C%89%E7%82%B9%E6%90%9E%E7%AC%91%E7%9A%84%E6%98%AF%E7%BC%96%E8%AF%91%E4%BA%86%E5%BE%88%E4%B9%85%E6%B2%A1%E6%9C%89%E6%88%90%E5%8A%9F%EF%BC%8C%E6%9C%80%E5%90%8Eapt%E5%AE%89%E8%A3%85%E8%A7%A3%E5%86%B3%E4%BA%86"><span class="nav-text">3.1. 有点搞笑的是编译了很久没有成功，最后apt安装解决了</span></a></li></ol></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%AE%89%E8%A3%85anaconda"><span class="nav-text">1.  安装anaconda</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%B8%80%E4%BA%9B%E7%A2%8E%E7%9A%84linux%E7%9F%A5%E8%AF%86"><span class="nav-text">2.  一些碎的Linux知识</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9F%A5%E6%89%BE%E5%8C%85%E7%9A%84%E5%AE%89%E8%A3%85%E4%BD%8D%E7%BD%AE"><span class="nav-text">2.1.  查找包的安装位置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BC%96%E8%AF%91%E9%94%99%E8%AF%AF%E5%AE%9A%E4%BD%8D"><span class="nav-text">2.2.  编译错误定位</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#linux-%E7%9A%84%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F%E5%8F%AF%E8%83%BD%E6%98%AF%E4%B8%A4%E4%B8%AA"><span class="nav-text">2.3.  linux 的环境变量可能是两个</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%81%87%E5%88%B0%E4%B8%80%E4%B8%AA%E9%97%AE%E9%A2%98%E6%98%8E%E6%98%8E%E5%86%8D%E6%90%9C%E7%B4%A2%E8%B7%AF%E5%BE%84%E4%B8%8B%E6%9C%89%E5%8A%A8%E6%80%81%E5%BA%93%E5%8D%B4%E6%8A%A5%E9%94%99%E6%89%80%E6%97%A0%E6%B3%95%E6%89%BE%E5%88%B0"><span class="nav-text">2.4.  遇到一个问题明明再搜索路径下有动态库，却报错所无法找到</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%BC%96%E8%AF%91vim"><span class="nav-text">3.  编译vim</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9C%89%E7%82%B9%E6%90%9E%E7%AC%91%E7%9A%84%E6%98%AF%E7%BC%96%E8%AF%91%E4%BA%86%E5%BE%88%E4%B9%85%E6%B2%A1%E6%9C%89%E6%88%90%E5%8A%9F%E6%9C%80%E5%90%8Eapt%E5%AE%89%E8%A3%85%E8%A7%A3%E5%86%B3%E4%BA%86"><span class="nav-text">3.1.  有点搞笑的是编译了很久没有成功，最后apt安装解决了</span></a></li></ol></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -251,26 +251,26 @@
     
     
     <div class="post-body" itemprop="articleBody">
-        <html><head></head><body><h1><span class="post-title-index">1. </span>安装anaconda</h1>
+        <html><head></head><body><h1 id="安装anaconda"><span class="post-title-index">1. </span><a class="markdownIt-Anchor" href="#安装anaconda"></a> 安装anaconda</h1>
 <p>本来安装anaconda应该问题不大，但是却发现了一个问题。
 <code>./Anaconda3-2021.11-Linux-x86_64.sh: 489: [[: Exec format error</code>
 这个错，是因为直用./Anaconda.sh启动安装默认用的是sh
 改成了bash Anaconda.sh就不会报错了.</p>
-<h1><span class="post-title-index">2. </span>一些碎的Linux知识</h1>
-<h2 id="查找包的安装位置"><span class="post-title-index">2.1. </span>查找包的安装位置</h2>
+<h1 id="一些碎的linux知识"><span class="post-title-index">2. </span><a class="markdownIt-Anchor" href="#一些碎的linux知识"></a> 一些碎的Linux知识</h1>
+<h2 id="查找包的安装位置"><span class="post-title-index">2.1. </span><a class="markdownIt-Anchor" href="#查找包的安装位置"></a> 查找包的安装位置</h2>
 <p>一些软件用apt install了，但是不知道安装位置在哪里
 <code>dpkg -L xxx</code>显示包的安装位置．</p>
-<h2 id="编译错误定位"><span class="post-title-index">2.2. </span>编译错误定位</h2>
+<h2 id="编译错误定位"><span class="post-title-index">2.2. </span><a class="markdownIt-Anchor" href="#编译错误定位"></a> 编译错误定位</h2>
 <p>编译的时候,打印一些log但是并不详细
 一般会有更加详细的编译log文件，在里面可以更精确的定位错误发生的原因．</p>
-<h2 id="linux-的环境变量可能是两个"><span class="post-title-index">2.3. </span>linux 的环境变量可能是两个</h2>
+<h2 id="linux-的环境变量可能是两个"><span class="post-title-index">2.3. </span><a class="markdownIt-Anchor" href="#linux-的环境变量可能是两个"></a> linux 的环境变量可能是两个</h2>
 <p><code>LIBRARY_PATH</code>编译的时候用到的库的搜索路径
 <code>LD_LIBRARY_PATH</code>程序加载时库的搜索路径</p>
-<h2 id="遇到一个问题明明再搜索路径下有动态库，却报错所无法找到"><span class="post-title-index">2.4. </span>遇到一个问题明明再搜索路径下有动态库，却报错所无法找到</h2>
+<h2 id="遇到一个问题明明再搜索路径下有动态库却报错所无法找到"><span class="post-title-index">2.4. </span><a class="markdownIt-Anchor" href="#遇到一个问题明明再搜索路径下有动态库却报错所无法找到"></a> 遇到一个问题明明再搜索路径下有动态库，却报错所无法找到</h2>
 <p>okular: error while loading shared libraries: libQt5Core.so.5: cannot open shared object file: No such file or directory
 用strip处理完之后解决
 sudo strip --remove-section=.note.ABI-tag /usr/lib/x86_64-linux-gnu/libQt5Core.so.5</p>
-<h1><span class="post-title-index">3. </span>编译vim</h1>
+<h1 id="编译vim"><span class="post-title-index">3. </span><a class="markdownIt-Anchor" href="#编译vim"></a> 编译vim</h1>
 <p>apt安装的vim不能随意的控制vim的特性，比如在latex反向搜索的时候需要的+clietservice。
 apt-cache search libc-dev
 ln -s libXtst.so.6 <a target="_blank" rel="noopener" href="http://libXtst.so">libXtst.so</a>
@@ -280,7 +280,7 @@ ln -s libXtst.so.6 <a target="_blank" rel="noopener" href="http://libXtst.so">li
 尽量多的保留特性，最终得到的config 命令是</p>
 <figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">./configure --<span class="keyword">with</span>-features=huge \</span><br><span class="line">    --enable-multibyte \</span><br><span class="line">    --enable-rubyinterp=yes \</span><br><span class="line">    --enable-python3interp=yes \</span><br><span class="line">    --enable-perlinterp=yes \</span><br><span class="line">    --enable-cscope \</span><br><span class="line">    --enable-fontset \</span><br><span class="line">    --enable-largefile \</span><br><span class="line">    --enable-fail-<span class="keyword">if</span>-missing \</span><br><span class="line">    --prefix=/path-to-install</span><br></pre></td></tr></tbody></table></figure>
 <p><code>--enable-fail-if-missing</code> 用于显示错误信息。</p>
-<h2 id="有点搞笑的是编译了很久没有成功，最后apt安装解决了"><span class="post-title-index">3.1. </span>有点搞笑的是编译了很久没有成功，最后apt安装解决了</h2>
+<h2 id="有点搞笑的是编译了很久没有成功最后apt安装解决了"><span class="post-title-index">3.1. </span><a class="markdownIt-Anchor" href="#有点搞笑的是编译了很久没有成功最后apt安装解决了"></a> 有点搞笑的是编译了很久没有成功，最后apt安装解决了</h2>
 <p>编译的时候feature 用了hug，但是还是没有增加+clientserver。
 我估计是缺少库。查src/auto/cofig.log也没有发现很相关的信息。
 最后<code>sudo apt-get install vim-gtk</code>成功安装了+clientserver的vim。</p>
