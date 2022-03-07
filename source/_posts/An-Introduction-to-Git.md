@@ -11,11 +11,6 @@ tags:
 ---
 
 
-
-
-
-
-
 ![The Structure of Git](git.jpg)
 
 git checkout用于切换分支或恢复工作数文件，它是一个危险的命令，因为这条命令会重写工作区。
