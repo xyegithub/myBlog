@@ -38,4 +38,4 @@ Dynamic Task Prioritization for Multitask Learning
 对于每个进来的 batch，每个$Task_i$ 有个 $loss_i$。每个 Task i 还有个不同的 $KPI: k_i$。
 那根据 Focal loss 的定义，$FL(k_i, \gamma_i) = -(1 - k_i)^{\gamma_i} * \log(k_i)$。一般来说我们 $\gamma$ 取 2。
 
-最后 $loss = sum(FL(k_i, \gamma_i) * loss_i)$，loss 前面乘以得这个系数 FL，就是一个自适应的权重，当任务完成得很好的时候，权重就比较小，不怎么优化这个 loss 了，当任务完成得不好的时候，权重就会比较大。
+最后 $loss = \sum(FL(k_i, \gamma_i) * loss_i)$，loss 前面乘以得这个系数 FL，就是一个自适应的权重，当任务完成得很好的时候，权重就比较小，不怎么优化这个 loss 了，当任务完成得不好的时候，权重就会比较大。
