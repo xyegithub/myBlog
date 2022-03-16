@@ -1,5 +1,4 @@
 ---
-
 title: Tips in Papers
 top: false
 cover: false
@@ -10,14 +9,11 @@ password:
 summary:
 description: 记录阅读论文过程中，新获取的信息。
 categories:
-
-- About Papers
+  - About Papers
 
 tags:
-
-- Papers
-- Personal Thought
-
+  - Papers
+  - Personal Thought
 ---
 
 # Attention
@@ -187,20 +183,20 @@ ordered logits policy 的缺陷在于，只关注了最重要的少数的特征�
 文章重复利用了 bn 层中的权重，文章任务 bn 层的权重可以表达特征图的重要程度。然而 attention 正好又需要特征图的重要程度。所以文章在 attention 中利用了 bn 层的权重。**使得 bn 的权重出现重复利用的现象。**
 
 $$
-\begin{align}
+\begin{aligned}
 att &= norm(x) \\
 att &= att \times \gamma + \delta \\
 att &= att \times \frac\gamma{sum(\gamma)} \\
 out &= att.sigmoid() \times x
-\end{align}
+\end{aligned}
 $$
 
 ```python
 class Channel_Att(nn.Module):
-def __init__(self, channels, t=16):
-super(Channel_Att, self).__init__()
-self.channels = channels
-self.bn2 = nn.BatchNorm2d(self.channels, affine=True)
+    def __init__(self, channels, t=16):
+        super(Channel_Att, self).__init__()
+        self.channels = channels
+        self.bn2 = nn.BatchNorm2d(self.channels, affine=True)
 def forward(self, x):
 residual = x
 x = self.bn2(x)
@@ -218,9 +214,7 @@ return x
 >
 > To suppress the less salient weights, we add a regularization term into the loss function.
 
-$$
-Loss = \sum\_{(x,y)}l(f(x, W), y) + p\sum g(\gamma) + p \sum g(\lambda)
-$$
+$$Loss = \sum_{(x,y)}l(f(x, W), y) + p\sum g(\gamma) + p \sum g(\lambda)$$
 
 第一项是正常的损失函数，第二项和第三项的$g（）$是一范数，$\gamma$是通道注意力中 bn 的权重，$\lambda$是空间注意力中 pix normalization 的权重。加上这两项使得通道和空间注意力都有了稀疏性。
 
