@@ -61,6 +61,80 @@ class Solution:
 
 ```
 
+## Keyboard
+
+A keyboard only have 26 keys, `a~z`. Each key can be only typed `k` times at
+most.
+
+How many possible content there is, when the keyboard is typed `n` times?
+
+### Method 1: dfs
+
+```python
+ class Solution:
+    # depth first search: from the first letter to the last letter
+    # fill the n positions.
+    def keyboard(self, k: int, n: int) -> int:
+        MOD = 1000000007
+
+        # c is the number of remain letters
+        # n is the number of letters needed to type in
+        # k is the max number that each letter can type
+        @lru_cache(None)
+        def dfs(c, n, k):
+            if n == 0:
+                # no letters is needed any more
+                # only 1 way: type nothing
+                # pick 0 letters
+                return 1
+            if c <= 0:
+                # no letter remained but n is not 0
+                # this is a failed type scheme
+                return 0
+            res = 0
+            for i in range(0, min(n, k) + 1):
+            # there are math.comb(n, i) ways to put i letters
+            # into n position.
+                res += math.comb(n, i) * dfs(c-1, n - i, k) % MOD
+            return res % MOD
+        ans = dfs(26, n, k)
+        return ans % MOD
+```
+
+### Method 2: dynamic programming
+
+```python
+class Solution:
+    def keyboard(self, k: int, n: int) -> int:
+        MOD = 1000000007
+        res = [[0 for _ in range(27)] for _ in range(n + 1)]
+        # res[i][j] is the number of possibilities when first j letters
+        # is used to fill i positions.
+        # when the position is 0, no matter how many letters are used.
+        # there is only one possibility, i.e., filling nothing.
+        # thus, res[0][i] are all 1.
+        res[0][0] = 1
+        for i in range(27):
+            res[0][i] = 1
+
+        # res[i][j] can be divided into several possibilities.
+        # When 0 letter is filled for the $j^{th}$ letter, res[i][j-1]
+        # when 1 letter is filled for the j-th letter, res[i-1][j-1]
+        # * C_i^1
+        # when 2 letters are filled for the j-th letter, res[i-2][j-1]
+        # * C_i^2
+        # C_i^m represent how many possibilities there are filling m of
+        # the same letters into i positions.
+        # m can be 0, but can not be larger than k or i.
+        for i in range(1, n + 1):
+            for j in range(1, 27):
+                for m in range(min(i + 1, k + 1)):
+                    res[i][j] += res[i - m][j - 1] * math.comb(i, m)
+                    res[i][j] %= MOD
+
+        return res[-1][-1] % MOD
+```
+
 # Other
 
 ## The Gas Station
@@ -117,10 +191,10 @@ class Solution:
                         sum_ += res[second
 ```
 
-Consider this, if a car can not arrive y from x. That is to say
-$\sum_{i = y}^x res[i] < 0$. For a station z between x and y. It can arrive z
-from x, which means the sum $> 0$. Then from z to y, the sum is definitely
-$< 0$. It can not arrive y from z.
+Consider this, if y is the first station that the car can not arrive from x.
+That is to say $\sum_{i = y}^x res[i] < 0$. For a station z between x and y. It
+can arrive z from x, which means the sum $> 0$. Then from z to y, the sum is
+definitely $< 0$. It can not arrive y from z.
 
 Thus, if a car can not arrive y from x, it can not arrive y from any station
 between x and y. It is no need to search such stations.
