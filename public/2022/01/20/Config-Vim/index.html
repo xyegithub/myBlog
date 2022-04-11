@@ -29,7 +29,7 @@
 <meta property="og:description" content="vim的配置，包括markdown, vimtex的支持等">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2022-01-20T02:24:34.000Z">
-<meta property="article:modified_time" content="2022-03-16T08:52:14.738Z">
+<meta property="article:modified_time" content="2022-04-10T13:05:17.123Z">
 <meta property="article:author" content="Xiang Ye">
 <meta property="article:tag" content="vim">
 <meta property="article:tag" content="markdown">
@@ -122,7 +122,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%AE%89%E8%A3%85anaconda"><span class="nav-text">1.  安装anaconda</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%B8%80%E4%BA%9B%E7%A2%8E%E7%9A%84linux%E7%9F%A5%E8%AF%86"><span class="nav-text">2.  一些碎的Linux知识</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9F%A5%E6%89%BE%E5%8C%85%E7%9A%84%E5%AE%89%E8%A3%85%E4%BD%8D%E7%BD%AE"><span class="nav-text">2.1.  查找包的安装位置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BC%96%E8%AF%91%E9%94%99%E8%AF%AF%E5%AE%9A%E4%BD%8D"><span class="nav-text">2.2.  编译错误定位</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#linux-%E7%9A%84%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F%E5%8F%AF%E8%83%BD%E6%98%AF%E4%B8%A4%E4%B8%AA"><span class="nav-text">2.3.  linux 的环境变量可能是两个</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%81%87%E5%88%B0%E4%B8%80%E4%B8%AA%E9%97%AE%E9%A2%98%E6%98%8E%E6%98%8E%E5%86%8D%E6%90%9C%E7%B4%A2%E8%B7%AF%E5%BE%84%E4%B8%8B%E6%9C%89%E5%8A%A8%E6%80%81%E5%BA%93%E5%8D%B4%E6%8A%A5%E9%94%99%E6%89%80%E6%97%A0%E6%B3%95%E6%89%BE%E5%88%B0"><span class="nav-text">2.4.  遇到一个问题明明再搜索路径下有动态库，却报错所无法找到</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%BC%96%E8%AF%91vim"><span class="nav-text">3.  编译vim</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9C%89%E7%82%B9%E6%90%9E%E7%AC%91%E7%9A%84%E6%98%AF%E7%BC%96%E8%AF%91%E4%BA%86%E5%BE%88%E4%B9%85%E6%B2%A1%E6%9C%89%E6%88%90%E5%8A%9F%E6%9C%80%E5%90%8Eapt%E5%AE%89%E8%A3%85%E8%A7%A3%E5%86%B3%E4%BA%86"><span class="nav-text">3.1.  有点搞笑的是编译了很久没有成功，最后apt安装解决了</span></a></li></ol></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%AE%89%E8%A3%85-anaconda"><span class="nav-text">1.  安装 anaconda</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%B8%80%E4%BA%9B%E7%A2%8E%E7%9A%84-linux-%E7%9F%A5%E8%AF%86"><span class="nav-text">2.  一些碎的 Linux 知识</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9F%A5%E6%89%BE%E5%8C%85%E7%9A%84%E5%AE%89%E8%A3%85%E4%BD%8D%E7%BD%AE"><span class="nav-text">2.1.  查找包的安装位置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BC%96%E8%AF%91%E9%94%99%E8%AF%AF%E5%AE%9A%E4%BD%8D"><span class="nav-text">2.2.  编译错误定位</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#linux-%E7%9A%84%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F%E5%8F%AF%E8%83%BD%E6%98%AF%E4%B8%A4%E4%B8%AA"><span class="nav-text">2.3.  linux 的环境变量可能是两个</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%81%87%E5%88%B0%E4%B8%80%E4%B8%AA%E9%97%AE%E9%A2%98%E6%98%8E%E6%98%8E%E5%86%8D%E6%90%9C%E7%B4%A2%E8%B7%AF%E5%BE%84%E4%B8%8B%E6%9C%89%E5%8A%A8%E6%80%81%E5%BA%93%E5%8D%B4%E6%8A%A5%E9%94%99%E6%89%80%E6%97%A0%E6%B3%95%E6%89%BE%E5%88%B0"><span class="nav-text">2.4.  遇到一个问题明明再搜索路径下有动态库，却报错所无法找到</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%BC%96%E8%AF%91-vim"><span class="nav-text">3.  编译 vim</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9C%89%E7%82%B9%E6%90%9E%E7%AC%91%E7%9A%84%E6%98%AF%E7%BC%96%E8%AF%91%E4%BA%86%E5%BE%88%E4%B9%85%E6%B2%A1%E6%9C%89%E6%88%90%E5%8A%9F%E6%9C%80%E5%90%8E-apt-%E5%AE%89%E8%A3%85%E8%A7%A3%E5%86%B3%E4%BA%86"><span class="nav-text">3.1.  有点搞笑的是编译了很久没有成功，最后 apt 安装解决了</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#a-practice-for-neovim-from-scratch"><span class="nav-text">4.  A Practice for Neovim-from-scratch</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#install"><span class="nav-text">4.1.  Install</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#analysis"><span class="nav-text">4.2.  Analysis</span></a></li></ol></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -228,7 +228,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">Edited on</span>
-      <time title="Modified: 2022-03-16 16:52:14" itemprop="dateModified" datetime="2022-03-16T16:52:14+08:00">2022-03-16</time>
+      <time title="Modified: 2022-04-10 21:05:17" itemprop="dateModified" datetime="2022-04-10T21:05:17+08:00">2022-04-10</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -251,39 +251,119 @@
     
     
     <div class="post-body" itemprop="articleBody">
-        <html><head></head><body><h1 id="安装anaconda"><span class="post-title-index">1. </span><a class="markdownIt-Anchor" href="#安装anaconda"></a> 安装anaconda</h1>
-<p>本来安装anaconda应该问题不大，但是却发现了一个问题。
-<code>./Anaconda3-2021.11-Linux-x86_64.sh: 489: [[: Exec format error</code>
-这个错，是因为直用./Anaconda.sh启动安装默认用的是sh
-改成了bash Anaconda.sh就不会报错了.</p>
-<h1 id="一些碎的linux知识"><span class="post-title-index">2. </span><a class="markdownIt-Anchor" href="#一些碎的linux知识"></a> 一些碎的Linux知识</h1>
+        <html><head></head><body><h1 id="安装-anaconda"><span class="post-title-index">1. </span><a class="markdownIt-Anchor" href="#安装-anaconda"></a> 安装 anaconda</h1>
+<p>本来安装 anaconda 应该问题不大，但是却发现了一个问题。
+<code>./Anaconda3-2021.11-Linux-x86_64.sh: 489: [[: Exec format error</code> 这个错，是因为
+直用./Anaconda.sh 启动安装默认用的是 sh 改成了 bash <a target="_blank" rel="noopener" href="http://Anaconda.sh">Anaconda.sh</a> 就不会报错了.</p>
+<h1 id="一些碎的-linux-知识"><span class="post-title-index">2. </span><a class="markdownIt-Anchor" href="#一些碎的-linux-知识"></a> 一些碎的 Linux 知识</h1>
 <h2 id="查找包的安装位置"><span class="post-title-index">2.1. </span><a class="markdownIt-Anchor" href="#查找包的安装位置"></a> 查找包的安装位置</h2>
-<p>一些软件用apt install了，但是不知道安装位置在哪里
-<code>dpkg -L xxx</code>显示包的安装位置．</p>
+<p>一些软件用 apt install 了，但是不知道安装位置在哪里 <code>dpkg -L xxx</code>显示包的安装位
+置．</p>
 <h2 id="编译错误定位"><span class="post-title-index">2.2. </span><a class="markdownIt-Anchor" href="#编译错误定位"></a> 编译错误定位</h2>
-<p>编译的时候,打印一些log但是并不详细
-一般会有更加详细的编译log文件，在里面可以更精确的定位错误发生的原因．</p>
+<p>编译的时候,打印一些 log 但是并不详细一般会有更加详细的编译 log 文件，在里面可以
+更精确的定位错误发生的原因．</p>
 <h2 id="linux-的环境变量可能是两个"><span class="post-title-index">2.3. </span><a class="markdownIt-Anchor" href="#linux-的环境变量可能是两个"></a> linux 的环境变量可能是两个</h2>
-<p><code>LIBRARY_PATH</code>编译的时候用到的库的搜索路径
-<code>LD_LIBRARY_PATH</code>程序加载时库的搜索路径</p>
+<p><code>LIBRARY_PATH</code>编译的时候用到的库的搜索路径 <code>LD_LIBRARY_PATH</code>程序加载时库的搜索路
+径</p>
 <h2 id="遇到一个问题明明再搜索路径下有动态库却报错所无法找到"><span class="post-title-index">2.4. </span><a class="markdownIt-Anchor" href="#遇到一个问题明明再搜索路径下有动态库却报错所无法找到"></a> 遇到一个问题明明再搜索路径下有动态库，却报错所无法找到</h2>
-<p>okular: error while loading shared libraries: libQt5Core.so.5: cannot open shared object file: No such file or directory
-用strip处理完之后解决
-sudo strip --remove-section=.note.ABI-tag /usr/lib/x86_64-linux-gnu/libQt5Core.so.5</p>
-<h1 id="编译vim"><span class="post-title-index">3. </span><a class="markdownIt-Anchor" href="#编译vim"></a> 编译vim</h1>
-<p>apt安装的vim不能随意的控制vim的特性，比如在latex反向搜索的时候需要的+clietservice。
-apt-cache search libc-dev
-ln -s libXtst.so.6 <a target="_blank" rel="noopener" href="http://libXtst.so">libXtst.so</a>
-综合两篇博客。
-<a target="_blank" rel="noopener" href="https://www.jianshu.com/p/aa5ea81bbc72">https://www.jianshu.com/p/aa5ea81bbc72</a>
-<a target="_blank" rel="noopener" href="https://toutiao.io/posts/runvgs/preview">https://toutiao.io/posts/runvgs/preview</a>
-尽量多的保留特性，最终得到的config 命令是</p>
+<p>okular: error while loading shared libraries: libQt5Core.so.5: cannot open
+shared object file: No such file or directory 用 strip 处理完之后解决 sudo strip
+–remove-section=.note.ABI-tag /usr/lib/x86_64-linux-gnu/libQt5Core.so.5</p>
+<h1 id="编译-vim"><span class="post-title-index">3. </span><a class="markdownIt-Anchor" href="#编译-vim"></a> 编译 vim</h1>
+<p>apt 安装的 vim 不能随意的控制 vim 的特性，比如在 latex 反向搜索的时候需要的
++clietservice。 apt-cache search libc-dev ln -s libXtst.so.6 <a target="_blank" rel="noopener" href="http://libXtst.so">libXtst.so</a> 综合两篇
+博客。 <a target="_blank" rel="noopener" href="https://www.jianshu.com/p/aa5ea81bbc72">https://www.jianshu.com/p/aa5ea81bbc72</a>
+<a target="_blank" rel="noopener" href="https://toutiao.io/posts/runvgs/preview">https://toutiao.io/posts/runvgs/preview</a> 尽量多的保留特性，最终得到的 config 命令
+是</p>
 <figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">./configure --<span class="keyword">with</span>-features=huge \</span><br><span class="line">    --enable-multibyte \</span><br><span class="line">    --enable-rubyinterp=yes \</span><br><span class="line">    --enable-python3interp=yes \</span><br><span class="line">    --enable-perlinterp=yes \</span><br><span class="line">    --enable-cscope \</span><br><span class="line">    --enable-fontset \</span><br><span class="line">    --enable-largefile \</span><br><span class="line">    --enable-fail-<span class="keyword">if</span>-missing \</span><br><span class="line">    --prefix=/path-to-install</span><br></pre></td></tr></tbody></table></figure>
 <p><code>--enable-fail-if-missing</code> 用于显示错误信息。</p>
-<h2 id="有点搞笑的是编译了很久没有成功最后apt安装解决了"><span class="post-title-index">3.1. </span><a class="markdownIt-Anchor" href="#有点搞笑的是编译了很久没有成功最后apt安装解决了"></a> 有点搞笑的是编译了很久没有成功，最后apt安装解决了</h2>
-<p>编译的时候feature 用了hug，但是还是没有增加+clientserver。
-我估计是缺少库。查src/auto/cofig.log也没有发现很相关的信息。
-最后<code>sudo apt-get install vim-gtk</code>成功安装了+clientserver的vim。</p>
+<h2 id="有点搞笑的是编译了很久没有成功最后-apt-安装解决了"><span class="post-title-index">3.1. </span><a class="markdownIt-Anchor" href="#有点搞笑的是编译了很久没有成功最后-apt-安装解决了"></a> 有点搞笑的是编译了很久没有成功，最后 apt 安装解决了</h2>
+<p>编译的时候 feature 用了 hug，但是还是没有增加+clientserver。我估计是缺少库。查
+src/auto/cofig.log 也没有发现很相关的信息。最后<code>sudo apt-get install vim-gtk</code>成
+功安装了+clientserver 的 vim。</p>
+<h1 id="a-practice-for-neovim-from-scratch"><span class="post-title-index">4. </span><a class="markdownIt-Anchor" href="#a-practice-for-neovim-from-scratch"></a> A Practice for <code>Neovim-from-scratch</code></h1>
+<h2 id="install"><span class="post-title-index">4.1. </span><a class="markdownIt-Anchor" href="#install"></a> Install</h2>
+<ol>
+<li>Plugins are defined in <code>~/.config/nvim/lua/user/plugins.lua</code>. The plugins
+will fail to be installed due to the internet of China Mainland. Thus, git is
+asked to be configured with ssh. Then the path of plugins can be changed by
+add <code>git@github.com:</code> before the original path.</li>
+<li><code>treesitter</code> is a plugin for syntax-hight. It will install a series of
+language parsers. They are defined in
+<code>~/.config/nvim/lua/user/treesitter.lua</code>. By setting
+<code>ensure_installed = {'astro', 'xxx'}</code>, we can define the parsers to be
+download. Also, download errors may be occurred due to the internet</li>
+</ol>
+<h2 id="analysis"><span class="post-title-index">4.2. </span><a class="markdownIt-Anchor" href="#analysis"></a> Analysis</h2>
+<ol>
+<li>
+<p>There are 21 files required in <code>init.lua</code>. They are exactly the 21 files in
+<code>lua/user</code> folder. About 34 plugins are defined in <code>plugins.lua</code>. The lua
+files are all the configuration file of the plugins defined in <code>plugins.lua</code>,
+except for <code>keymaps.lua</code>, <code>option.lua</code>, <code>autocommand.lua</code>. <code>plugins.lua</code>
+itself is the configuration file of <code>packer.nvim</code>, a plugin manager.</p>
+</li>
+<li>
+<p>Here gives a brief look at the plugins.</p>
+<ol>
+<li><code>packer.nvim</code> is a plugin manager.</li>
+<li><code>Alpha-vim</code> is a plugin used by Neovim-from-scratch. It allow one to
+custom the greeter for neovim</li>
+<li><code>popup.nvim</code>, An implementation of the Popup API from vim in neovim.</li>
+<li><code>plenary.nvim</code>, implement some useful window management items for neovim.</li>
+<li><code>nvim-autopais</code> A super powerful auto pair plugin for neovim that supports
+multiple characters.</li>
+<li><code>Comment.nvim</code> Smart and Powerful commenting plugin for neovim.</li>
+<li><code>nvim-web-devicons</code> A lua fork of <code>vim-devicons</code>. This plugin provides the
+same icons as well as colors for each icon</li>
+<li><code>nvim-tree-lua</code> A file explorer for neovim written in lua.</li>
+<li><code>bufferline.nvim</code> A snazzy buffer line (with tabpage integration) for
+neovim built using lua.</li>
+<li><code>vim-bbye</code> Bbye allows you to do delete buffers (close files) without
+colosing you windows or messing up your layout.</li>
+<li><code>lualine.nvim</code> A blazing fast and easy to configure neovim status line
+written in lua.</li>
+<li><code>toggleterm.nvim</code> A neovim plugin to persist and toggle multiple
+terminals during an editing session.</li>
+<li><code>project.nvim</code> an all in one neovim plugin written in lua that provides
+superior project management.</li>
+<li><code>impatient.nvim</code> speed up loading lua modules in neovim to improve start
+up time.</li>
+<li><code>indent-blankline.nvim</code> adds indentation guides to all lines (including
+empty lines.)</li>
+<li><code>FixCursorHold.nvim</code> This is needed to fix lsp doc highlight.</li>
+<li><code>which-key.nvim</code> a lua plugin that displays a popup with possible key
+bindings of the command you started typing.</li>
+<li><code>darkplus.nvim</code> color themes</li>
+<li><code>nvim-cmp</code> The completion plugin</li>
+<li><code>cmp-buffer</code> buffer completions</li>
+<li><code>cmp-path</code> path completions</li>
+<li><code>cmp-cmdline</code> cmdline completions</li>
+<li><code>cmp_luasnip</code> snippet completions.</li>
+<li><code>cmp-nvim-lsp</code> nvim-cmp source for neovim’s built-in language server
+client.</li>
+<li><code>LuaSnip</code> snippet engin</li>
+<li><code>friendly-snippets</code> a bunch of snippets to use</li>
+<li><code>nvim-lspconfig</code> A collection of common configurations for neovim’s
+built-in language server clinet. Features: go-to-definition,
+find-references, hover, completion, rename, format, refactor.</li>
+<li><code>nvim-lsp-installer</code> allows you to seamlessly install LSP server
+locally(inside <code>:echo stdpaht("data")</code>)</li>
+<li><code>nlsp-settings.nvim</code> A plugin to configure LSP using json/yaml files like
+<code>coc-setting.json</code></li>
+<li><code>null-ls.nvim</code> for formatters and linters, use neovim as a language
+server to inject LSP diagnostic, code actions, and more via lua</li>
+<li><code>telescope.nvim</code> a highly extendable fuzzy finder over lists.</li>
+<li><code>nvim-treesitter</code> both provide a simple and easy way to use the interface
+for <code>tree-sitter</code> in neovim and to provide some basic functionality such
+as highlighting based on it.</li>
+<li><code>nvim-ts-context-commentstring"</code> setting <code>comment string</code> option based on
+the cursor location in the file. The location is checked via treesitter
+queries.</li>
+<li><code>gitsigns.nvim</code> Git</li>
+</ol>
+</li>
+</ol>
 </body></html>
     </div>
 
