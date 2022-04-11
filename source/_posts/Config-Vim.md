@@ -74,6 +74,43 @@ https://toutiao.io/posts/runvgs/preview 尽量多的保留特性，最终得到�
 src/auto/cofig.log 也没有发现很相关的信息。最后`sudo apt-get install vim-gtk`成
 功安装了+clientserver 的 vim。
 
+# Why lua instead of vimL(vim script)
+
+## Introduction
+
+Neovim has an embedded lua 5.1 runtime which is used to create faster and more
+powerful extentions of you favorite efitor.
+
+1. VimL is a slow interpreted language with almost no optimizations. Much of the
+   time spent in vim startup and in actions from plugins that can block the main
+   loop in the editor is in parsing and executing vim script.
+
+## How to use lua in command line or vimL file
+
+see `:h lua`.
+
+- From the vim command line, you can run `lua <you code>`. This is useful for
+  keybindings, commands, and other one-off execution cases.
+- Inside of a vimL file, you can demarcate lua code with the follow code
+  fencing:
+
+```vim
+lua << EOF
+-- your lua code
+EOF
+```
+
+- Inside of a vimL file you can use the `lua` keyword to execute commands
+  similar to the first example,i.e., `lua <your code>`.
+
+One important note here is that Neovim will look for lua code in the
+`runtimepath` you've set in your settings. Additionally, it will append your
+runtimepath with `/lua/?.lua` and `lua/?/init.lua` so it is common practice to
+see a `/lua` sub-directory inside `nvim`. For more detailed information about
+where Neovim looks for lua code, check out `:h lua-require`.
+
+[More Information](https://github.com/nanotee/nvim-lua-guide)
+
 # A Practice for `Neovim-from-scratch`
 
 ## Install
@@ -86,7 +123,10 @@ src/auto/cofig.log 也没有发现很相关的信息。最后`sudo apt-get insta
    language parsers. They are defined in
    `~/.config/nvim/lua/user/treesitter.lua`. By setting
    `ensure_installed = {'astro', 'xxx'}`, we can define the parsers to be
-   download. Also, download errors may be occurred due to the internet
+   download. Also, download errors may be occurred due to the internet. The path
+   of these language parsers are defined in
+   `~/.local/share/nvim/site/pack/packer/start/nvim-treesitter/lua/nvim-treesitter/parsers.lua`,
+   which may be changed by download with ssh.
 
 ## Analysis
 
@@ -152,3 +192,6 @@ src/auto/cofig.log 也没有发现很相关的信息。最后`sudo apt-get insta
        the cursor location in the file. The location is checked via treesitter
        queries.
    34. `gitsigns.nvim` Git
+
+3. The plugins are installed in `~/.local/share/nvim/site/pack/packer/start`,
+   which is defined in the `install_path` in `plugins.lua`.

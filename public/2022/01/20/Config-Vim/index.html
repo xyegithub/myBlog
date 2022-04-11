@@ -29,7 +29,7 @@
 <meta property="og:description" content="vim的配置，包括markdown, vimtex的支持等">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2022-01-20T02:24:34.000Z">
-<meta property="article:modified_time" content="2022-04-10T13:05:17.123Z">
+<meta property="article:modified_time" content="2022-04-11T09:06:42.569Z">
 <meta property="article:author" content="Xiang Ye">
 <meta property="article:tag" content="vim">
 <meta property="article:tag" content="markdown">
@@ -122,7 +122,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%AE%89%E8%A3%85-anaconda"><span class="nav-text">1.  安装 anaconda</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%B8%80%E4%BA%9B%E7%A2%8E%E7%9A%84-linux-%E7%9F%A5%E8%AF%86"><span class="nav-text">2.  一些碎的 Linux 知识</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9F%A5%E6%89%BE%E5%8C%85%E7%9A%84%E5%AE%89%E8%A3%85%E4%BD%8D%E7%BD%AE"><span class="nav-text">2.1.  查找包的安装位置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BC%96%E8%AF%91%E9%94%99%E8%AF%AF%E5%AE%9A%E4%BD%8D"><span class="nav-text">2.2.  编译错误定位</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#linux-%E7%9A%84%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F%E5%8F%AF%E8%83%BD%E6%98%AF%E4%B8%A4%E4%B8%AA"><span class="nav-text">2.3.  linux 的环境变量可能是两个</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%81%87%E5%88%B0%E4%B8%80%E4%B8%AA%E9%97%AE%E9%A2%98%E6%98%8E%E6%98%8E%E5%86%8D%E6%90%9C%E7%B4%A2%E8%B7%AF%E5%BE%84%E4%B8%8B%E6%9C%89%E5%8A%A8%E6%80%81%E5%BA%93%E5%8D%B4%E6%8A%A5%E9%94%99%E6%89%80%E6%97%A0%E6%B3%95%E6%89%BE%E5%88%B0"><span class="nav-text">2.4.  遇到一个问题明明再搜索路径下有动态库，却报错所无法找到</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%BC%96%E8%AF%91-vim"><span class="nav-text">3.  编译 vim</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9C%89%E7%82%B9%E6%90%9E%E7%AC%91%E7%9A%84%E6%98%AF%E7%BC%96%E8%AF%91%E4%BA%86%E5%BE%88%E4%B9%85%E6%B2%A1%E6%9C%89%E6%88%90%E5%8A%9F%E6%9C%80%E5%90%8E-apt-%E5%AE%89%E8%A3%85%E8%A7%A3%E5%86%B3%E4%BA%86"><span class="nav-text">3.1.  有点搞笑的是编译了很久没有成功，最后 apt 安装解决了</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#a-practice-for-neovim-from-scratch"><span class="nav-text">4.  A Practice for Neovim-from-scratch</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#install"><span class="nav-text">4.1.  Install</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#analysis"><span class="nav-text">4.2.  Analysis</span></a></li></ol></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%AE%89%E8%A3%85-anaconda"><span class="nav-text">1.  安装 anaconda</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%B8%80%E4%BA%9B%E7%A2%8E%E7%9A%84-linux-%E7%9F%A5%E8%AF%86"><span class="nav-text">2.  一些碎的 Linux 知识</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9F%A5%E6%89%BE%E5%8C%85%E7%9A%84%E5%AE%89%E8%A3%85%E4%BD%8D%E7%BD%AE"><span class="nav-text">2.1.  查找包的安装位置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BC%96%E8%AF%91%E9%94%99%E8%AF%AF%E5%AE%9A%E4%BD%8D"><span class="nav-text">2.2.  编译错误定位</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#linux-%E7%9A%84%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F%E5%8F%AF%E8%83%BD%E6%98%AF%E4%B8%A4%E4%B8%AA"><span class="nav-text">2.3.  linux 的环境变量可能是两个</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%81%87%E5%88%B0%E4%B8%80%E4%B8%AA%E9%97%AE%E9%A2%98%E6%98%8E%E6%98%8E%E5%86%8D%E6%90%9C%E7%B4%A2%E8%B7%AF%E5%BE%84%E4%B8%8B%E6%9C%89%E5%8A%A8%E6%80%81%E5%BA%93%E5%8D%B4%E6%8A%A5%E9%94%99%E6%89%80%E6%97%A0%E6%B3%95%E6%89%BE%E5%88%B0"><span class="nav-text">2.4.  遇到一个问题明明再搜索路径下有动态库，却报错所无法找到</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%BC%96%E8%AF%91-vim"><span class="nav-text">3.  编译 vim</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9C%89%E7%82%B9%E6%90%9E%E7%AC%91%E7%9A%84%E6%98%AF%E7%BC%96%E8%AF%91%E4%BA%86%E5%BE%88%E4%B9%85%E6%B2%A1%E6%9C%89%E6%88%90%E5%8A%9F%E6%9C%80%E5%90%8E-apt-%E5%AE%89%E8%A3%85%E8%A7%A3%E5%86%B3%E4%BA%86"><span class="nav-text">3.1.  有点搞笑的是编译了很久没有成功，最后 apt 安装解决了</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#why-lua-instead-of-vimlvim-script"><span class="nav-text">4.  Why lua instead of vimL(vim script)</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#introduction"><span class="nav-text">4.1.  Introduction</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#how-to-use-lua-in-command-line-or-viml-file"><span class="nav-text">4.2.  How to use lua in command line or vimL file</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#a-practice-for-neovim-from-scratch"><span class="nav-text">5.  A Practice for Neovim-from-scratch</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#install"><span class="nav-text">5.1.  Install</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#analysis"><span class="nav-text">5.2.  Analysis</span></a></li></ol></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -228,7 +228,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">Edited on</span>
-      <time title="Modified: 2022-04-10 21:05:17" itemprop="dateModified" datetime="2022-04-10T21:05:17+08:00">2022-04-10</time>
+      <time title="Modified: 2022-04-11 17:06:42" itemprop="dateModified" datetime="2022-04-11T17:06:42+08:00">2022-04-11</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -281,8 +281,36 @@ shared object file: No such file or directory 用 strip 处理完之后解决 su
 <p>编译的时候 feature 用了 hug，但是还是没有增加+clientserver。我估计是缺少库。查
 src/auto/cofig.log 也没有发现很相关的信息。最后<code>sudo apt-get install vim-gtk</code>成
 功安装了+clientserver 的 vim。</p>
-<h1 id="a-practice-for-neovim-from-scratch"><span class="post-title-index">4. </span><a class="markdownIt-Anchor" href="#a-practice-for-neovim-from-scratch"></a> A Practice for <code>Neovim-from-scratch</code></h1>
-<h2 id="install"><span class="post-title-index">4.1. </span><a class="markdownIt-Anchor" href="#install"></a> Install</h2>
+<h1 id="why-lua-instead-of-vimlvim-script"><span class="post-title-index">4. </span><a class="markdownIt-Anchor" href="#why-lua-instead-of-vimlvim-script"></a> Why lua instead of vimL(vim script)</h1>
+<h2 id="introduction"><span class="post-title-index">4.1. </span><a class="markdownIt-Anchor" href="#introduction"></a> Introduction</h2>
+<p>Neovim has an embedded lua 5.1 runtime which is used to create faster and more
+powerful extentions of you favorite efitor.</p>
+<ol>
+<li>VimL is a slow interpreted language with almost no optimizations. Much of the
+time spent in vim startup and in actions from plugins that can block the main
+loop in the editor is in parsing and executing vim script.</li>
+</ol>
+<h2 id="how-to-use-lua-in-command-line-or-viml-file"><span class="post-title-index">4.2. </span><a class="markdownIt-Anchor" href="#how-to-use-lua-in-command-line-or-viml-file"></a> How to use lua in command line or vimL file</h2>
+<p>see <code>:h lua</code>.</p>
+<ul>
+<li>From the vim command line, you can run <code>lua &lt;you code&gt;</code>. This is useful for
+keybindings, commands, and other one-off execution cases.</li>
+<li>Inside of a vimL file, you can demarcate lua code with the follow code
+fencing:</li>
+</ul>
+<figure class="highlight vim"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">lua</span> &lt;&lt; EOF</span><br><span class="line">-- your <span class="keyword">lua</span> code</span><br><span class="line">EOF</span><br></pre></td></tr></tbody></table></figure>
+<ul>
+<li>Inside of a vimL file you can use the <code>lua</code> keyword to execute commands
+similar to the first example,i.e., <code>lua &lt;your code&gt;</code>.</li>
+</ul>
+<p>One important note here is that Neovim will look for lua code in the
+<code>runtimepath</code> you’ve set in your settings. Additionally, it will append your
+runtimepath with <code>/lua/?.lua</code> and <code>lua/?/init.lua</code> so it is common practice to
+see a <code>/lua</code> sub-directory inside <code>nvim</code>. For more detailed information about
+where Neovim looks for lua code, check out <code>:h lua-require</code>.</p>
+<p><a target="_blank" rel="noopener" href="https://teukka.tech/luanvim.html">More Information</a></p>
+<h1 id="a-practice-for-neovim-from-scratch"><span class="post-title-index">5. </span><a class="markdownIt-Anchor" href="#a-practice-for-neovim-from-scratch"></a> A Practice for <code>Neovim-from-scratch</code></h1>
+<h2 id="install"><span class="post-title-index">5.1. </span><a class="markdownIt-Anchor" href="#install"></a> Install</h2>
 <ol>
 <li>Plugins are defined in <code>~/.config/nvim/lua/user/plugins.lua</code>. The plugins
 will fail to be installed due to the internet of China Mainland. Thus, git is
@@ -292,9 +320,12 @@ add <code>git@github.com:</code> before the original path.</li>
 language parsers. They are defined in
 <code>~/.config/nvim/lua/user/treesitter.lua</code>. By setting
 <code>ensure_installed = {'astro', 'xxx'}</code>, we can define the parsers to be
-download. Also, download errors may be occurred due to the internet</li>
+download. Also, download errors may be occurred due to the internet. The path
+of these language parsers are defined in
+<code>~/.local/share/nvim/site/pack/packer/start/nvim-treesitter/lua/nvim-treesitter/parsers.lua</code>,
+which may be changed by download with ssh.</li>
 </ol>
-<h2 id="analysis"><span class="post-title-index">4.2. </span><a class="markdownIt-Anchor" href="#analysis"></a> Analysis</h2>
+<h2 id="analysis"><span class="post-title-index">5.2. </span><a class="markdownIt-Anchor" href="#analysis"></a> Analysis</h2>
 <ol>
 <li>
 <p>There are 21 files required in <code>init.lua</code>. They are exactly the 21 files in
@@ -362,6 +393,10 @@ the cursor location in the file. The location is checked via treesitter
 queries.</li>
 <li><code>gitsigns.nvim</code> Git</li>
 </ol>
+</li>
+<li>
+<p>The plugins are installed in <code>~/.local/share/nvim/site/pack/packer/start</code>,
+which is defined in the <code>install_path</code> in <code>plugins.lua</code>.</p>
 </li>
 </ol>
 </body></html>
