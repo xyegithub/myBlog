@@ -7,13 +7,12 @@ mathjax: true
 date: 2022-01-20 10:24:34
 password:
 summary:
-description: vim的配置，包括markdown, vimtex的支持等
+description: Vim Configuration
 categories:
-  - Little Things
+  - Programming
+  - Vim
 tags:
-  - vim
-  - markdown
-  - vimtex
+  - Vim
 ---
 
 # 安装 anaconda

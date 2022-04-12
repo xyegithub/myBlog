@@ -29,7 +29,7 @@
 <meta property="og:description" content="Learn Regex">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2022-04-12T06:57:48.000Z">
-<meta property="article:modified_time" content="2022-04-12T07:00:28.290Z">
+<meta property="article:modified_time" content="2022-04-12T07:22:18.731Z">
 <meta property="article:author" content="Xiang Ye">
 <meta property="article:tag" content="Regex">
 <meta name="twitter:card" content="summary">
@@ -107,7 +107,7 @@
 
   <aside class="sidebar">
 
-    <div class="sidebar-inner sidebar-overview-active">
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
       <ul class="sidebar-nav">
         <li class="sidebar-nav-toc">
           Table of Contents
@@ -120,6 +120,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#regular-expressions-in-vim"><span class="nav-text">1.  Regular Expressions in Vim</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#lookahead-and-lookbehind"><span class="nav-text">1.1.  Lookahead and Lookbehind</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#positive-lookahead-with-and-negative-lookahead-with"><span class="nav-text">1.1.1.  Positive lookahead with \@&#x3D; and negative lookahead with \@!</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#positive-lookbehind-with-and-negative-lookbehind-with"><span class="nav-text">1.1.2.  Positive Lookbehind with \@&lt;&#x3D; and negative Lookbehind with \@&lt;!</span></a></li></ol></li></ol></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -140,12 +141,12 @@
       </div>
       <div class="site-state-item site-state-categories">
           <a href="/categories/">
-        <span class="site-state-item-count">9</span>
+        <span class="site-state-item-count">11</span>
         <span class="site-state-item-name">categories</span></a>
       </div>
       <div class="site-state-item site-state-tags">
           <a href="/tags/">
-        <span class="site-state-item-count">18</span>
+        <span class="site-state-item-count">16</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
@@ -219,7 +220,7 @@
       <span class="post-meta-item-text">Posted on</span>
       
 
-      <time title="Created: 2022-04-12 14:57:48 / Modified: 15:00:28" itemprop="dateCreated datePublished" datetime="2022-04-12T14:57:48+08:00">2022-04-12</time>
+      <time title="Created: 2022-04-12 14:57:48 / Modified: 15:22:18" itemprop="dateCreated datePublished" datetime="2022-04-12T14:57:48+08:00">2022-04-12</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -242,7 +243,18 @@
     
     
     <div class="post-body" itemprop="articleBody">
-        <html><head></head><body></body></html>
+        <html><head></head><body><h1 id="regular-expressions-in-vim"><span class="post-title-index">1. </span><a class="markdownIt-Anchor" href="#regular-expressions-in-vim"></a> Regular Expressions in Vim</h1>
+<h2 id="lookahead-and-lookbehind"><span class="post-title-index">1.1. </span><a class="markdownIt-Anchor" href="#lookahead-and-lookbehind"></a> Lookahead and Lookbehind</h2>
+<p>Directly some examples.</p>
+<p>See <code>:help /\@=</code>, <code>:help /\@!</code>, <code>:help /\@&lt;=</code>, and <code>:help /\@&lt;!</code> for detail.</p>
+<h3 id="positive-lookahead-with-and-negative-lookahead-with"><span class="post-title-index">1.1.1. </span><a class="markdownIt-Anchor" href="#positive-lookahead-with-and-negative-lookahead-with"></a> Positive lookahead with <code>\@=</code> and negative lookahead with <code>\@!</code></h3>
+<figure class="highlight tex"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">quick fox quick dog quick fox</span><br><span class="line">quick dog quick fox</span><br><span class="line">dog fox</span><br></pre></td></tr></tbody></table></figure>
+<p>Find <code>quick</code> if followed by <code>dog</code> with <code>/quick\( dog\)\@=</code>.</p>
+<p>Find <code>quick</code> if not followed by <code>dog</code> with <code>/quick\( dog\)\@!</code>.</p>
+<h3 id="positive-lookbehind-with-and-negative-lookbehind-with"><span class="post-title-index">1.1.2. </span><a class="markdownIt-Anchor" href="#positive-lookbehind-with-and-negative-lookbehind-with"></a> Positive Lookbehind with <code>\@&lt;=</code> and negative Lookbehind with <code>\@&lt;!</code></h3>
+<p>Find <code>fox</code> preceded by <code>quick</code> with <code>\(quick \)\@&lt;=fox</code>.</p>
+<p>Find <code>fox</code> not preceded by <code>quick</code> with <code>\(quick \)\@&lt;!fox</code>.</p>
+</body></html>
     </div>
 
     

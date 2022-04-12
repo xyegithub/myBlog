@@ -7,26 +7,27 @@ mathjax: true
 date: 2021-12-18 10:00:56
 password:
 summary:
-description: 作为NLP的入门，介绍Transformer和BERT.
+description: NLP, Transformer and BERT.
 categories:
-- Natural Language Processing
+  - Machine Learning
+  - Natural Language Processing
 tags:
-- Natural Language Processing
-- Transformer
-- BERT
+  - Natural Language Processing
+  - Transformer
+  - BERT
 ---
 
-I will introduce transformer and BERT according to their original papers.
-[^1] [^2]
+I will introduce transformer and BERT according to their original papers. [^1]
+[^2]
 
-[^2]:BERT: Pre-training of Deep Bidirectional Transformer for Language Understanding
-[^1]:Attention is all you need
+[^2]:
+    BERT: Pre-training of Deep Bidirectional Transformer for Language
+    Understanding
+
+[^1]: Attention is all you need
 
 Based on the two paper, we will also take the first step to NLP.
 
-# Transformer #
+# Transformer
 
-
-
-# BERT #
-
+# BERT

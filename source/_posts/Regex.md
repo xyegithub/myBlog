@@ -12,3 +12,29 @@ categories:
 tags:
   - Regex
 ---
+
+# Regular Expressions in Vim
+
+## Lookahead and Lookbehind
+
+Directly some examples.
+
+See `:help /\@=`, `:help /\@!`, `:help /\@<=`, and `:help /\@<!` for detail.
+
+### Positive lookahead with `\@=` and negative lookahead with `\@!`
+
+```tex
+quick fox quick dog quick fox
+quick dog quick fox
+dog fox
+```
+
+Find `quick` if followed by `dog` with `/quick\( dog\)\@=`.
+
+Find `quick` if not followed by `dog` with `/quick\( dog\)\@!`.
+
+### Positive Lookbehind with `\@<=` and negative Lookbehind with `\@<!`
+
+Find `fox` preceded by `quick` with `\(quick \)\@<=fox`.
+
+Find `fox` not preceded by `quick` with `\(quick \)\@<!fox`.
