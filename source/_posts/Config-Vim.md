@@ -67,7 +67,7 @@ https://toutiao.io/posts/runvgs/preview 尽量多的保留特性，最终得到�
 
 `--enable-fail-if-missing` 用于显示错误信息。
 
-## 有点搞笑的是编译了很久没有成功，最后 apt 安装解决了
+## 很久没有成功，最后 apt 安装解决了
 
 编译的时候 feature 用了 hug，但是还是没有增加+clientserver。我估计是缺少库。查
 src/auto/cofig.log 也没有发现很相关的信息。最后`sudo apt-get install vim-gtk`成
@@ -194,3 +194,198 @@ where Neovim looks for lua code, check out `:h lua-require`.
 
 3. The plugins are installed in `~/.local/share/nvim/site/pack/packer/start`,
    which is defined in the `install_path` in `plugins.lua`.
+
+# Analyze `LunarVim`
+
+## The Install Script `install.sh`
+
+25 functions are defined in `install.sh`.
+
+```tex
+
+    __attempt_to_install_with_cargo
+    __install_nodejs_deps_npm
+    __install_nodejs_deps_pnpm
+    __install_nodejs_deps_yarn
+    __validate_node_installation
+    backup_old_config
+    check_neovim_min_version
+    check_system_deps
+    clone_lvim
+    detect_platform
+    install_nodejs_deps
+    install_python_deps
+    install_rust_deps
+    link_local_lvim
+    main
+    msg
+    parse_arguments
+    print_logo
+    print_missing_dep_msg
+    remove_old_cache_files
+    setup_lvim
+    setup_shim
+    usage
+    validate_lunarvim_files
+    verify_lvim_dirs
+```
+
+The last line `main "$@"` shows that it well execute the `main` function first.
+`$@` means that all the args will be passed to the function.
+
+### Function `main`
+
+```bash
+function main() {
+# function parse_arguments is defined to parse the arguments passed by
+# "$@$"
+  parse_arguments "$@"
+
+  # print the logo of lunarvim
+  print_logo
+
+  msg "Detecting platform for managing any additional neovim dependencies"
+  detect_platform
+  # check if the git and neovim is installed
+  check_system_deps
+
+  if [ "$ARGS_INSTALL_DEPENDENCIES" -eq 1 ]; then
+    if [ "$INTERACTIVE_MODE" -eq 1 ]; then
+      msg "Would you like to install LunarVim's NodeJS dependencies?"
+      read -p "[y]es or [n]o (default: no) : " -r answer
+      [ "$answer" != "${answer#[Yy]}" ] && install_nodejs_deps
+
+      msg "Would you like to install LunarVim's Python dependencies?"
+      read -p "[y]es or [n]o (default: no) : " -r answer
+      [ "$answer" != "${answer#[Yy]}" ] && install_python_deps
+
+      msg "Would you like to install LunarVim's Rust dependencies?"
+      read -p "[y]es or [n]o (default: no) : " -r answer
+      [ "$answer" != "${answer#[Yy]}" ] && install_rust_deps
+    else
+      install_nodejs_deps
+      install_python_deps
+      install_rust_deps
+    fi
+  fi
+
+  # backup old config of lunarvim if it is installed before
+  backup_old_config
+  # if the paths are not already, mkdir them
+  verify_lvim_dirs
+
+  if [ "$ARGS_LOCAL" -eq 1 ]; then
+    link_local_lvim
+  elif [ -d "$LUNARVIM_BASE_DIR" ]; then
+    validate_lunarvim_files
+  else
+    clone_lvim
+  fi
+
+  setup_lvim
+
+  msg "Thank you for installing LunarVim!!"
+  echo "You can start it by running: $INSTALL_PREFIX/bin/lvim"
+  echo "Do not forget to use a font with glyphs (icons) support [https://github.com/ryanoasis/nerd-fonts]"
+}
+```
+
+### Function `clone_lvim`
+
+```bash
+
+function clone_lvim() {
+  msg "Cloning LunarVim configuration"
+  if ! git clone --branch "$LV_BRANCH" \
+    # to download by ssh, change this line to
+    # `--depth 1 "git@github.com:LunarVim/LunarVim.git" "$LUNARVIM_BASE_DIR"; then`
+    --depth 1 "https://github.com/${LV_REMOTE}" "$LUNARVIM_BASE_DIR"; then
+    echo "Failed to clone repository. Installation failed."
+    exit 1
+  fi
+}
+```
+
+### Function `setup_lvim`
+
+```bash
+function setup_lvim() {
+
+  remove_old_cache_files
+
+  msg "Installing LunarVim shim"
+
+  # output the executable file of `lvim` which lies in `~/.local/bin/lvim`
+  setup_shim
+
+  cp "$LUNARVIM_BASE_DIR/utils/installer/config.example.lua" "$LUNARVIM_CONFIG_DIR/config.lua"
+
+  echo "Preparing Packer setup"
+
+  # Prepare Packer, this is done by `nvim -u init.lua --headless -c 'autocmd User PackerComplete quitall' -c 'PackerSync'`
+  # `--headless` means Don't start a user interface.
+  # `-c <cmd>` means Execute <cmd> after config and first file
+
+  # packer is often failed to be setup due to the network of the China Mainland
+
+
+  "$INSTALL_PREFIX/bin/lvim" --headless \
+    -c 'autocmd User PackerComplete quitall' \
+    -c 'PackerSync'
+
+  echo "Packer setup complete"
+}
+```
+
+### Function `setup_shim`
+
+```bash
+function setup_shim() {
+ #  make -C ~/.local/share/lunarvim/lvim install-bin
+ # `-C` specifies the directory of `Makefile`
+ # `install-bin` is a target defined in `Makefile`
+ # install-bin:
+ #	@echo starting LunarVim bin-installer
+ #	bash ./utils/installer/install_bin.sh
+ # This command outputs `~/.local/bin/lvim`, the executable file of `lvim`,
+
+  make -C "$LUNARVIM_BASE_DIR" install-bin
+}
+```
+
+The `~/.local/bin/lvim` is
+
+```bash
+#!/bin/sh
+
+export LUNARVIM_RUNTIME_DIR="${LUNARVIM_RUNTIME_DIR:-"~/.local/share/lunarvim"}"
+export LUNARVIM_CONFIG_DIR="${LUNARVIM_CONFIG_DIR:-"~/.config/lvim"}"
+export LUNARVIM_CACHE_DIR="${LUNARVIM_CACHE_DIR:-"~/.cache/nvim"}"
+
+ # `exec` is a builtin command of the Bash shell. It allows you to execute a
+ # command that completely replaces the current process. The current shell process
+ # is destroyed, and entirely replaced by the command you specify.
+ # `-u` means use this config file, which is `~/.config/share/lunarvim/lvim/init.lua`
+exec nvim -u "$LUNARVIM_RUNTIME_DIR/lvim/init.lua" "$@"
+
+```
+
+### Function `msg`
+
+Message or log is an effective tool to debug and make the users know the detail
+of the programming. Instead of simply using `print/echo` function, most
+programmers define their message functions to enable effective message giving.
+Have a look at this message function.
+
+```bash
+function msg() {
+# local variable receives the message needed to be print.
+  local text="$1"
+  local div_width="80"
+  # before print the message a line comprised of `-` will be printed.
+  # it will makes the message easily been noticed.
+  # div_width gives the width of the line.
+  printf "%${div_width}s\n" ' ' | tr ' ' -
+  printf "%s\n" "$text"
+}
+```
