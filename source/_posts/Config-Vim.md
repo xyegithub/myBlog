@@ -202,7 +202,6 @@ where Neovim looks for lua code, check out `:h lua-require`.
 25 functions are defined in `install.sh`.
 
 ```tex
-
     __attempt_to_install_with_cargo
     __install_nodejs_deps_npm
     __install_nodejs_deps_pnpm
@@ -388,4 +387,41 @@ function msg() {
   printf "%${div_width}s\n" ' ' | tr ' ' -
   printf "%s\n" "$text"
 }
+```
+
+## ABout `Packer`
+
+### The `init.lua`
+
+```lua
+-- init_path = 'lua'
+local init_path = debug.getinfo(1, "S").source:sub(2)
+local base_dir = init_path:match("(.*[/\\])"):sub(1, -2)
+
+if not vim.tbl_contains(vim.opt.rtp:get(), base_dir) then
+  vim.opt.rtp:append(base_dir)
+end
+-- bootstrap file is in lua/lvim/, which is the guide file of lvim
+-- NOTICE THAT, the end of the bootstrap file, return a local module M,
+-- which is defined at the beginning of the file.
+-- Thus, the term :init(base_dir) runs the init function of module M.
+require("lvim.bootstrap"):init(base_dir)
+
+require("lvim.config"):load()
+
+-- the plugins are defined in lua/lvim/plugins.lua
+local plugins = require "lvim.plugins"
+
+-- the same as init funtion in bootstrap, `load` is a function of the module in
+-- plugins-loader
+
+require("lvim.plugin-loader").load { plugins, lvim.plugins }
+
+local Log = require "lvim.core.log"
+Log:debug "Starting LunarVim"
+
+local commands = require "lvim.core.commands"
+commands.load(commands.defaults)
+
+require("lvim.lsp").setup()
 ```

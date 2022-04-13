@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://yexiang.ml/2021/12/17/Algorithm/</loc>
+    
+    <lastmod>2022-04-13</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://yexiang.ml/2022/01/20/Config-Vim/</loc>
     
     <lastmod>2022-04-13</lastmod>
@@ -75,13 +82,6 @@
     <loc>http://yexiang.ml/2021/12/10/An-Introduction-to-Git/</loc>
     
     <lastmod>2022-04-12</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://yexiang.ml/2021/12/17/Algorithm/</loc>
-    
-    <lastmod>2022-03-31</lastmod>
     
   </url>
   

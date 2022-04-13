@@ -135,6 +135,68 @@ class Solution:
         return res[-1][-1] % MOD
 ```
 
+# Linked List
+
+## Palindrome Linked List
+
+Given the `head` of a singly linked list, return `true` if it is a Palindrome.
+
+```python
+class Solution:
+    def isPalindrome(self, head: ListNode) -> bool:
+        res = []
+        if not head:
+            return True
+        num = 0
+        first = head
+        while first.next:
+            res.append(first.val)
+            num += 1 # count the length of the linked list
+            first = first.next
+        res.append(first.val) # store all the node value
+        for i in range(num // 2 + 1): # does not need to check all the nodes
+            if res[i] != res[num - i]:
+                return False
+        return True
+```
+
+If one want only use O(n) time and O(1) storage, must reverse the last half of
+the linked list.
+
+```python
+class Solution:
+    def isPalindrome(self, head: ListNode) -> bool:
+        if not head or not head.next:
+            return True
+        def find_the_middle(node):
+            slow = node
+            fast = node
+            while fast.next and fast.next.next:
+                slow = slow.next
+                fast = fast.next.next
+            second_start = slow.next
+            slow.next = None
+            return second_start
+        second_start = find_the_middle(head)
+        def reverse(node):
+            start = node
+            pre = node.next
+            start.next = None
+            while pre:
+                cur = pre
+                pre = pre.next
+                cur.next = start
+                start = cur
+            return start
+        new_start = reverse(second_start)
+        while head and new_start:
+            if head.val != new_start.val:
+                return False
+            head = head.next
+            new_start = new_start.next
+        return True
+```
+
 # Other
 
 ## The Gas Station
