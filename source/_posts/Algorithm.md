@@ -197,6 +197,52 @@ class Solution:
         return True
 ```
 
+# Sort
+
+## Wiggle Sort 2
+
+Given an integer array `nums`, recorder it such that
+`nums[0] < nums[1] > nums[2] < nums[3] > ...`. You may assume the input array
+always has a valid answer.
+
+```python
+class Solution:
+    def wiggleSort(self, nums: List[int]) -> None:
+        """
+        Do not return anything, modify nums in-place instead.
+        """
+        res = []
+        for i in nums:
+            res.append(i)
+        res.sort()
+        n = len(nums)
+        # Because the smaller number is always filled first,
+        # let len(smaller numbers) - len(larger numbers) == 1
+        # if the len(nums) is odd.
+        # if n is even, the small half from 0 to n // 2 - 1
+        # the large half from n // 2 to n - 1
+        # if n is odd, small number from 0 to n // 2
+        # large number from n // 2 + 1 to n - 1,
+        # Thus, no matter n is odd or even, small number from 0 to
+        # (n + 1) // 2 - 1, large number from (n + 1) // 2 to n - 1
+        half = (n + 1) // 2
+        # to avoid that the last small number is equal to the first large
+        # number, fill the small number from *last* to first,
+        # also, fill the large number from last to *first*
+        # ** means that the number should try to be apart.
+
+        # if n is even, half * 2 == n
+        # if n is odd, half * 2 == n + 1
+        for i in range(half):
+            nums[2 * i] = res[half - 1 -i]
+            # len(large number) is smaller than len(small number),
+            # thus, the when i = half -1, maybe no large number anymore
+            try:
+                nums[2 * i + 1] = res[n - 1 - i]
+            except:
+                pass
+```
+
 # Other
 
 ## The Gas Station
