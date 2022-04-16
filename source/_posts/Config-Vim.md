@@ -403,15 +403,18 @@ function msg() {
 }
 ```
 
-## ABout `Packer`
+## ABout the init process
 
 ### The `init.lua`
 
 ```lua
--- init_path = 'lua'
+-- init_path = '~/.local/share/lunarvim/lvim/init.lua'
+-- base_dir = '~/.local/share/lunarvim/lvim/'
 local init_path = debug.getinfo(1, "S").source:sub(2)
 local base_dir = init_path:match("(.*[/\\])"):sub(1, -2)
 
+-- vim.opt return a option object
+-- rtp mean runtimepath
 if not vim.tbl_contains(vim.opt.rtp:get(), base_dir) then
   vim.opt.rtp:append(base_dir)
 end
@@ -440,6 +443,61 @@ commands.load(commands.defaults)
 require("lvim.lsp").setup()
 ```
 
+### The `Bootstrap:init`
+
+```lua
+---Initialize the `&runtimepath` variables and prepare for startup
+---@return table
+function M:init(base_dir)
+  self.runtime_dir = get_runtime_dir()
+  self.config_dir = get_config_dir()
+  self.cache_dir = get_cache_dir()
+  self.pack_dir = join_paths(self.runtime_dir, "site", "pack")
+  self.packer_install_dir = join_paths(self.runtime_dir, "site", "pack", "packer", "start", "packer.nvim")
+  self.packer_cache_path = join_paths(self.config_dir, "plugin", "packer_compiled.lua")
+
+  ---Get the full path to LunarVim's base directory
+  ---@return string
+  function _G.get_lvim_base_dir()
+    return base_dir
+  end
+
+  if os.getenv "LUNARVIM_RUNTIME_DIR" then
+    -- vim.opt.rtp:append(os.getenv "LUNARVIM_RUNTIME_DIR" .. path_sep .. "lvim")
+    vim.opt.rtp:remove(join_paths(vim.fn.stdpath "data", "site"))
+    vim.opt.rtp:remove(join_paths(vim.fn.stdpath "data", "site", "after"))
+    vim.opt.rtp:prepend(join_paths(self.runtime_dir, "site"))
+    vim.opt.rtp:append(join_paths(self.runtime_dir, "site", "after"))
+
+    vim.opt.rtp:remove(vim.fn.stdpath "config")
+    vim.opt.rtp:remove(join_paths(vim.fn.stdpath "config", "after"))
+    vim.opt.rtp:prepend(self.config_dir)
+    vim.opt.rtp:append(join_paths(self.config_dir, "after"))
+    -- TODO: we need something like this: vim.opt.packpath = vim.opt.rtp
+
+    vim.cmd [[let &packpath = &runtimepath]]
+  end
+
+  -- FIXME: currently unreliable in unit-tests
+  if not in_headless then
+    _G.PLENARY_DEBUG = false
+    require("lvim.impatient").setup {
+      path = join_paths(self.cache_dir, "lvim_cache"),
+      enable_profiling = true,
+    }
+  end
+
+  require("lvim.config"):init()
+
+  require("lvim.plugin-loader").init {
+    package_root = self.pack_dir,
+    install_path = self.packer_install_dir,
+  }
+
+  return self
+end
+```
+
 ## Treesitter
 
 ### Parsers install
@@ -449,3 +507,26 @@ require("lvim.lsp").setup()
 Parsers often failed to be downloaded. See
 `https://github.com/nvim-treesitter/nvim-treesitter#adding-parsers`. One can
 download it manually. And change the url of the parsers.
+
+## About `packer`
+
+1. the some plugins are installed in `opt` directory. Some are installed in
+   `start` directory. This is controlled by the settings in `plugins.lua`. 7
+   plugins are installed in `opt` directory, 6 of which are setted `event` and
+   only the 6 plugins are setted it. `lua-dev` is setted `module`.
+
+   In the Readme of `Packer`
+
+   > `use` takes either a string or a table. If a string is provided, it is
+   > treated as a plugin location (link) for a non-optional plugin with no
+   > additional configuration.
+
+   [Opt](https://github.com/wbthomason/packer.nvim/issues/237#issuecomment-787457600)
+
+   > `start` packages are always avaliable and loaded every time you start nvim,
+   > while `opt` packages are loaded on-demand with the `packadd` command. This
+   > is what `packer` uses to conditionally load plugins. `packer` itself
+   > doesn't run any code until you call `require('packer')`, so it should be
+   > fine to keep it as a start package.
+
+   [Opt](https://github.com/wbthomason/packer.nvim/discussions/823#discussioncomment-2184455)
