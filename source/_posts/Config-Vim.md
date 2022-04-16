@@ -327,6 +327,20 @@ function setup_lvim() {
 
   # packer is often failed to be setup due to the network of the China Mainland
 
+  # Packer's operation are asynchronous. Previously, to install plugins in a non
+  # -interactive way, `nvim + PackerSync + 30sleep + quitall`.
+  # It is not ideal since we do not really know that after 30 seconds, the plugin
+  # install process should finish.
+  # A more ideal way is to use autocmd PackerComplete
+  # https://github.com/wbthomason/packer.nvim/blob/master/doc/packer.txt#L479
+  # provided by Packer
+  # `nvim -c 'autocmd User PackerComplete quitall' -c 'PackerSync'`
+  # PackerComplete xxx: Fires xxx after install, update, clean, and sync
+  # asynchronous operations finish
+  # PackerSync: Perform 'PackerUpdate' and then 'PackerCompile'
+  # PackerUpdate: Clean, then update and install plugins
+  # PackerCompile: You must run this or 'PackerSync' whenever you make
+  # changes to your plugin configuration. Regenerate compiled loader file.
 
   "$INSTALL_PREFIX/bin/lvim" --headless \
     -c 'autocmd User PackerComplete quitall' \
@@ -425,3 +439,13 @@ commands.load(commands.defaults)
 
 require("lvim.lsp").setup()
 ```
+
+## Treesitter
+
+### Parsers install
+
+11 parsers are defined to be installed in `~/.config/lvim/config.lua`
+
+Parsers often failed to be downloaded. See
+`https://github.com/nvim-treesitter/nvim-treesitter#adding-parsers`. One can
+download it manually. And change the url of the parsers.
