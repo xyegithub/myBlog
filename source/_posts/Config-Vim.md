@@ -508,12 +508,31 @@ Parsers often failed to be downloaded. See
 `https://github.com/nvim-treesitter/nvim-treesitter#adding-parsers`. One can
 download it manually. And change the url of the parsers.
 
+[parsers](https://github.com/nvim-treesitter/nvim-treesitter#language-parsers)
+
+> parser for every language need to be generated via `tree-sitter-cli` from
+> `grammer.js` file, then complied to a `.so` library that needd to be placed in
+> neovim's `runtimepath` (typically under `parser/{language}.so`). To simplify
+> this, `nvim-treesitter` provides commands to automate this process. If the
+> language is already supported by `nvim-treesitter` you can install it with
+> `TSInstall <language>`
+
+The `{language}.so` files are in
+`~/.local/share/lunarvim/site/pack/packer/start/nvim-treesitter.git/parser`.
+
 ## About `packer`
 
 1. the some plugins are installed in `opt` directory. Some are installed in
    `start` directory. This is controlled by the settings in `plugins.lua`. 7
    plugins are installed in `opt` directory, 6 of which are setted `event` and
    only the 6 plugins are setted it. `lua-dev` is setted `module`.
+
+   > module = string or list -- Specifies lua module name for require. When
+   > requiring a string which starts with one of these module names, the plugin
+   > will be loaded.
+
+   > event = string or list, -- Specifies auto command events which load this
+   > plugin
 
    In the Readme of `Packer`
 
@@ -523,10 +542,33 @@ download it manually. And change the url of the parsers.
 
    [Opt](https://github.com/wbthomason/packer.nvim/issues/237#issuecomment-787457600)
 
-   > `start` packages are always avaliable and loaded every time you start nvim,
+   > `start` packages are always available and loaded every time you start nvim,
    > while `opt` packages are loaded on-demand with the `packadd` command. This
    > is what `packer` uses to conditionally load plugins. `packer` itself
    > doesn't run any code until you call `require('packer')`, so it should be
    > fine to keep it as a start package.
 
    [Opt](https://github.com/wbthomason/packer.nvim/discussions/823#discussioncomment-2184455)
+
+## Plugins
+
+### The yank plugins
+
+In the visual mode of `lunarvim`, `y` will yank the select chars into the system
+clipboard automatically. Do not use `"+y`, which will yank the whole line.
+`"[~+]y` is also available.
+
+### The `project.nvim`
+
+If open vim in a subdirectory of a git package, and then open a new tmux pane or
+window, its initial path will be the main directory of that git package.
+
+### The `telescope`
+
+The `telescope` is depended on `fd`. To install `fd` do not use
+`apt install fdclone` which causes a collapse of nvim when run `telescope`.
+
+### The `Comment`
+
+An error occur with `Comment` when open `lvim`, which is solved by adding
+`tag = 'v0.6',` to the `plugins.lua` file the Comment part.
