@@ -110,6 +110,11 @@ where Neovim looks for lua code, check out `:h lua-require`.
 
 [More Information](https://github.com/nanotee/nvim-lua-guide)
 
+# Debug vim
+
+1. `:message/:mes` will display the messages that your configuration files
+   print.
+
 # A Practice for `Neovim-from-scratch`
 
 ## Install
@@ -558,17 +563,43 @@ In the visual mode of `lunarvim`, `y` will yank the select chars into the system
 clipboard automatically. Do not use `"+y`, which will yank the whole line.
 `"[~+]y` is also available.
 
-### The `project.nvim`
+### `project.nvim`
 
 If open vim in a subdirectory of a git package, and then open a new tmux pane or
 window, its initial path will be the main directory of that git package.
 
-### The `telescope`
+### `telescope`
 
 The `telescope` is depended on `fd`. To install `fd` do not use
 `apt install fdclone` which causes a collapse of nvim when run `telescope`.
 
-### The `Comment`
+### `Comment`
 
 An error occur with `Comment` when open `lvim`, which is solved by adding
 `tag = 'v0.6',` to the `plugins.lua` file the Comment part.
+
+### `nvim-lspconfig.git`
+
+Features: go-to-definition, find-references, hover, completion, rename, format,
+refactor
+
+## LSP
+
+1. the setup function of a lsp server is defined by the files in
+   ` ~/.local/share/lunarvim/site/after/ftplugin`. `ftplugin` directory means
+   file type plugin. Vim will auto load this directory when it is in the runtime
+   path. However, only the `filetype.lua/vim` will be loaded when open a file of
+   particular filetype. ` ~/.local/share/lunarvim/site/after/ftplugin` is
+   created by `~/.local/share/lunarvim/lvim/lua/lvim/lsp/templates.lua` (see
+   line 67). The server list is given in line 58. The content in the files in
+   ftplugins is given in line 40.
+2. The configuration files of `nvim-lspconfig` are listed in
+   `~/.local/share/lunarvim/site/pack/packer/start/nvim-lspconfig.git/lua/lspconfig/server_configurations`.
+   Which can be modified.
+3. The servers installed by `lsp-installer` are installed in
+   `~/.local/share/nvim/lsp_servers`
+
+### the relationship between `lspconfig` and `null-ls`
+
+1. Both of them can use `latexindent` to format the tex file
+2. `lspconfig` can not use `prettier`.
