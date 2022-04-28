@@ -603,3 +603,7 @@ refactor
 
 1. Both of them can use `latexindent` to format the tex file
 2. `lspconfig` can not use `prettier`.
+
+Thus `null-ls` provide an extension tools for `lspconfig`. When `lspconfig` can
+match our requirement, we do not need to use `null-ls`, e.g., tools for tex
+file.
