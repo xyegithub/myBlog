@@ -503,9 +503,37 @@ function M:init(base_dir)
 end
 ```
 
-## Treesitter
+## The nerd-fonts
 
-### Parsers install
+I use mobaxterm as my terminal whose font can not be modified into the third
+part fonts.
+
+## Plugins
+
+### yank
+
+In the visual mode of `lunarvim`, `y` will yank the select chars into the system
+clipboard automatically. Do not use `"+y`, which will yank the whole line.
+`"[~+]y` is also available.
+
+### `project.nvim`
+
+If open vim in a subdirectory of a git package, and then open a new tmux pane or
+window, its initial path will be the main directory of that git package.
+
+### `telescope`
+
+The `telescope` is depended on `fd`. To install `fd` do not use
+`apt install fdclone` which causes a collapse of nvim when run `telescope`.
+
+### `Comment`
+
+An error occur with `Comment` when open `lvim`, which is solved by adding
+`tag = 'v0.6',` to the `plugins.lua` file the Comment part.
+
+### Treesitter
+
+#### Parsers install
 
 11 parsers are defined to be installed in `~/.config/lvim/config.lua`
 
@@ -525,12 +553,12 @@ download it manually. And change the url of the parsers.
 The `{language}.so` files are in
 `~/.local/share/lunarvim/site/pack/packer/start/nvim-treesitter.git/parser`.
 
-### Notice
+#### Notice
 
 treestter may not always perform a good highlight, e.g., for markdown or tex
 files.
 
-## About `packer`
+### About `packer`
 
 1. the some plugins are installed in `opt` directory. Some are installed in
    `start` directory. This is controlled by the settings in `plugins.lua`. 7
@@ -560,35 +588,7 @@ files.
 
    [Opt](https://github.com/wbthomason/packer.nvim/discussions/823#discussioncomment-2184455)
 
-## Plugins
-
-### The yank plugins
-
-In the visual mode of `lunarvim`, `y` will yank the select chars into the system
-clipboard automatically. Do not use `"+y`, which will yank the whole line.
-`"[~+]y` is also available.
-
-### `project.nvim`
-
-If open vim in a subdirectory of a git package, and then open a new tmux pane or
-window, its initial path will be the main directory of that git package.
-
-### `telescope`
-
-The `telescope` is depended on `fd`. To install `fd` do not use
-`apt install fdclone` which causes a collapse of nvim when run `telescope`.
-
-### `Comment`
-
-An error occur with `Comment` when open `lvim`, which is solved by adding
-`tag = 'v0.6',` to the `plugins.lua` file the Comment part.
-
-### `nvim-lspconfig.git`
-
-Features: go-to-definition, find-references, hover, completion, rename, format,
-refactor
-
-## LSP
+### LSP
 
 1. the setup function of a lsp server is defined by the files in
    ` ~/.local/share/lunarvim/site/after/ftplugin`. `ftplugin` directory means
@@ -607,7 +607,7 @@ refactor
 3. The servers installed by `lsp-installer` are installed in
    `~/.local/share/nvim/lsp_servers`
 
-### the relationship between `lspconfig` and `null-ls`
+#### the relationship between `lspconfig` and `null-ls`
 
 1. Both of them can use `latexindent` to format the tex file
 2. `lspconfig` can not use `prettier`.
@@ -616,7 +616,7 @@ Thus `null-ls` provide an extension tools for `lspconfig`. When `lspconfig` can
 match our requirement, we do not need to use `null-ls`, e.g., tools for tex
 file.
 
-### the relationship between `lspconfig` and `lsp-installer`
+#### the relationship between `lspconfig` and `lsp-installer`
 
 1. `lsp-installer` depends on `lspconfig` as in the readme of `lsp-installer`.
 2. lvim strives to have support for all major languages. This is made possible
@@ -624,12 +624,7 @@ file.
    provide support for handing external formatters, such as `prettier` and
    `eslint`.
 
-## The nerd-fonts
-
-I use mobaxterm as my terminal whose font can not be modified into the third
-part fonts.
-
-## The lualine
+### The lualine
 
 The status line is defined in
 `~/.local/share/lunarvim/lvim/lua/lvim/core/lualine/init.lua` line 5 which can
@@ -638,12 +633,23 @@ be chose as `default`, `lvim`, or `none`. The are defined in the
 component are defined in
 `~/.local/share/lunarvim/lvim/lua/lvim/core/lualine/components.lua`.
 
-## The whichkey
+### The whichkey
 
 whichkey can define key mappings for vim. They are defined in
-`~/.local/share/lunarvim/lvim/lua/lvim/core/which-key.lua`.
+`~/.local/share/lunarvim/lvim/lua/lvim/core/which-key.lua`. The use of
+`telescope` can be learned by reading which-key.lua, since the key mapping of
+`telescope` is defined in it.
 
 The lsp also used which key, which is defined in
 `~/.local/share/lunarvim/lvim/lua/lvim/lsp/config.lua` and used/registered in
 `~/.local/share/lunarvim/lvim/lua/lvim/lsp/init.lua`. Which key makes the key
 mappings more organized.
+
+### The alpha
+
+The start cover is defined in
+`~/.local/share/lunarvim/lvim/lua/lvim/core/alpha/startify.lua`.
+
+### nvim-notify
+
+The notation manager and message manager for nvim.
