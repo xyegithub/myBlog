@@ -525,6 +525,11 @@ download it manually. And change the url of the parsers.
 The `{language}.so` files are in
 `~/.local/share/lunarvim/site/pack/packer/start/nvim-treesitter.git/parser`.
 
+### Notice
+
+treestter may not always perform a good highlight, e.g., for markdown or tex
+files.
+
 ## About `packer`
 
 1. the some plugins are installed in `opt` directory. Some are installed in
@@ -592,7 +597,10 @@ refactor
    particular filetype. ` ~/.local/share/lunarvim/site/after/ftplugin` is
    created by `~/.local/share/lunarvim/lvim/lua/lvim/lsp/templates.lua` (see
    line 67). The server list is given in line 58. The content in the files in
-   ftplugins is given in line 40.
+   ftplugins is given in line 40. The `ft.lua` will call `lvim.lsp.manager`
+   which is a function defined in
+   `~/.local/share/lunarvim/lvim/lua/lvim/lsp/manager.lua`. It setup the lsp
+   servers since when `ft.lua` is removed, the lsp server will not start.
 2. The configuration files of `nvim-lspconfig` are listed in
    `~/.local/share/lunarvim/site/pack/packer/start/nvim-lspconfig.git/lua/lspconfig/server_configurations`.
    Which can be modified.
@@ -607,3 +615,35 @@ refactor
 Thus `null-ls` provide an extension tools for `lspconfig`. When `lspconfig` can
 match our requirement, we do not need to use `null-ls`, e.g., tools for tex
 file.
+
+### the relationship between `lspconfig` and `lsp-installer`
+
+1. `lsp-installer` depends on `lspconfig` as in the readme of `lsp-installer`.
+2. lvim strives to have support for all major languages. This is made possible
+   by plugins such as `nvim-lspconfig`, for LSP support, and `null-ls` to
+   provide support for handing external formatters, such as `prettier` and
+   `eslint`.
+
+## The nerd-fonts
+
+I use mobaxterm as my terminal whose font can not be modified into the third
+part fonts.
+
+## The lualine
+
+The status line is defined in
+`~/.local/share/lunarvim/lvim/lua/lvim/core/lualine/init.lua` line 5 which can
+be chose as `default`, `lvim`, or `none`. The are defined in the
+`~/.local/share/lunarvim/lvim/lua/lvim/core/lualine/styles.lua` file. The
+component are defined in
+`~/.local/share/lunarvim/lvim/lua/lvim/core/lualine/components.lua`.
+
+## The whichkey
+
+whichkey can define key mappings for vim. They are defined in
+`~/.local/share/lunarvim/lvim/lua/lvim/core/which-key.lua`.
+
+The lsp also used which key, which is defined in
+`~/.local/share/lunarvim/lvim/lua/lvim/lsp/config.lua` and used/registered in
+`~/.local/share/lunarvim/lvim/lua/lvim/lsp/init.lua`. Which key makes the key
+mappings more organized.
