@@ -505,8 +505,15 @@ end
 
 ## The nerd-fonts
 
-I use mobaxterm as my terminal whose font can not be modified into the third
-part fonts?
+The font is only related to your local devices. It is not related to the remote
+device.
+
+To install the nerd fonts, you need to download the nerd version of your fonts,
+for example I use `hack`, though
+[this](https://www.nerdfonts.com/font-downloads) or
+[this](https://github.com/ryanoasis/nerd-fonts). Then put it in your font
+directory. For windows, it is `C:\Windows\Fonts`. Finally, restart your terminal
+and set your terminal such as mobaxterm to use that font.
 
 ## Debug system
 

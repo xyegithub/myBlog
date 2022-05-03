@@ -37,3 +37,12 @@ git config --global https.proxy https://127.0.0.1:1080
 git config --global --unset http.proxy
 git config --global --unset https.proxy
 ```
+
+# Get back to an old version
+
+`git log` can show the history of your commit.
+
+`git reset xxx` will git back to an old version. However, the workspace will not
+change, i.e., the workspace is also the current workspace.
+`git reset --hard xxx` will get back to an old version, and the workspace will
+be also the old version.
