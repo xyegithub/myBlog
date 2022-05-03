@@ -506,25 +506,59 @@ end
 ## The nerd-fonts
 
 I use mobaxterm as my terminal whose font can not be modified into the third
-part fonts.
+part fonts?
+
+## Debug system
+
+### lvim.log
+
+1. The file is in `~/.cache/` which is defined by
+   `~/.local/share/lunarvim/lvim/lua/lvim/core/log.lua`. Using `Log:warn/debug`
+   will write logs in the file.
+2. `lvim.log.level` controls the level that will be print into the `lvim.log`
+   (see `local log_level = Log.levels[(lvim.log.level):upper() or "WARN"]` in
+   the `log.lua`. `function Log:get_path()` sets the path and name of the log
+   file.
+3. `log.lua` used `structlog` which is a plugin of nvim defined in the
+   `plugins.lua`. In the readme of `structlog`:
+   > `structlog` makes logging in lua less painful and more powerful by adding
+   > structure to your log entries.
 
 ## Plugins
 
 ### yank
 
 In the visual mode of `lunarvim`, `y` will yank the select chars into the system
-clipboard automatically. Do not use `"+y`, which will yank the whole line.
+clipboard automatically. Do not use `"+Y`, which will yank the whole line.
 `"[~+]y` is also available.
 
 ### `project.nvim`
 
 If open vim in a subdirectory of a git package, and then open a new tmux pane or
-window, its initial path will be the main directory of that git package.
+window, its initial path will be the main directory of that git package. The
+`manual mode` in `~/.local/share/lunarvim/lvim/lua/lvim/core/project.lua`
+determines vim change the directory or not.
 
-### `telescope`
+#### With lsp
+
+In the readme of `project`.
+
+> Automagically cd to project directory using nvim lsp. If not then uses pattern
+> matching to cd to root directory
+
+This means that lsp has the function to find the project directories.
+
+### Telescope
 
 The `telescope` is depended on `fd`. To install `fd` do not use
 `apt install fdclone` which causes a collapse of nvim when run `telescope`.
+
+#### Telescope in which key
+
+`~/.local/share/lunarvim/lvim/lua/lvim/core/which-key.lua` defines many which
+key mapping related to telescope. <leader>f can find the files in git repos
+which is the feature provided by `telescope.builtin` (see the document of
+telescope). `<leader>sf` can find the files in current directory.
 
 ### `Comment`
 
@@ -553,10 +587,10 @@ download it manually. And change the url of the parsers.
 The `{language}.so` files are in
 `~/.local/share/lunarvim/site/pack/packer/start/nvim-treesitter.git/parser`.
 
-#### Notice
+<!-- #### Notice -->
 
-treestter may not always perform a good highlight, e.g., for markdown or tex
-files.
+<!-- treestter may not always perform a good highlight, e.g., for markdown or tex -->
+<!-- files. -->
 
 ### About `packer`
 
@@ -590,6 +624,8 @@ files.
 
 ### LSP
 
+#### The setup process
+
 1. the setup function of a lsp server is defined by the files in
    ` ~/.local/share/lunarvim/site/after/ftplugin`. `ftplugin` directory means
    file type plugin. Vim will auto load this directory when it is in the runtime
@@ -606,6 +642,126 @@ files.
    Which can be modified.
 3. The servers installed by `lsp-installer` are installed in
    `~/.local/share/nvim/lsp_servers`
+4. see `setup` function in `manager.lua`
+
+```lua
+function M.setup(server_name, user_config)
+  vim.validate { name = { server_name, "string" } }
+
+
+  if lvim_lsp_utils.is_client_active(server_name) or client_is_configured(server_name) then
+    return
+  end
+
+
+  local config = resolve_config(server_name, user_config)
+
+  local servers = require "nvim-lsp-installer.servers"
+  local server_available, requested_server = servers.get_server(server_name)
+
+  -- if not server available in nvim-lsp-installer, call lspconfig[server_name].setup(config)
+  -- if the server is  available it will be set up by nvim-lsp-installer.
+  -- that is to say all the servers will preferentially be set upped by nvim-lsp-installer.
+
+  -- NOTE THAT
+
+  -- Most servers will be set uppped by nvim-lsp-installer by this way.
+  if not server_available then
+    -- The pcall function calls its first argument in protected mode, so that it
+    -- catches any errors while the function is running. If there are no errors, pcall
+    -- returns true, plus any values returned by the call. Otherwise, it returns false,
+    -- plus the error message.
+    pcall(function()
+      require("lspconfig")[server_name].setup(config)
+      buf_try_add(server_name)
+    end)
+    return
+  end
+
+  local install_notification = false
+
+  if not requested_server:is_installed() then
+    if lvim.lsp.automatic_servers_installation then
+      Log:debug "Automatic server installation detected"
+      requested_server:install()
+      install_notification = true
+    else
+      Log:debug(requested_server.name .. " is not managed by the automatic installer")
+    end
+  end
+
+  requested_server:on_ready(function()
+    if install_notification then
+      -- `vim.notify` is defined in `log.lua` in lvim folder.
+      -- > `vim.notify` A fancy, configurable, notification manager for NeoVim.
+      -- `vim.log.levels.INFO` is defined in the `lua-dev` plunin defined in `plugins.lua`.
+      -- > `lua-dev` setup for init.lua and plugin development with full signature help,
+      -- > docs and completion for the nvim lua API.
+      -- i do not find where the vim.log.levels is required by `manager.lua`.
+      -- I think vim.log.levels must be in the search path of nvim thus it can find it
+      -- though the search path.
+      vim.notify(string.format("Installation complete for [%s] server", requested_server.name), vim.log.levels.INFO)
+    end
+    install_notification = false
+    requested_server:setup(config)
+    -- Log:warn(config)
+  end)
+end
+```
+
+From the code we know that most of the servers will be setup by
+`nvim-lsp-installer` (see `requested_server:setup(config)`). However, thought
+this the configuration for manually setup server is not works. From the document
+of `nvim-lsp-installer`,
+[server.setup](https://github.com/williamboman/nvim-lsp-installer/blob/40442b67a151fc2a58a790fd7e74a7487f1f9157/doc/nvim-lsp-installer.txt#L349)
+is deprecated. Thus I change the `setup` function in `manager.lua`.
+
+```lua
+function M.setup(server_name, user_config)
+  vim.validate { name = { server_name, "string" } }
+
+
+  if lvim_lsp_utils.is_client_active(server_name) or client_is_configured(server_name) then
+    return
+  end
+
+
+  local config = resolve_config(server_name, user_config)
+
+  local servers = require "nvim-lsp-installer.servers"
+  local server_available, requested_server = servers.get_server(server_name)
+
+  -- if the server is installed then setup by lspconfig
+  if requested_server:is_installed() then
+    pcall(function()
+      require("lspconfig")[server_name].setup(config)
+      buf_try_add(server_name)
+    end)
+    return
+  end
+
+  local install_notification = false
+
+  -- if the server is not installed, install it
+  if not requested_server:is_installed() then
+    if lvim.lsp.automatic_servers_installation then
+      Log:debug "Automatic server installation detected"
+      requested_server:install()
+      install_notification = true
+    else
+      Log:debug(requested_server.name .. " is not managed by the automatic installer")
+    end
+  end
+
+  requested_server:on_ready(function()
+    if install_notification then
+      vim.notify(string.format("Installation complete for [%s] server", requested_server.name), vim.log.levels.INFO)
+    end
+    install_notification = false
+    -- requested_server:setup(config)
+  end)
+end
+```
 
 #### the relationship between `lspconfig` and `null-ls`
 
@@ -623,6 +779,13 @@ file.
    by plugins such as `nvim-lspconfig`, for LSP support, and `null-ls` to
    provide support for handing external formatters, such as `prettier` and
    `eslint`.
+
+`lua print(vim.inspect(vim.lsp.buf_get_clients()[2].resolved_capabilities))` see
+the detail of server clients.
+
+#### Code Action
+
+Code action = quick fixes and refactoring
 
 ### The lualine
 
