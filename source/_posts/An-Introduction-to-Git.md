@@ -46,3 +46,8 @@ git config --global --unset https.proxy
 change, i.e., the workspace is also the current workspace.
 `git reset --hard xxx` will get back to an old version, and the workspace will
 be also the old version.
+
+To get back to the newest version `git reflog` can show the reference logs
+information. It records when the tips of branches and other references were
+updated in the local repository. The code of the newest version will be
+observed.
