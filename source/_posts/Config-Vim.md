@@ -297,7 +297,6 @@ function main() {
 ### Function `clone_lvim`
 
 ```bash
-
 function clone_lvim() {
   msg "Cloning LunarVim configuration"
   if ! git clone --branch "$LV_BRANCH" \
