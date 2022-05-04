@@ -805,7 +805,7 @@ component are defined in
 
 ### The whichkey
 
-whichkey can define key mappings for vim. They are defined in
+Which key can define key mappings for vim. They are defined in
 `~/.local/share/lunarvim/lvim/lua/lvim/core/which-key.lua`. The use of
 `telescope` can be learned by reading which-key.lua, since the key mapping of
 `telescope` is defined in it.
