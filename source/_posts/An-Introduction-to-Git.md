@@ -51,3 +51,38 @@ To get back to the newest version `git reflog` can show the reference logs
 information. It records when the tips of branches and other references were
 updated in the local repository. The code of the newest version will be
 observed.
+
+# Clone to slow
+
+The network speed of `git clone` is often very slow in China mainland. To
+improve the speed, I often `clone` by ssh, i.e., use the ssh link instead of
+http link. However, it need to change the link. Use
+`git config --global url. xxx insteadof xxx` can download repos fast without
+changing the links. It will write some thing in the `~/.gitconfig` file.
+
+When the `.gitconfig` file is
+
+```
+[user]
+	name = xyegithub
+	email = xye@bupt.edu.cn
+[url "https://gitclone.com/"]
+	insteadOf = https://github.com
+```
+
+`git clone https://github.com/XXX/XXX.git` will be clone from
+`https://gitclone.com//XXX/XXX.git/`. When the `.gitconfig` file is
+
+```
+[user]
+	name = xyegithub
+	email = xye@bupt.edu.cn
+[url "https://gitclone.com/github.com"]
+	insteadOf = https://github.com
+```
+
+`git clone https://github.com/XXX/XXX.git` will be clone from
+`https://gitclone.com/github.com/XXX/XXX.git/`.
+
+Thus, you can find some mirrors of github and figure out how to use change the
+link for `url` in `.gitconfig` file.
