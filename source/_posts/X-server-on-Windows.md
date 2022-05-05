@@ -1,5 +1,5 @@
 ---
-title: X-server-on-Windows
+title: X Server on Windows
 top: false
 cover: false
 toc: true

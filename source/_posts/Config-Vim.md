@@ -114,6 +114,9 @@ where Neovim looks for lua code, check out `:h lua-require`.
 
 1. `:message/:mes` will display the messages that your configuration files
    print.
+2. `:nmap or :imap` can check all the shortcuts of normal or insert mode. `:map`
+   lists the shortcuts of all modes. However, I find that some shortcuts defined
+   can not be find by `:map`.
 
 # A Practice for `Neovim-from-scratch`
 

@@ -135,6 +135,68 @@ class Solution:
         return res[-1][-1] % MOD
 ```
 
+# Dynamic Programming
+
+## The number of palindromes
+
+Given a string return the number of the palindromes. The substrings are regarded
+as different strings if they are start and end at different position.
+
+```python
+class Solution:
+    def countSubstrings(self, s: str) -> int:
+        n = len(s)
+        res = [[False for _ in range(n)] for _ in range(n)]
+        # if n == 0, there are 0 palindromes.
+        # if n == 1, there are 1 palindromes.
+        if not n or n == 1:
+            return n
+        ans = n
+
+        for i in range(n):
+            res[0][i] = True
+
+        for i in range(n - 1):
+            res[1][i] = s[i] == s[i + 1]
+            if res[1][i]:
+                ans += 1
+# if n == 2 it will not enter the following circle.
+# if n > 2 it will contnue to caculate palindromes whose length is larger than 2
+        for l in range(2, n):
+            for st in range(n - l):
+                res[l][st] = res[l - 2][st + 1] and s[st] == s[st + l]
+                if res[l][st]:
+                    ans += 1
+        return ans
+```
+
+## Knight Dialer
+
+The topic is [here](https://leetcode-cn.com/problems/knight-dialer/).
+
+```python
+class Solution(object):
+    def knightDialer(self, N):
+        MOD = 10**9 + 7
+        # From 0 can reach 4 and 6
+        # From 1 can reach 6 and 8
+        moves = [[4,6],[6,8],[7,9],[4,8],[3,9,0],[],
+                     [1,7,0],[2,6],[1,3],[2,4]]
+
+        # There is dp[i]==1 ways to reach i by one step
+        dp = [1] * 10
+        for hops in range(N-1):
+            dp2 = [0] * 10
+            for node, count in enumerate(dp):
+              # There are count way to reach node by hops + 1 steps
+                for nei in moves[node]:
+                    dp2[nei] += count
+                    dp2[nei] %= MOD
+              # There are dp2[nei] way to reach nei by hops + 2 steps
+            dp = dp2
+        return sum(dp) % MOD
+```
+
 # Linked List
 
 ## Palindrome Linked List

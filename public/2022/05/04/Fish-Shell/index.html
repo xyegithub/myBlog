@@ -23,13 +23,13 @@
 <script class="next-config" data-name="main" type="application/json">{"hostname":"yexiang.ml","root":"/","images":"/images","scheme":"Gemini","darkmode":true,"version":"8.8.2","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"}}</script><script src="/js/config.js"></script>
 <meta name="description" content="everyday fish shell">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Fish-Shell">
+<meta property="og:title" content="Fish Shell">
 <meta property="og:url" content="http://yexiang.ml/2022/05/04/Fish-Shell/index.html">
 <meta property="og:site_name" content="Ye, Xiang&#39;s Blog">
 <meta property="og:description" content="everyday fish shell">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2022-05-04T01:43:16.000Z">
-<meta property="article:modified_time" content="2022-05-04T01:52:42.498Z">
+<meta property="article:modified_time" content="2022-05-05T06:55:43.926Z">
 <meta property="article:author" content="Xiang Ye">
 <meta property="article:tag" content="Fish">
 <meta name="twitter:card" content="summary">
@@ -39,10 +39,10 @@
 
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"en","comments":true,"permalink":"http://yexiang.ml/2022/05/04/Fish-Shell/","path":"2022/05/04/Fish-Shell/","title":"Fish-Shell"}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"en","comments":true,"permalink":"http://yexiang.ml/2022/05/04/Fish-Shell/","path":"2022/05/04/Fish-Shell/","title":"Fish Shell"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>Fish-Shell | Ye, Xiang's Blog</title>
+<title>Fish Shell | Ye, Xiang's Blog</title>
   
 
 
@@ -120,7 +120,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#configuration-of-shortcuts-for-fish"><span class="nav-text">1.  Configuration of shortcuts for fish</span></a></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#configuration-of-shortcuts-for-fish"><span class="nav-text">1.  Configuration of shortcuts for fish</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#set-the-default-editor-in-fish"><span class="nav-text">2.  Set the default editor in fish</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -208,7 +208,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          Fish-Shell
+          Fish Shell
         </h1>
 
         <div class="post-meta-container">
@@ -218,9 +218,15 @@
         <i class="far fa-calendar"></i>
       </span>
       <span class="post-meta-item-text">Posted on</span>
-      
 
-      <time title="Created: 2022-05-04 09:43:16 / Modified: 09:52:42" itemprop="dateCreated datePublished" datetime="2022-05-04T09:43:16+08:00">2022-05-04</time>
+      <time title="Created: 2022-05-04 09:43:16" itemprop="dateCreated datePublished" datetime="2022-05-04T09:43:16+08:00">2022-05-04</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">Edited on</span>
+      <time title="Modified: 2022-05-05 14:55:43" itemprop="dateModified" datetime="2022-05-05T14:55:43+08:00">2022-05-05</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -253,6 +259,13 @@
 the shortcut. <code>accept-autosuggestion</code> is the input function, which means accept
 the current autosuggestion. For more special function see
 <a target="_blank" rel="noopener" href="https://fishshell.com/docs/current/cmds/bind.html">this</a>.</p>
+<p>In fish <code>bind -M normal</code> can not work for normal mode of vi input method.
+However, <code>bind -M default</code> works fine for the normal mode of the vi input
+method.</p>
+<h1 id="set-the-default-editor-in-fish"><span class="post-title-index">2. </span><a class="markdownIt-Anchor" href="#set-the-default-editor-in-fish"></a> Set the default editor in fish</h1>
+<p><a target="_blank" rel="noopener" href="https://github.com/jethrokuan/fzf">fzf</a> allows fish to use fuzzy search. <code>\co</code>
+is a shortcut of fzf-fish to open a file by fuzzy search with default editor.
+The default editor can be set by <code>set -gx EDITOR nvim</code>.</p>
 </body></html>
     </div>
 
@@ -274,8 +287,8 @@ the current autosuggestion. For more special function see
                 </a>
             </div>
             <div class="post-nav-item">
-                <a href="/2022/05/05/X-server-on-Windows/" rel="next" title="X-server-on-Windows">
-                  X-server-on-Windows <i class="fa fa-chevron-right"></i>
+                <a href="/2022/05/05/X-server-on-Windows/" rel="next" title="X Server on Windows">
+                  X Server on Windows <i class="fa fa-chevron-right"></i>
                 </a>
             </div>
           </div>
