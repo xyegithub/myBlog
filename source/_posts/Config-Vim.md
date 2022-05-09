@@ -73,6 +73,19 @@ https://toutiao.io/posts/runvgs/preview 尽量多的保留特性，最终得到�
 src/auto/cofig.log 也没有发现很相关的信息。最后`sudo apt-get install vim-gtk`成
 功安装了+clientserver 的 vim。
 
+# tmux
+
+To enable vi key mode in tmux. I mapped `hjkl` for select the pane.
+
+```
+bind -r 'h' select-pane -L  # move left
+bind -r 'j' select-pane -D  # move down
+bind -r 'k' select-pane -U  # move up
+bind -r 'l' select-pane -R  # move right
+```
+
+`r` means I can change the pane continually by click `<prefix>` and twice `k`.
+
 # Why lua instead of vimL(vim script)
 
 ## Introduction

@@ -259,6 +259,30 @@ class Solution:
         return True
 ```
 
+# String
+
+## Minimum Changes to Make Alternating Binary String
+
+You are given a string `s` consisting only of the characters `0` and `1`. In one
+operation, you can change any `0` to `1` or vice versa.
+
+The string is called alternating if no two adjacent characters are equal. Return
+the minimum number of operations needed to make `s` alternating.
+
+```python
+class Solution:
+    def minOperations(self, s: str) -> int:
+        n = len(s)
+        # The ans is the operation needed to turn s into `010101`
+        ans = 0
+        for i in range(n):
+            if i % 2 and s[i] != "1":
+              ans += 1
+            if not i % 2 and s[i] != "0":
+                ans += 1
+        return min(ans, n - ans)
+```
+
 # Sort
 
 ## Wiggle Sort 2
@@ -303,6 +327,128 @@ class Solution:
                 nums[2 * i + 1] = res[n - 1 - i]
             except:
                 pass
+```
+
+## Rank Teams by Votes
+
+In a special ranking system, each voter gives a rank from highest to lowest to
+all teams participated in the competition, e.g., one gives `ABC`, one gives
+`BCA`.
+
+The ordering of teams is decided by who received the most position-one votes. If
+`A` received the most 1-st place Then `A` is the first. If `B` received the same
+first place as `A` then compare the number of second place they received. If `A`
+and `B` received all the places the same number then ordered them by their
+letter, i.e., `A` is in front of `B`.
+
+```python
+class Solution:
+    def rankTeams(self, votes: List[str]) -> str:
+        n = len(votes[0])
+        # initialization of a hash map, the default value is list [0, 0, ..., 0]
+        # NOTE: How to set defaultdict by lambda without input, it is indeed a function factory.
+        ranking = collections.defaultdict(lambda: [0] * n)
+         # count the vote situation for each team, vid is the name of teams.
+        for vote in votes:
+            for i, vid in enumerate(vote):
+                ranking[vid][i] += 1
+
+        # result is a list, e.g., [('A', [5, 0, 0]), ('B', [0, 2, 3]), ('C', [0, 3, 2])]
+        result = list(ranking.items())
+        # sort the order of letter -ord(x[0]) is regard as the last criterion
+        result.sort(key=lambda x: (x[1], -ord(x[0])), reverse=True)
+        # return the ordered vid
+        return "".join([vid for vid, rank in result])
+```
+
+## Number Game
+
+Give a list of numbers. You can `+ 1` or `- 1` at position `i` which is regarded
+as one operator at position `i`. Please return the minimum operators for
+position `i` to make the list of numbers satisfying
+`nums[a] + 1 == nums[a + 1], 0 <= a <= i`. The original topic is
+[here](https://leetcode.cn/problems/5TxKeK/).
+
+### Analysis
+
+To satisfying `nums[a] + 1 == nums[a + 1]`, we do not know which number it is
+for position `i` which makes the operators minimum.
+
+Thus we can transform this problem, we make `nums[a] = nums[a] - a`. Then we
+only need to make each position of the `nums` all equal to the same number. Then
+the minimum way is to set the number as the median number of `nums`.
+
+<font color=red>NOTE:</font> it is the median number, not the mean value. If the
+length of the list is even then the median is the mean of the middle two
+numbers.
+
+It is easy to prove that the mean value can not bring the minimum operators. For
+examples, for list `[1, 3, 8]` the mean value is `4` and it needs
+`3 + 1 + 4 = 8` operators to make the list into `[4, 4, 4]`. The median is `3`
+and it needs only `2 + 0 + 5 = 7` operators to make the list into `[3, 3, 3]`.
+
+<font color=blue>The reason for why it is the median.</font>
+
+Let `s` be the value that each position will reach and `m` be the median. If `s`
+is large than `m`, then `#(nums[i] > s) < #(nums[i] < s)`. If set `s = s - 1`,
+`nums[i]` will add `1` operator if `nums[i] > s` and `nums[i]` will decrease `1`
+operator if `nums[i] < s`. For `#(nums[i] > s) < #(nums[i] < s)`, the total
+number of operators will decrease. It will always decrease until `s == m`, i.e.,
+`#(nums[i] > s) = #(nums[i] < s)`.
+
+```python
+from typing import List
+from heapq import heappush, heappushpop
+
+
+class MedianFinder:
+    def __init__(self):
+        self.small = []  # 大顶堆
+        self.large = []  # 小顶堆
+        self.leftSum = 0
+        self.rightSum = 0
+
+    def add(self, num: int) -> None:
+        # if #small == #large then put the num in large
+        # How to push it in large.
+        # NOTE: not put it in large directly, find the largest value then put it in to the large.
+        # This ensure that large is always larger than small.
+        # #small always smaller than #large and only larger than 1
+        if len(self.small) == len(self.large):
+            leftMax = -heappushpop(self.small, -num)
+            heappush(self.large, leftMax)
+            self.leftSum += num - leftMax
+            self.rightSum += leftMax
+        elif len(self.small) < len(self.large):
+            rightMin = heappushpop(self.large, num)
+            heappush(self.small, -rightMin)
+            self.leftSum += rightMin
+            self.rightSum += num - rightMin
+
+    def getMedian(self) -> float:
+     # self.large[0] is the smallest value in large
+     # -self.small[0] is the largest value in small
+     # get the median if the length is odd, else the mean of the two middle numbers
+        if len(self.small) == len(self.large):
+            return (self.large[0] - self.small[0]) / 2
+        else:
+            return self.large[0]
+
+    def getDiffSum(self) -> float:
+        median = self.getMedian()
+        return self.rightSum - len(self.large) * median + len(self.small) * median - self.leftSum
+
+
+class Solution:
+    def numsGame(self, nums: List[int]) -> List[int]:
+        MOD = int(1e9 + 7)
+        res = []
+        medianFinder = MedianFinder()
+        for i in range(len(nums)):
+            normalized = nums[i] - i
+            medianFinder.add(normalized)
+            res.append(int(medianFinder.getDiffSum() % MOD))
+        return res
 ```
 
 # Other

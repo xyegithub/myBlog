@@ -25,18 +25,18 @@ git ls-files 查看缓存区中文件信息，它的参数有，括号里面是�
 
 --other (-o)查看没有被 git 跟踪的文件
 
-# errors
+<!-- # errors -->
 
-## Failed to connect to github.com port 443: Time out
+<!-- ## Failed to connect to github.com port 443: Time out -->
 
-The following commands fixed this issue.
+<!-- The following commands fixed this issue. -->
 
-```fish
-git config --global http.proxy http://127.0.0.1:1080
-git config --global https.proxy https://127.0.0.1:1080
-git config --global --unset http.proxy
-git config --global --unset https.proxy
-```
+<!-- ```fish -->
+<!-- git config --global http.proxy http://127.0.0.1:1080 -->
+<!-- git config --global https.proxy https://127.0.0.1:1080 -->
+<!-- git config --global --unset http.proxy -->
+<!-- git config --global --unset https.proxy -->
+<!-- ``` -->
 
 # Get back to an old version
 
@@ -56,9 +56,10 @@ observed.
 
 The network speed of `git clone` is often very slow in China mainland. To
 improve the speed, I often `clone` by ssh, i.e., use the ssh link instead of
-http link. However, it need to change the link. Use
-`git config --global url. xxx insteadof xxx` can download repos fast without
-changing the links. It will write some thing in the `~/.gitconfig` file.
+https link. However, it need to change the link. Use
+`git config --global url."https://mirror.ghproxy.com/https://github.com".insteadOf https://github.com`
+can download repos fast without changing the links. It will write some thing in
+the `~/.gitconfig` file.
 
 When the `.gitconfig` file is
 
@@ -66,23 +67,15 @@ When the `.gitconfig` file is
 [user]
 	name = xyegithub
 	email = xye@bupt.edu.cn
-[url "https://gitclone.com/"]
+[url "https://mirror.ghproxy.com/https://github.com"]
 	insteadOf = https://github.com
 ```
 
-`git clone https://github.com/XXX/XXX.git` will be clone from
-`https://gitclone.com//XXX/XXX.git/`. When the `.gitconfig` file is
+If you clone a repo by `git clone https://github.com/xxx/xxx.git`, it will
+actually clone from `https://mirror.ghproxy.com/https://github.com/xxx/xxx.git`.
+Thus the mirror is used.
 
-```
-[user]
-	name = xyegithub
-	email = xye@bupt.edu.cn
-[url "https://gitclone.com/github.com"]
-	insteadOf = https://github.com
-```
-
-`git clone https://github.com/XXX/XXX.git` will be clone from
-`https://gitclone.com/github.com/XXX/XXX.git/`.
-
-Thus, you can find some mirrors of github and figure out how to use change the
-link for `url` in `.gitconfig` file.
+However, it may cause some trouble when `git push` is used for your own repos.
+Use ssh will work fine for it only replace `https://github.com` and ssh uses
+`git@github`. The `url` in `.gitconfig` file have no effect on ssh push/clone or
+pull.
