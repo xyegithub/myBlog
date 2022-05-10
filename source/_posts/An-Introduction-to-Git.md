@@ -52,7 +52,7 @@ information. It records when the tips of branches and other references were
 updated in the local repository. The code of the newest version will be
 observed.
 
-# Clone to slow
+# Clone too slow
 
 The network speed of `git clone` is often very slow in China mainland. To
 improve the speed, I often `clone` by ssh, i.e., use the ssh link instead of

@@ -518,6 +518,25 @@ function M:init(base_dir)
 end
 ```
 
+### The `config` function in `builtin` folder
+
+For some plugins, such as `whichkey` and `telescope`, there are `M.config`
+functions in their configuration files. However, the `setup` function only uses
+some variable defined in them and do not execute them first. The are executed by
+the `init.lua` in the `builtin` folder.
+
+```lua
+function M.config(config)
+  for _, builtin_path in ipairs(builtins) do
+    local builtin = require(builtin_path)
+    builtin.config(config)
+  end
+end
+```
+
+During the lunch process, the `config` functions will be called in front of the
+functions defined in the configuration file `config.lua`.
+
 ## The nerd-fonts
 
 The font is only related to your local devices. It is not related to the remote
@@ -822,13 +841,25 @@ component are defined in
 
 Which key can define key mappings for vim. They are defined in
 `~/.local/share/lunarvim/lvim/lua/lvim/core/which-key.lua`. The use of
-`telescope` can be learned by reading which-key.lua, since the key mapping of
+`telescope` can be learned by reading `which-key.lua`, since the key mapping of
 `telescope` is defined in it.
 
 The lsp also used which key, which is defined in
 `~/.local/share/lunarvim/lvim/lua/lvim/lsp/config.lua` and used/registered in
 `~/.local/share/lunarvim/lvim/lua/lvim/lsp/init.lua`. Which key makes the key
 mappings more organized.
+
+#### Modify which key map
+
+To modify which key maps, for example, `<leader>sp` is defined in
+`whichkey.lua`. I want to change it in `config.lua`.
+`lvim.builtin.which_key.mappings["sp"] = { "<CMD>Telescope projects<CR>", "Project" }`
+does not work.
+
+`lvim.builtin.which_key.mappings.s["p"] = { "<CMD>Telescope projects<CR>", "Project" }`
+works. `lvim.builtin.which_key.mappings.s` is a table, and the `config` function
+in `which-key.lua` is executed in front of the `config.lua`. So that the value
+of key `p` can be modified.
 
 ### The alpha
 

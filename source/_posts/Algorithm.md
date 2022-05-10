@@ -451,6 +451,60 @@ class Solution:
         return res
 ```
 
+# Brute Force Search
+
+## Coordinate with Maximum Network Quality <font color=magenta>[2022-05-10]</font>
+
+An array of network towers `towers` is given, where
+$towers[i] = [x_i, y_i, q_i]$. $x_i$ and $y_i$ are the integral coordinates of
+the network tower location and $q_i$ is the network quality factor. The network
+quality of `towers[i]` at $(x, y)$ is $q_i / (1 + d)$ where
+$d = \sqrt{(x - x_i)^2 + (y - y_i)^2}$.
+
+You are also given an integer `radius`. All the tower is not reachable if and
+only if `d > radius`.
+
+The network quality of a location is the sum of network qualities from all
+towers. Return the location with the maximum network quality.
+
+If there are multiple coordinates with the same network quality, return the
+lexicographically minimum non-negative coordinate.
+
+Constraints:
+
+1. 1 <= towers.length <= 50
+2. towers[i].length == 3
+3. 0 <= $x_i$, $y_i$, $q_i$ <=50
+4. 1 <= radius <= 50
+
+### Analysis
+
+For 0 <= $x_i$, $y_i$, $q_i$ <=50, if x or y is large than 51, it can not be the
+answer. All the network quality will be stronger when x or y is smaller. Thus,
+we do only need to search within [0, 51].
+
+```python
+import math
+class Solution:
+    def bestCoordinate(self, towers: List[List[int]], radius: int) -> List[int]:
+        max_signal, x, y = 0, 0, 0
+        # search from small coordinate to large then we will get the small coordinate first
+        for i in range(51):
+            for j in range(51):
+                signal_ij = 0
+                for tower in towers:
+                    delta_x, delta_y = tower[0] - i, tower[1] - j
+                    d = math.sqrt(delta_x * delta_x + delta_y * delta_y)
+                    # if > radius no quality
+                    if d > radius:
+                        continue
+                      # use floor
+                    signal_ij += math.floor(tower[2] / (1 + d))
+                if signal_ij > max_signal:
+                    max_signal, x, y = signal_ij, i, j
+        return [x, y]
+```
+
 # Other
 
 ## The Gas Station
