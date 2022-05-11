@@ -602,3 +602,97 @@ class Solution:
                     return -1
                 sum_ = res[first]
 ```
+
+## Maximum Number of Tasks You Can Assign <font color=magenta>[2022-05-11]</font>
+
+The topic is
+[here](https://leetcode.cn/problems/maximum-number-of-tasks-you-can-assign/).
+
+### Analysis
+
+1. The task need small strength is preferred.
+2. The worker with large strength is preferred
+
+A wrong code
+
+```python
+class Solution:
+    def maxTaskAssign(self, tasks: List[int], workers: List[int], pills: int, strength: int) -> int:
+        tasks.sort()
+        workers.sort()
+        n =  len(tasks)
+        m =  len(workers)
+        ans = 0
+        j = 0
+        for i in range(m):
+            if j < n:
+                # A new worker waiting for task
+                if workers[i] >= tasks[j]:
+                    ans += 1
+                    # the task has been assigned, consider the next task
+                    j += 1
+                else:
+                    # if there is pills avaliable
+                    if pills and workers[i] + strength >= tasks[j]:
+                        # use this pill
+                        pills -= 1
+                        ans += 1
+                        j += 1
+        return ans
+```
+
+This code prefers to use small strength workers, which is wrong. When the
+workers can do `k` tasks, it must be the top `k` strength workers taking the
+bottom `k` tasks.
+
+The final answer.
+
+```python
+from sortedcontainers import SortedList
+
+
+class Solution:
+    def maxTaskAssign(self, tasks, workers, pills, strength):
+        n, m = len(tasks), len(workers)
+        tasks.sort()
+        workers.sort()
+
+        def check(mid: int) -> bool:
+            p = pills
+            #  the workers needed to be check
+            ws = SortedList(workers[m - mid:])
+            # tasks from large to small
+            for i in range(mid - 1, -1, -1):
+                if ws[-1] >= tasks[i]:
+                    # tasks[i] is assigned to ws[-1]
+                    ws.pop()
+                else:
+                    if p == 0:
+                        # if does not have pills anymore
+                        return False
+                    # has pills
+                    # Note: find the smallest worker can take the task by pill
+                    rep = ws.bisect_left(tasks[i] - strength)
+                    if rep == len(ws):
+                        return False
+                    p -= 1
+                    ws.pop(rep)
+            return True
+
+        # The scope of k needed to be checked if 1 checked false, answer is 0
+        # if right = min(m, n) checked true, answer is right
+        left, right, ans = 1, min(m, n), 0
+        while left <= right:
+            mid = (left + right) // 2
+            if check(mid):
+                # if mid is true, then ans is larger than mid
+                # find it in [mid + 1, right]
+                ans = mid
+                left = mid + 1
+            else:
+                # if mid is false, then ans is smaller than mid
+                # find it in [left, mid - 1]
+                right = mid - 1
+
+        return ans
+```

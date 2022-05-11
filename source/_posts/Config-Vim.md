@@ -86,6 +86,14 @@ bind -r 'l' select-pane -R  # move right
 
 `r` means I can change the pane continually by click `<prefix>` and twice `k`.
 
+# A practice of vim
+
+## Search and Replace
+
+`:.,$s/old/new/gc`, where `g` means match all for each line and `c` means ask me
+before replace at each position. Without `g` only the first match of each line
+will be considered.
+
 # Why lua instead of vimL(vim script)
 
 ## Introduction
