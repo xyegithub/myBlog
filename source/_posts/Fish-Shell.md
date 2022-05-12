@@ -9,6 +9,7 @@ summary:
 description: everyday fish shell
 categories:
   - Programming
+  - Shell
   - Fish
 tags:
   - Fish
