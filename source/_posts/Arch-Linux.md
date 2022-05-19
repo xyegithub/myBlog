@@ -178,8 +178,6 @@ You may use any multi-boot supporting BIOS boot loader, such as 'grub'.
 
 # Configuration
 
-## Terminal
-
 ## Screen Translator
 
 ### youdao
@@ -197,3 +195,7 @@ can be solved by `pacman -S inetutils`.
 
 `shell command \`tmux\`throws\`can't use /dev/tty\` error`can be solved by`exec
 </dev/tty; exec <&1; TMUX= tmux`.
+
+## Clipboard of nvim
+
+To enable the clipboard of nvim share by the system, run `sudo pacman -S xsel`
