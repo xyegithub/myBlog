@@ -28,11 +28,13 @@
 <meta property="og:site_name" content="Ye, Xiang&#39;s Blog">
 <meta property="og:description" content="Arch Linux installation, Configuration">
 <meta property="og:locale" content="en_US">
+<meta property="og:image" content="http://yexiang.ml/2022/05/15/Arch-Linux/init.png">
 <meta property="article:published_time" content="2022-05-15T12:40:03.000Z">
-<meta property="article:modified_time" content="2022-05-15T13:10:46.032Z">
+<meta property="article:modified_time" content="2022-05-18T03:22:37.787Z">
 <meta property="article:author" content="Xiang Ye">
 <meta property="article:tag" content="Arch Linux">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://yexiang.ml/2022/05/15/Arch-Linux/init.png">
 
 
 <link rel="canonical" href="http://yexiang.ml/2022/05/15/Arch-Linux/">
@@ -120,7 +122,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#what-is-uefi"><span class="nav-text">1.  What is UEFI</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#bios"><span class="nav-text">1.1.  BIOS</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#uefi"><span class="nav-text">1.2.  UEFI</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#the-usage-of-uefi"><span class="nav-text">1.2.1.  The Usage of UEFI</span></a></li></ol></li></ol></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#what-is-verify-signature"><span class="nav-text">1.  What is Verify Signature</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#what-is-kernel-module"><span class="nav-text">2.  What is Kernel Module</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#nouveau"><span class="nav-text">2.1.  Nouveau</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#initramfs"><span class="nav-text">3.  initramfs</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#what-is-fstab"><span class="nav-text">4.  What is fstab</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#what-is-grub"><span class="nav-text">5.  What is grub</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#firmware-types"><span class="nav-text">6.  Firmware Types</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#what-is-uefi"><span class="nav-text">7.  What is UEFI</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#bios"><span class="nav-text">7.1.  BIOS</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#uefi"><span class="nav-text">7.2.  UEFI</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#the-usage-of-uefi"><span class="nav-text">7.2.1.  The Usage of UEFI</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#system-initialization"><span class="nav-text">8.  System Initialization</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#under-bios"><span class="nav-text">8.1.  Under BIOS</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#under-uefi"><span class="nav-text">8.2.  Under UEFI</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#dual-boot-with-windows"><span class="nav-text">9.  Dual Boot with Windows</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#windows-before-linux"><span class="nav-text">9.1.  Windows Before Linux</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#bios-systems"><span class="nav-text">9.1.1.  BIOS Systems</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#using-a-linux-boot-loader"><span class="nav-text">9.1.1.1.  Using a Linux Boot Loader</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#using-windows-boot-loader"><span class="nav-text">9.1.1.2.  Using Windows Boot Loader</span></a></li></ol></li></ol></li></ol></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -218,9 +220,15 @@
         <i class="far fa-calendar"></i>
       </span>
       <span class="post-meta-item-text">Posted on</span>
-      
 
-      <time title="Created: 2022-05-15 20:40:03 / Modified: 21:10:46" itemprop="dateCreated datePublished" datetime="2022-05-15T20:40:03+08:00">2022-05-15</time>
+      <time title="Created: 2022-05-15 20:40:03" itemprop="dateCreated datePublished" datetime="2022-05-15T20:40:03+08:00">2022-05-15</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">Edited on</span>
+      <time title="Modified: 2022-05-18 11:22:37" itemprop="dateModified" datetime="2022-05-18T11:22:37+08:00">2022-05-18</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -247,8 +255,48 @@
     
     
     <div class="post-body" itemprop="articleBody">
-        <html><head></head><body><h1 id="what-is-uefi"><span class="post-title-index">1. </span><a class="markdownIt-Anchor" href="#what-is-uefi"></a> What is UEFI</h1>
-<h2 id="bios"><span class="post-title-index">1.1. </span><a class="markdownIt-Anchor" href="#bios"></a> BIOS</h2>
+        <html><head></head><body><p><a target="_blank" rel="noopener" href="https://archlinuxstudio.github.io/ArchLinuxTutorial/#/">A good Tutorial for Installing it</a></p>
+<h1 id="what-is-verify-signature"><span class="post-title-index">1. </span><a class="markdownIt-Anchor" href="#what-is-verify-signature"></a> What is Verify Signature</h1>
+<p>Signature is used for protecting data from undetected changes by including a
+proof of identify value called a digital signature.</p>
+<h1 id="what-is-kernel-module"><span class="post-title-index">2. </span><a class="markdownIt-Anchor" href="#what-is-kernel-module"></a> What is Kernel Module</h1>
+<p>Kernel module are pieces of code that can be loaded and unloaded into the kernel
+upon demand. They extend the functionality of the kernel without the need of
+reboot the system.</p>
+<p>Modules are stored in <code>/usr/lib/modules/kernel_release</code> or <code>/lib/modules</code>. You
+can use the command <code>uname -r</code> to get your current kernel release version.</p>
+<p><a target="_blank" rel="noopener" href="https://wiki.archlinux.org/title/Kernel_modules#Blacklisting">How to block a kernel module</a>.</p>
+<h2 id="nouveau"><span class="post-title-index">2.1. </span><a class="markdownIt-Anchor" href="#nouveau"></a> Nouveau</h2>
+<p>Nouveau is an open-source Nouveau driver for NVIDIA graphics cards.</p>
+<h1 id="initramfs"><span class="post-title-index">3. </span><a class="markdownIt-Anchor" href="#initramfs"></a> initramfs</h1>
+<p>The root file system at <code>/</code> starts out as an empty rootfs, which is a special
+instance of ramfs or tmpfs. The purpose of the initramfs is to bootstrap the
+system to the point where it can access the root file system. It does not need
+to contain every module one would ever want to use; it should only have modules
+required for the root device like IDE, SCCI, SATA or USB/FW. The majority of
+modules will be loaded later on by <code>udev</code>, during the init process.</p>
+<h1 id="what-is-fstab"><span class="post-title-index">4. </span><a class="markdownIt-Anchor" href="#what-is-fstab"></a> What is fstab</h1>
+<p><code>fstab</code> is the Linux system’s file system table. It is a configuration table
+designed to ease the burden of mounting and unmounting file systems to a
+machine. It is a set of rules used to control how different file systems are
+treated each time they are introduced to a system.</p>
+<h1 id="what-is-grub"><span class="post-title-index">5. </span><a class="markdownIt-Anchor" href="#what-is-grub"></a> What is grub</h1>
+<p><code>grub</code> is a boot loader. It is the software that loads the Linux kernel (It has
+other uses as well). It is the first software that starts at a system boot.</p>
+<p>The BIOS checks the Master Boot Record (MBR) which is a 512 byte section located
+first on the Hard Drive. It looks for a bootloader (like GRUB).</p>
+<p>Then you will be prompted by the GRUB menu which can contain a list of the
+operating systems installed (in the case of dual boot), or perhaps different
+kernels installed in a Linux distro.</p>
+<p>When you choose which distro or kernel you want to use, GRUB loads the selected
+kernel. The kernel starts <code>init</code> or <code>systemd</code>, which is the first process to
+start in Linux. <code>init</code> then starts other processes like network services and
+other that you might have configured at boot time.</p>
+<h1 id="firmware-types"><span class="post-title-index">6. </span><a class="markdownIt-Anchor" href="#firmware-types"></a> Firmware Types</h1>
+<p>The firmware is the very first program that is executed once the system is
+switched on. The words BIOS or (U)EFI are often used instead of firmware.</p>
+<h1 id="what-is-uefi"><span class="post-title-index">7. </span><a class="markdownIt-Anchor" href="#what-is-uefi"></a> What is UEFI</h1>
+<h2 id="bios"><span class="post-title-index">7.1. </span><a class="markdownIt-Anchor" href="#bios"></a> BIOS</h2>
 <ol>
 <li>BIOS (basic input/output system) is a program.</li>
 <li>It is in the ROM (read only) disk. It is hard encoded on the computer
@@ -260,17 +308,90 @@ process (power-on startup).</li>
 attached devices, such as the hard disk, video adapter, keyboard, mouse and
 printer.</li>
 </ol>
-<h2 id="uefi"><span class="post-title-index">1.2. </span><a class="markdownIt-Anchor" href="#uefi"></a> UEFI</h2>
+<h2 id="uefi"><span class="post-title-index">7.2. </span><a class="markdownIt-Anchor" href="#uefi"></a> UEFI</h2>
 <p>BIOS’s popularity has waned in favor of a newer technology: UEFI (Unified
 Extensible Firmware Interface). Intel announced a plan in 2017 to retire support
 for legacy BIOS systems by 2020, replacing them with UEFI.</p>
-<h3 id="the-usage-of-uefi"><span class="post-title-index">1.2.1. </span><a class="markdownIt-Anchor" href="#the-usage-of-uefi"></a> The Usage of UEFI</h3>
+<p>UEFI does not launch any boot code from the Master Boot Record (MBR) whether it
+exists or not, instead booting relies on boot entries in NVRAM.</p>
+<h3 id="the-usage-of-uefi"><span class="post-title-index">7.2.1. </span><a class="markdownIt-Anchor" href="#the-usage-of-uefi"></a> The Usage of UEFI</h3>
 <p>UEFI launches EFI (Extensible Firmware Interface) applications, e.g., boot
 loaders, boot managers, UEFI shell, etc. These applications are usually stored
 as files in the EFI system partition. Each vendor can stores its files in the
 EFI system partition under the <code>/EFI/vendor_name</code> directory. The applications
 can be launched by adding a boot entry to the NVRAM (non-volatile random access
 memory, an RAM can keep the data with power off) or from the UEFI shell.</p>
+<h1 id="system-initialization"><span class="post-title-index">8. </span><a class="markdownIt-Anchor" href="#system-initialization"></a> System Initialization</h1>
+<h2 id="under-bios"><span class="post-title-index">8.1. </span><a class="markdownIt-Anchor" href="#under-bios"></a> Under BIOS</h2>
+<p><img src="init.png" alt="The Initialization process"></p>
+<ol>
+<li>System switched on, the POST (power-on self-test) is executed.</li>
+<li>After POST, BIOS initializes the hardware required for booting (disk,
+keyboard controller etc.).</li>
+<li>BIOS launches the first 440 bytes (the Master Boot Record bootstrap code
+area) of the first disk in the BIOS disk order.</li>
+<li>The boot loader’s first stage in the MBR (Master Boot Record) boot code then
+launches its second stage code (if any) from either:
+<ul>
+<li>next disk sectors after the MBR, i.e., the so called post-MBR gap (only on
+a MBR partition table).</li>
+<li>A partition’s or a partitionless disk’s volume boot record (VBR)</li>
+<li>The BIOS boot partition (GRUB on BIOS/GPT only).</li>
+</ul>
+</li>
+<li>The actual boot loader is launched.</li>
+<li>The boot loader then loads an operating system by either chain-loading or
+directly loading the operating system kernel</li>
+</ol>
+<blockquote>
+<p>POST: A power-on self-test is a set of routines performed by firmware or
+software immediately after a computer is powered on, to determine if the
+hardware is working as expected. The process would proceed further only if the
+required hardware is working correctly, else the BIOS would issue an error
+message. POST sequence is executed irrespective of the Operating System and is
+handled by the system BIOS. Once the tests are passed the POST would generally
+notify the OS with beeps while the number of beeps can vary from system to
+system. When POST is successfully finalized bootstrapping is enable.
+Bootstrapping starts the initialization of the OS.</p>
+</blockquote>
+<h2 id="under-uefi"><span class="post-title-index">8.2. </span><a class="markdownIt-Anchor" href="#under-uefi"></a> Under UEFI</h2>
+<ol>
+<li>System switched on, the power-on self-test (POST) is executed.</li>
+<li>After POST, UEFI initializes the hardware required for booting (disk,
+keyboard controllers etc.).</li>
+<li>Firmware reads the boot entries in the NVRAM to determine which EFI
+application to launch and from where (e.g. from which disk and partition).
+<ul>
+<li>A boot entry could simply be a disk. In this case the firmware looks fro an
+EFI system partition on that disk and tries to find an EFI application in
+the fallback boot path <code>\EFI\BOOT\BOOTx64.EFI</code> (<code>bootia32.EFI</code> on systems
+with a IA32 (32-bit) UEFI). This is how UEFI bootable removable media work.</li>
+</ul>
+</li>
+<li>Firmware launches the EFI application.
+<ul>
+<li>This could be a boot loader or the Arch kernel itself using EFISTUB.</li>
+<li>It could be some other EFI application such as UEFI shell or a boot manages
+like systemd-boot or rEFInd.</li>
+</ul>
+</li>
+</ol>
+<p>If Secure Boot is enabled, the boot process will verify authenticity of the EFI
+binary by signature.</p>
+<h1 id="dual-boot-with-windows"><span class="post-title-index">9. </span><a class="markdownIt-Anchor" href="#dual-boot-with-windows"></a> Dual Boot with Windows</h1>
+<h2 id="windows-before-linux"><span class="post-title-index">9.1. </span><a class="markdownIt-Anchor" href="#windows-before-linux"></a> Windows Before Linux</h2>
+<p>The main difference between installing individual Linux and dual system is the
+boot loader, which load the operating system.</p>
+<h3 id="bios-systems"><span class="post-title-index">9.1.1. </span><a class="markdownIt-Anchor" href="#bios-systems"></a> BIOS Systems</h3>
+<h4 id="using-a-linux-boot-loader"><span class="post-title-index">9.1.1.1. </span><a class="markdownIt-Anchor" href="#using-a-linux-boot-loader"></a> Using a Linux Boot Loader</h4>
+<p>You may use any multi-boot supporting BIOS boot loader, such as ‘grub’.</p>
+<h4 id="using-windows-boot-loader"><span class="post-title-index">9.1.1.2. </span><a class="markdownIt-Anchor" href="#using-windows-boot-loader"></a> Using Windows Boot Loader</h4>
+<ol>
+<li>Install a Linux bootloader on a partition instead of the MBR, e.g., the
+<code>/boot</code> partition</li>
+<li>Copy this bootloader to a partition readable by the windows bootloader</li>
+<li>Use Windows bootloader to start said copy of the Linux bootloader</li>
+</ol>
 </body></html>
     </div>
 
