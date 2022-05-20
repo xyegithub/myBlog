@@ -199,3 +199,16 @@ can be solved by `pacman -S inetutils`.
 ## Clipboard of nvim
 
 To enable the clipboard of nvim share by the system, run `sudo pacman -S xsel`
+
+## Try to run `exe` files
+
+## Wine
+
+I successfully installed wechat with wine. However, it can not use the camera.
+
+## Bottles
+
+### PyGObject
+
+Bottles depends on `PyGObject`, it is a python package. However, it is difficult
+to install it by `pip`. It can be easily installed by conda.
