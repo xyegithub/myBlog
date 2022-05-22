@@ -212,3 +212,17 @@ I successfully installed wechat with wine. However, it can not use the camera.
 
 Bottles depends on `PyGObject`, it is a python package. However, it is difficult
 to install it by `pip`. It can be easily installed by conda.
+
+# A way to install PyGObject
+
+`pip install PyGObject` default to install its dependences like `pycairo`.
+However, the latest version of `pycairo` can not be successfully ran on my
+system. Thus I can install `pycairo` manually by `pip` or `conda` and run
+`pip install --no-build-isolation pygobject` to install `pygobject` and in this
+way `pygobject` will not install its dependences automatically and will find the
+dependences locally.
+
+## Install successfully
+
+`bottles` is installed successfully by using ` flatpak`, by
+`sudo pacman -S flatpak`. However, it also can not use the camera.
