@@ -29,7 +29,7 @@
 <meta property="og:description" content="The first step for learning GAN">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2022-05-13T02:17:22.000Z">
-<meta property="article:modified_time" content="2022-05-13T08:26:33.768Z">
+<meta property="article:modified_time" content="2022-05-24T01:43:39.065Z">
 <meta property="article:author" content="Xiang Ye">
 <meta property="article:tag" content="Generative Adversarial Network">
 <meta name="twitter:card" content="summary">
@@ -120,7 +120,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#the-reason-for-gan"><span class="nav-text">1.  The Reason For GAN</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#the-thought-of-gan-from-game-theory"><span class="nav-text">2.  The thought of GAN from Game Theory</span></a></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#some-characteristics"><span class="nav-text">1.  Some Characteristics</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#the-thought-of-gan-from-game-theory"><span class="nav-text">2.  The thought of GAN from Game Theory</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#model-collapse"><span class="nav-text">3.  Model Collapse</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#apache-spark"><span class="nav-text">4.  Apache Spark</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#bigdl"><span class="nav-text">5.  BigDL</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -218,9 +218,15 @@
         <i class="far fa-calendar"></i>
       </span>
       <span class="post-meta-item-text">Posted on</span>
-      
 
-      <time title="Created: 2022-05-13 10:17:22 / Modified: 16:26:33" itemprop="dateCreated datePublished" datetime="2022-05-13T10:17:22+08:00">2022-05-13</time>
+      <time title="Created: 2022-05-13 10:17:22" itemprop="dateCreated datePublished" datetime="2022-05-13T10:17:22+08:00">2022-05-13</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">Edited on</span>
+      <time title="Modified: 2022-05-24 09:43:39" itemprop="dateModified" datetime="2022-05-24T09:43:39+08:00">2022-05-24</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -247,19 +253,38 @@
     
     
     <div class="post-body" itemprop="articleBody">
-        <html><head></head><body><h1 id="the-reason-for-gan"><span class="post-title-index">1. </span><a class="markdownIt-Anchor" href="#the-reason-for-gan"></a> The Reason For GAN</h1>
-<p>GAN is a generative model, which can only create data, but not directly provides
-the density function of data. So why we need it. There are several reasons.</p>
+        <html><head></head><body><h1 id="some-characteristics"><span class="post-title-index">1. </span><a class="markdownIt-Anchor" href="#some-characteristics"></a> Some Characteristics</h1>
 <ul>
 <li>Generate samples of real world</li>
 <li>GANs training process does not depend on the maximum likelihood estimation.</li>
 <li>GAN does not “see” the training data during the training process. Thus it
 rarely suffers from the over-fitting issue.</li>
 <li>GAN is good at capturing the distribution of data.</li>
+<li>GAN does not need labeled data.</li>
+<li>Meaningful latent vectors.</li>
 </ul>
 <h1 id="the-thought-of-gan-from-game-theory"><span class="post-title-index">2. </span><a class="markdownIt-Anchor" href="#the-thought-of-gan-from-game-theory"></a> The thought of GAN from Game Theory</h1>
 <p>The adversarial process of GAN is related to Max-Min game in Game Theory.</p>
 <p>The balance point of the generative model and discriminate model python</p>
+<h1 id="model-collapse"><span class="post-title-index">3. </span><a class="markdownIt-Anchor" href="#model-collapse"></a> Model Collapse</h1>
+<p>Usually you want GAN to produce a wide variety of outputs. You want, for
+example, a different face for every random input to your face generator.</p>
+<p>However, if a generator produces an especially plausible output, the generator
+may learn to produce only that output. In fact, the generator is always trying
+to find the one output that seems most plausible to the discriminator.</p>
+<p>Each iteration of generator over-optimizes for a particular discriminator, and
+the discriminator never manages to lean its way out of the trap. As a result the
+generators rotate through a small set of output types. This form of GAN failure
+is called <strong>model collapse</strong>.</p>
+<p>GAN has a strong relationship with image super-resolution</p>
+<h1 id="apache-spark"><span class="post-title-index">4. </span><a class="markdownIt-Anchor" href="#apache-spark"></a> Apache Spark</h1>
+<p>Unified engine for large-scale data analytics. Apache spark is a multi-language
+engine for executing data engineering data science, and machine learning on
+single-node machines or clusters.</p>
+<h1 id="bigdl"><span class="post-title-index">5. </span><a class="markdownIt-Anchor" href="#bigdl"></a> BigDL</h1>
+<p>BigDL is a distributed deep learning library for Apache Spark, with BigDL users
+can write their deep learning applications as standard Spark programs, which can
+directly run on top of existing Spark or Hadoop clusters.</p>
 </body></html>
     </div>
 
