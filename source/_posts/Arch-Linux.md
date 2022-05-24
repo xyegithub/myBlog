@@ -226,3 +226,8 @@ dependences locally.
 
 `bottles` is installed successfully by using ` flatpak`, by
 `sudo pacman -S flatpak`. However, it also can not use the camera.
+
+# Locale
+
+For detail to see the Arch Linux wiki. Notice that the KDE can set the language
+too. Only set to en_US.
