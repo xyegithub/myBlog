@@ -2,6 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+<<<<<<< HEAD
     <loc>http://yexiang.ml/2022/05/26/Proxy-Configuration/</loc>
     
     <lastmod>2022-05-26</lastmod>
@@ -10,15 +11,18 @@
   
   <url>
     <loc>http://yexiang.ml/2022/05/13/The-First-Step-to-GAN/</loc>
+=======
+    <loc>http://yexiang.ml/2022/05/15/Arch-Linux/</loc>
+>>>>>>> 774d4591df163603d477f8c7a0856bee200d5bd4
     
     <lastmod>2022-05-24</lastmod>
     
   </url>
   
   <url>
-    <loc>http://yexiang.ml/2022/05/15/Arch-Linux/</loc>
+    <loc>http://yexiang.ml/2022/05/13/The-First-Step-to-GAN/</loc>
     
-    <lastmod>2022-05-22</lastmod>
+    <lastmod>2022-05-24</lastmod>
     
   </url>
   
