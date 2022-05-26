@@ -23,6 +23,15 @@ export http_proxy=socks://127.0.0.1:10808
 export https_proxy=socks://127.0.0.1:10808
 ```
 
+For fish user
+
+```fish
+if test $(grep Microsoft /proc/version)
+  set -x http_proxy socks://127.0.0.1:10808
+  set -x https_proxy socks://127.0.0.1:10808
+end
+```
+
 Then verify the setting with `curl google.com`.
 
 When `http(s)_proxy` is set you can see the log in your proxy on Windows when
