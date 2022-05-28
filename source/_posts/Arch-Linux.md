@@ -178,6 +178,21 @@ You may use any multi-boot supporting BIOS boot loader, such as 'grub'.
 
 # Configuration
 
+## Touch pad
+
+When `dwm` is started, tapping the touchpad does not work. To let it work create
+`/etc/X11/xorg.conf.d/30-touchpad.conf`, which contains
+
+```
+Section "InputClass"
+Identifier "touchpad catchall"
+Driver "libinput"
+Option "Tapping" "on"
+EndSection
+```
+
+Notice that there is no indents in the file, otherwise it will not work.
+
 ## Network
 
 Connect a network with `NetworkManager`. For example,
