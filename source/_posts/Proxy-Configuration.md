@@ -35,6 +35,7 @@ end
 Then verify the setting with `curl google.com`.
 
 When `http(s)_proxy` is set you can see the log in your proxy on Windows when
-you run `curl google.com`. Be careful about the ip, the port `10808` which is
-defined in your windows proxy app, and `socks` is the protocol which also
-defined in your windows proxy app.
+you run `curl google.com`. Be careful about the `127.0.0.1` which is the loop
+back address of local host, the port `10808` which is defined in your windows
+proxy app, and `socks` is the protocol which also defined in your windows proxy
+app.

@@ -178,6 +178,26 @@ You may use any multi-boot supporting BIOS boot loader, such as 'grub'.
 
 # Configuration
 
+## Network
+
+Connect a network with `NetworkManager`. For example,
+`nmcli connection add type wifi con-name BUPT-mobile ifname wlan0 ssid BUPT-mobile -- wifi-sec.key-mgmt wpa-eap 802-1x.eap ttls 802-1x.phase2-auth mschapv2 802-1x.identity USERNAME`
+Then `BUPT-mobile` can be connected with `nmcli --ask connection up BUPT-mobile`
+or `nmtui`. The `nmtui` does not support add network of `WPA2 802.1X` otherwise
+one can add and connect the network by only `nmtui`.
+
+## startx
+
+`startx` provides a command line startup of Linux. However, it will cause a
+black screen problem with NVIDIA. To avoid it, add
+
+```bash
+xrandr --setprovideroutputsource modesetting NVIDIA-0
+xrandr --auto
+```
+
+to the `.xinitrc`.
+
 ## Screen Translator
 
 ### youdao
