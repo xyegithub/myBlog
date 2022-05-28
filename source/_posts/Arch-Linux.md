@@ -186,6 +186,9 @@ Then `BUPT-mobile` can be connected with `nmcli --ask connection up BUPT-mobile`
 or `nmtui`. The `nmtui` does not support add network of `WPA2 802.1X` otherwise
 one can add and connect the network by only `nmtui`.
 
+Use `space` to enable or disable `automatically connect` in `nmtui`. `X` denotes
+enable.
+
 ## startx
 
 `startx` provides a command line startup of Linux. However, it will cause a
