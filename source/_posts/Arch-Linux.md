@@ -206,6 +206,8 @@ enable.
 
 ## startx
 
+### NVIDIA
+
 `startx` provides a command line startup of Linux. However, it will cause a
 black screen problem with NVIDIA. To avoid it, add
 
@@ -215,6 +217,16 @@ xrandr --auto
 ```
 
 to the `.xinitrc`.
+
+### Auto Start
+
+Add the following snippets to `~/.bash_profile`.
+
+```bash
+if [ -z "${DISPLAY}" ] && [ "${XDG_VTNR}" -eq 1 ]; then
+  exec startx
+fi
+```
 
 ## Screen Translator
 
