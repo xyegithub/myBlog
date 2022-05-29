@@ -237,6 +237,15 @@ show the result when words are picked. This is because of the vpn. I use
 `51game`. However, when I set the `system client` into `mainland white list`, it
 translate fast for picking words.
 
+## Goldendict
+
+Goldendict is a more power translator. Install `translate-shell`. `edit` >
+`dictionaries` > `programs` > `add`, `type`: `Plain text`; `Command Line`:
+`trans -e google -s en -t zh -show-original y -show-original-phonetics n -show-translation y -no-ansi -show-translation-phonetics n -show-prompt-message n -show-languages n -show-original-dictionary n -show-dictionary n -show-alternatives n "%GDWORD%"`
+
+Set `popup` only press `alt`. Use `ctrl` will cause a problem that translate
+when copy. Especially when copy a web link.
+
 ## Tmux
 
 When install `tmux`, some error maybe occur.
