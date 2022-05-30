@@ -246,6 +246,10 @@ Goldendict is a more power translator. Install `translate-shell`. `edit` >
 Set `popup` only press `alt`. Use `ctrl` will cause a problem that translate
 when copy. Especially when copy a web link.
 
+To enable run `goldendict` in background, pick `Enable system try icon` and
+`Start to system try`. Otherwise, the gui of `goldendict` will open even if it
+is executed by `goldendict &`.
+
 ## Tmux
 
 When install `tmux`, some error maybe occur.

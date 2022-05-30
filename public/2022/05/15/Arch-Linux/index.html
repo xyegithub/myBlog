@@ -30,7 +30,7 @@
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="http://yexiang.ml/2022/05/15/Arch-Linux/init.png">
 <meta property="article:published_time" content="2022-05-15T12:40:03.000Z">
-<meta property="article:modified_time" content="2022-05-29T10:15:14.201Z">
+<meta property="article:modified_time" content="2022-05-30T09:19:20.944Z">
 <meta property="article:author" content="Xiang Ye">
 <meta property="article:tag" content="Arch Linux">
 <meta name="twitter:card" content="summary">
@@ -228,7 +228,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">Edited on</span>
-      <time title="Modified: 2022-05-29 18:15:14" itemprop="dateModified" datetime="2022-05-29T18:15:14+08:00">2022-05-29</time>
+      <time title="Modified: 2022-05-30 17:19:20" itemprop="dateModified" datetime="2022-05-30T17:19:20+08:00">2022-05-30</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -427,6 +427,9 @@ translate fast for picking words.</p>
 <code>trans -e google -s en -t zh -show-original y -show-original-phonetics n -show-translation y -no-ansi -show-translation-phonetics n -show-prompt-message n -show-languages n -show-original-dictionary n -show-dictionary n -show-alternatives n "%GDWORD%"</code></p>
 <p>Set <code>popup</code> only press <code>alt</code>. Use <code>ctrl</code> will cause a problem that translate
 when copy. Especially when copy a web link.</p>
+<p>To enable run <code>goldendict</code> in background, pick <code>Enable system try icon</code> and
+<code>Start to system try</code>. Otherwise, the gui of <code>goldendict</code> will open even if it
+is executed by <code>goldendict &amp;</code>.</p>
 <h2 id="tmux"><span class="post-title-index">10.6. </span><a class="markdownIt-Anchor" href="#tmux"></a> Tmux</h2>
 <p>When install <code>tmux</code>, some error maybe occur.
 <code>/usr/share/fish/functions/fish_prompt.fish (line 6): hostname|cut -d . -f 1</code>
