@@ -62,3 +62,15 @@ do
 done
 echo $num > /sys/class/backlight/intel_backlight/brightness
 ```
+
+## run tmux only open a terminal
+
+Add this to the `.bashrc`.
+
+```bash
+#  Note: the spaces after the [ and before the ] are necessary.
+# tmux will be executed only if it is opened by st
+if [ "$TERM" = "st-256color" ]; then
+	tmux
+fi
+```
