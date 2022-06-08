@@ -178,7 +178,43 @@ You may use any multi-boot supporting BIOS boot loader, such as 'grub'.
 
 # Configuration
 
-## Touch pad
+## Remote Desktop
+
+To use the local camera, this command is needed.
+
+```bash
+sudo xfreerdp /f /u:Account Name /p:Password /v:IP:Port /video /usb:id,dev:1bcf:28b
+0  /sound /microphone:sys:alsa
+```
+
+The usb id is obtained by command `lsusb`.
+
+Something also need to be set on the Windows side.
+
+1. Type `WinKey + R` and run `gpedit.msc` on the target VM (the target windows
+   10 Virtual Machine) to start the `Group Policy Editor`.
+2. Locate the item
+   ` Computer Configuration \ Administrative Templates \ Windows Components \ Remote Desktop Services \ Remote Desktop Session Host \ Device and Resource Redirection\ Do not allow supported Plug and Play device redirection`
+   and set this item to Disabled.
+3. Also you can set
+
+```bash
+Remote Desktop Connection Client \ RemoteFX USB Device Redirection \ Allow RDP redirection of other supported RemoteFX USB devices from this computer (Enabled)
+
+Remote Desktop Session Host \ Remote Session Environment \ RemoteFX for Windows Server 2008 R2 \ Configure RemoteFX (Enabled)
+
+Remote Desktop Session Host \ Connections \ Allow users to connect remotely by using Remote Desktop Services (Enabled)
+
+Remote Desktop Session Host \ Device and Resource Redirection\ Do not allow supported Plug and Play device redirection (Disabled)
+
+gpupdate /force in elevated CMD Prompt and reboot
+```
+
+4. Run `gpupdate /force` from an elevated command prompt.
+5. At least disconnect RDP session and connect again, if this does not work
+   reboot target VM.
+
+## Touch Pad
 
 When `dwm` is started, tapping the touchpad does not work. To let it work create
 `/etc/X11/xorg.conf.d/30-touchpad.conf`, which contains
@@ -265,18 +301,18 @@ To enable the clipboard of nvim share by the system, run `sudo pacman -S xsel`
 
 ## Try to run `exe` files
 
-## Wine
+### Wine
 
 I successfully installed wechat with wine. However, it can not use the camera.
 
-## Bottles
+### Bottles
 
-### PyGObject
+#### PyGObject
 
 Bottles depends on `PyGObject`, it is a python package. However, it is difficult
 to install it by `pip`. It can be easily installed by conda.
 
-# A way to install PyGObject
+##### A way to install PyGObject
 
 `pip install PyGObject` default to install its dependences like `pycairo`.
 However, the latest version of `pycairo` can not be successfully ran on my
@@ -285,7 +321,7 @@ system. Thus I can install `pycairo` manually by `pip` or `conda` and run
 way `pygobject` will not install its dependences automatically and will find the
 dependences locally.
 
-## Install successfully
+##### Install successfully
 
 `bottles` is installed successfully by using ` flatpak`, by
 `sudo pacman -S flatpak`. However, it also can not use the camera.
