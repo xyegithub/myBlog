@@ -9,6 +9,8 @@ summary:
 description: Learn Regex
 categories:
   - Programming
+  - Utile
+  - Regex
 tags:
   - Regex
 ---

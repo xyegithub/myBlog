@@ -10,6 +10,7 @@ summary:
 description: 遇到过精巧的算法设计
 categories:
   - Programming
+  - Algorithm
 tags:
   - Algorithm
   - Programming
