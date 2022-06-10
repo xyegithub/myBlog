@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://yexiang.ml/2022/06/10/C-Project/</loc>
+    
+    <lastmod>2022-06-10</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://yexiang.ml/2021/12/17/Algorithm/</loc>
     
     <lastmod>2022-06-10</lastmod>
@@ -311,6 +318,13 @@
     <priority>0.6</priority>
   </url>
   
+  <url>
+    <loc>http://yexiang.ml/tags/C/</loc>
+    <lastmod>2022-06-10</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
 
   
   <url>
@@ -427,6 +441,13 @@
   
   <url>
     <loc>http://yexiang.ml/categories/Programming/X-server/</loc>
+    <lastmod>2022-06-10</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://yexiang.ml/categories/Programming/C/</loc>
     <lastmod>2022-06-10</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
