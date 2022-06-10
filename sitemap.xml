@@ -2,6 +2,48 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://yexiang.ml/2022/01/20/Config-Vim/</loc>
+    
+    <lastmod>2022-06-10</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yexiang.ml/2022/05/04/Fish-Shell/</loc>
+    
+    <lastmod>2022-06-10</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yexiang.ml/2022/05/12/Bash/</loc>
+    
+    <lastmod>2022-06-10</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yexiang.ml/2022/02/10/Shorcut-on-Linux/</loc>
+    
+    <lastmod>2022-06-10</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yexiang.ml/2022/05/15/Arch-Linux/</loc>
+    
+    <lastmod>2022-06-10</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yexiang.ml/2021/12/10/An-Introduction-to-Git/</loc>
+    
+    <lastmod>2022-06-10</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://yexiang.ml/2022/06/10/C-Project/</loc>
     
     <lastmod>2022-06-10</lastmod>
@@ -12,20 +54,6 @@
     <loc>http://yexiang.ml/2021/12/17/Algorithm/</loc>
     
     <lastmod>2022-06-10</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://yexiang.ml/2022/05/15/Arch-Linux/</loc>
-    
-    <lastmod>2022-06-09</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://yexiang.ml/2022/05/12/Bash/</loc>
-    
-    <lastmod>2022-06-01</lastmod>
     
   </url>
   
@@ -72,13 +100,6 @@
   </url>
   
   <url>
-    <loc>http://yexiang.ml/2022/05/04/Fish-Shell/</loc>
-    
-    <lastmod>2022-05-12</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://yexiang.ml/2022/04/12/Regex/</loc>
     
     <lastmod>2022-05-12</lastmod>
@@ -107,21 +128,7 @@
   </url>
   
   <url>
-    <loc>http://yexiang.ml/2022/01/20/Config-Vim/</loc>
-    
-    <lastmod>2022-05-12</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://yexiang.ml/2021/12/18/Transformer-and-BERT/</loc>
-    
-    <lastmod>2022-05-12</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://yexiang.ml/2022/02/10/Shorcut-on-Linux/</loc>
     
     <lastmod>2022-05-12</lastmod>
     
@@ -143,13 +150,6 @@
   
   <url>
     <loc>http://yexiang.ml/2021/12/17/Experiments/</loc>
-    
-    <lastmod>2022-05-12</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://yexiang.ml/2021/12/10/An-Introduction-to-Git/</loc>
     
     <lastmod>2022-05-12</lastmod>
     
@@ -335,35 +335,7 @@
   </url>
   
   <url>
-    <loc>http://yexiang.ml/categories/Programming/Vim/</loc>
-    <lastmod>2022-06-10</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>http://yexiang.ml/categories/Programming/Git/</loc>
-    <lastmod>2022-06-10</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>http://yexiang.ml/categories/Programming/Linux/</loc>
-    <lastmod>2022-06-10</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>http://yexiang.ml/categories/Machine-Learning/</loc>
-    <lastmod>2022-06-10</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>http://yexiang.ml/categories/Programming/Shell/</loc>
     <lastmod>2022-06-10</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -385,20 +357,6 @@
   
   <url>
     <loc>http://yexiang.ml/categories/Machine-Learning/Reinforcement-Learning/</loc>
-    <lastmod>2022-06-10</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>http://yexiang.ml/categories/Programming/Shell/Bash/</loc>
-    <lastmod>2022-06-10</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>http://yexiang.ml/categories/Programming/Shell/Fish/</loc>
     <lastmod>2022-06-10</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -455,6 +413,41 @@
   
   <url>
     <loc>http://yexiang.ml/categories/Programming/Open-Source-Project/C/</loc>
+    <lastmod>2022-06-10</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://yexiang.ml/categories/Programming/Tools/</loc>
+    <lastmod>2022-06-10</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://yexiang.ml/categories/Programming/Tools/Vim/</loc>
+    <lastmod>2022-06-10</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://yexiang.ml/categories/Programming/Tools/Git/</loc>
+    <lastmod>2022-06-10</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://yexiang.ml/categories/Programming/Tools/Shell/</loc>
+    <lastmod>2022-06-10</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://yexiang.ml/categories/Programming/Tools/Linux/</loc>
     <lastmod>2022-06-10</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
