@@ -9,6 +9,7 @@ summary:
 description: The first step for learning GAN
 categories:
   - Machine Learning
+  - Methods
   - Generative Adversarial Network
 tags:
   - Generative Adversarial Network

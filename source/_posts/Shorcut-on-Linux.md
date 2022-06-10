@@ -10,6 +10,7 @@ summary:
 description: Describe the shortcuts of linux and how to set them
 categories:
   - Programming
+  - Tools
   - Linux
 tags:
   - Linux

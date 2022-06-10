@@ -9,8 +9,8 @@ summary:
 description: Bash Shell
 categories:
   - Programming
+  - Tools
   - Shell
-  - Bash
 tags:
   - Bash
 ---

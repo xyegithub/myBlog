@@ -7,6 +7,7 @@ tags:
 
 categories:
   - Machine Learning
+  - Methods
   - Reinforcement Learning
 ---
 

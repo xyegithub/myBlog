@@ -10,6 +10,7 @@ summary:
 description: NLP, Transformer and BERT.
 categories:
   - Machine Learning
+  - Applications
   - Natural Language Processing
 tags:
   - Natural Language Processing

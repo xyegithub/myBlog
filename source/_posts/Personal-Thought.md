@@ -10,10 +10,10 @@ summary:
 description: 记录自己在学术方面的一些想法。
 categories:
   - Machine Learning
-  - About Papers
+  - Paper Reading
 tags:
   - Personal Thought
-  - Papers
+  - Paper Reading
   - private
 ---
 

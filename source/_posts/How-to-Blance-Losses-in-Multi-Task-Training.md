@@ -10,6 +10,7 @@ summary:
 description: 在多任务模型中，如何平衡多个 loss 函数。
 categories:
   - Machine Learning
+  - Methods
   - Optimization
 tags:
   - Multi Task Training

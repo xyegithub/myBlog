@@ -7,14 +7,13 @@ mathjax: true
 date: 2021-12-14 16:33:03
 password:
 summary:
-description: 记录阅读论文过程中，新获取的信息。
+description: New things for paper reading.
 categories:
   - Machine Learning
-  - About Papers
+  - Paper Reading
 
 tags:
-  - Papers
-  - Personal Thought
+  - Paper Reading
 ---
 
 # Attention

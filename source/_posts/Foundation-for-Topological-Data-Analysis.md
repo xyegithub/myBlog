@@ -10,6 +10,7 @@ summary:
 description: An introduction to topological data analysis.
 categories:
   - Machine Learning
+  - Methods
   - Topological Data Analysis
 tags:
   - Topological Data Analysis

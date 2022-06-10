@@ -10,6 +10,7 @@ summary:
 description: Vim Configuration
 categories:
   - Programming
+  - Tools
   - Vim
 tags:
   - Vim

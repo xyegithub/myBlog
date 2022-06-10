@@ -199,7 +199,7 @@ class Solution(object):
 
 # Linked List
 
-## Reverse Nodes in K-Group
+## Reverse Nodes in K-Group <font color=magenta>[2022-06-10]</font>
 
 Given the head of a linked list, reverse the nodes of the list `k` at a time and
 return the modified list.

@@ -9,6 +9,7 @@ summary:
 description: Arch Linux installation, Configuration
 categories:
   - Programming
+  - Tools
   - Linux
 tags:
   - Arch Linux
