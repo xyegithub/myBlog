@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://yexiang.ml/2022/06/10/Windows/</loc>
+    
+    <lastmod>2022-06-10</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://yexiang.ml/2022/01/20/Config-Vim/</loc>
     
     <lastmod>2022-06-10</lastmod>
@@ -58,13 +65,6 @@
   </url>
   
   <url>
-    <loc>http://yexiang.ml/2022/05/26/Proxy-Configuration/</loc>
-    
-    <lastmod>2022-05-26</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://yexiang.ml/2022/05/13/The-First-Step-to-GAN/</loc>
     
     <lastmod>2022-05-24</lastmod>
@@ -73,13 +73,6 @@
   
   <url>
     <loc>http://yexiang.ml/tags/index.html</loc>
-    
-    <lastmod>2022-05-12</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://yexiang.ml/2022/05/05/X-server-on-Windows/</loc>
     
     <lastmod>2022-05-12</lastmod>
     
@@ -263,13 +256,6 @@
   </url>
   
   <url>
-    <loc>http://yexiang.ml/tags/Proxy/</loc>
-    <lastmod>2022-06-10</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>http://yexiang.ml/tags/Natural-Language-Processing/</loc>
     <lastmod>2022-06-10</lastmod>
     <changefreq>daily</changefreq>
@@ -312,14 +298,14 @@
   </url>
   
   <url>
-    <loc>http://yexiang.ml/tags/X-server/</loc>
+    <loc>http://yexiang.ml/tags/C/</loc>
     <lastmod>2022-06-10</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>http://yexiang.ml/tags/C/</loc>
+    <loc>http://yexiang.ml/tags/Windows/</loc>
     <lastmod>2022-06-10</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -336,13 +322,6 @@
   
   <url>
     <loc>http://yexiang.ml/categories/Machine-Learning/</loc>
-    <lastmod>2022-06-10</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>http://yexiang.ml/categories/Programming/Proxy/</loc>
     <lastmod>2022-06-10</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -398,13 +377,6 @@
   </url>
   
   <url>
-    <loc>http://yexiang.ml/categories/Programming/X-server/</loc>
-    <lastmod>2022-06-10</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>http://yexiang.ml/categories/Programming/Open-Source-Project/</loc>
     <lastmod>2022-06-10</lastmod>
     <changefreq>daily</changefreq>
@@ -448,6 +420,13 @@
   
   <url>
     <loc>http://yexiang.ml/categories/Programming/Tools/Linux/</loc>
+    <lastmod>2022-06-10</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://yexiang.ml/categories/Programming/Tools/Windows/</loc>
     <lastmod>2022-06-10</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
