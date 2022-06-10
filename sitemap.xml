@@ -2,6 +2,20 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://yexiang.ml/2021/12/17/Algorithm/</loc>
+    
+    <lastmod>2022-06-10</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yexiang.ml/2022/04/12/Regex/</loc>
+    
+    <lastmod>2022-06-10</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://yexiang.ml/2021/12/15/Personal-Thought/</loc>
     
     <lastmod>2022-06-10</lastmod>
@@ -107,13 +121,6 @@
   </url>
   
   <url>
-    <loc>http://yexiang.ml/2021/12/17/Algorithm/</loc>
-    
-    <lastmod>2022-06-10</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://yexiang.ml/tags/index.html</loc>
     
     <lastmod>2022-05-12</lastmod>
@@ -129,13 +136,6 @@
   
   <url>
     <loc>http://yexiang.ml/about/index.html</loc>
-    
-    <lastmod>2022-05-12</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://yexiang.ml/2022/04/12/Regex/</loc>
     
     <lastmod>2022-05-12</lastmod>
     
@@ -441,6 +441,27 @@
   
   <url>
     <loc>http://yexiang.ml/categories/Machine-Learning/Paper-Reading/</loc>
+    <lastmod>2022-06-10</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://yexiang.ml/categories/Programming/Algorithm/</loc>
+    <lastmod>2022-06-10</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://yexiang.ml/categories/Programming/Utile/</loc>
+    <lastmod>2022-06-10</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://yexiang.ml/categories/Programming/Utile/Regex/</loc>
     <lastmod>2022-06-10</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
