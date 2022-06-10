@@ -178,6 +178,12 @@ You may use any multi-boot supporting BIOS boot loader, such as 'grub'.
 
 # Configuration
 
+## Thunderbird
+
+Thunderbird is used as the email app. However, it can not be stored on the tray.
+`birdtray` can help. Install it with `yay -S birdtray` and run `birdtray` then
+Configure it with thunderbird.
+
 ## Remote Desktop
 
 To use the local camera, this command is needed.
@@ -213,6 +219,8 @@ gpupdate /force in elevated CMD Prompt and reboot
 4. Run `gpupdate /force` from an elevated command prompt.
 5. At least disconnect RDP session and connect again, if this does not work
    reboot target VM.
+
+[For More Information](https://stackoverflow.com/questions/33719489/how-to-enable-usb-redirection-in-windows-10/46628854)
 
 ## Touch Pad
 
