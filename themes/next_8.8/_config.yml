@@ -555,18 +555,30 @@ comments:
   style: tabs
   # Choose a comment system to be displayed by default.
   # Available values: disqus | disqusjs | changyan | livere | gitalk | utterances
-  active:
+  active: valine
   # Setting `true` means remembering the comment system selected by the visitor.
   storage: true
   # Lazyload all comment systems.
-  lazyload: false
+  lazyload: true
   # Modify texts or order for any naves, here are some examples.
   nav:
-    #disqus:
-    #  text: Load Disqus
-    #  order: -1
-    #gitalk:
-    #  order: -2
+    disqus:
+     text: Load Disqus
+     order: -1
+    gitalk:
+     order: -2
+# valine: https://cdn.jsdelivr.net/npm/valine@1.4.18/dist/Valine.min.js
+
+valine:
+  enable: true
+  appid:  uCqNjo9oCe3F1fcLUsRJRhU1-gzGzoHsz
+  appkey: UtI0z9xj2lqvOHXuwiKkzWv4
+  notify: false # mail notifier , https://github.com/xCss/Valine/wiki
+  verify: false # Verification code
+  placeholder: 有什么问题，欢迎留言指正与交流... # comment box placeholder
+  avatar: robohash # gravatar style
+  guest_info: nick,mail,link # custom comment header
+  pageSize: 10 # pagination size
 
 # Disqus
 # For more information: https://disqus.com
