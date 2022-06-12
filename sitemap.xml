@@ -242,13 +242,6 @@
   </url>
   
   <url>
-    <loc>http://yexiang.ml/tags/Reinforcement-Learning/</loc>
-    <lastmod>2022-06-12</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>http://yexiang.ml/tags/Fish/</loc>
     <lastmod>2022-06-12</lastmod>
     <changefreq>daily</changefreq>
@@ -264,6 +257,13 @@
   
   <url>
     <loc>http://yexiang.ml/tags/Multi-Task-Training/</loc>
+    <lastmod>2022-06-12</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://yexiang.ml/tags/Reinforcement-Learning/</loc>
     <lastmod>2022-06-12</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -305,14 +305,14 @@
   </url>
   
   <url>
-    <loc>http://yexiang.ml/tags/Generative-Adversarial-Network/</loc>
+    <loc>http://yexiang.ml/tags/Linux/</loc>
     <lastmod>2022-06-12</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>http://yexiang.ml/tags/Linux/</loc>
+    <loc>http://yexiang.ml/tags/Generative-Adversarial-Network/</loc>
     <lastmod>2022-06-12</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -482,13 +482,6 @@
   </url>
   
   <url>
-    <loc>http://yexiang.ml/categories/Machine-Learning/Methods/Reinforcement-Learning/</loc>
-    <lastmod>2022-06-12</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>http://yexiang.ml/categories/Machine-Learning/Methods/Topological-Data-Analysis/</loc>
     <lastmod>2022-06-12</lastmod>
     <changefreq>daily</changefreq>
@@ -497,6 +490,13 @@
   
   <url>
     <loc>http://yexiang.ml/categories/Machine-Learning/Methods/Optimization/</loc>
+    <lastmod>2022-06-12</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://yexiang.ml/categories/Machine-Learning/Methods/Reinforcement-Learning/</loc>
     <lastmod>2022-06-12</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
