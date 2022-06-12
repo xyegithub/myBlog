@@ -179,13 +179,6 @@
 
   
   <url>
-    <loc>http://yexiang.ml/tags/Git/</loc>
-    <lastmod>2022-06-12</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>http://yexiang.ml/tags/Algorithm/</loc>
     <lastmod>2022-06-12</lastmod>
     <changefreq>daily</changefreq>
@@ -194,6 +187,13 @@
   
   <url>
     <loc>http://yexiang.ml/tags/Programming/</loc>
+    <lastmod>2022-06-12</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://yexiang.ml/tags/Git/</loc>
     <lastmod>2022-06-12</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -228,13 +228,6 @@
   </url>
   
   <url>
-    <loc>http://yexiang.ml/tags/Vim/</loc>
-    <lastmod>2022-06-12</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>http://yexiang.ml/tags/Personal-Thought/</loc>
     <lastmod>2022-06-12</lastmod>
     <changefreq>daily</changefreq>
@@ -250,6 +243,13 @@
   
   <url>
     <loc>http://yexiang.ml/tags/private/</loc>
+    <lastmod>2022-06-12</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://yexiang.ml/tags/Vim/</loc>
     <lastmod>2022-06-12</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -291,13 +291,6 @@
   </url>
   
   <url>
-    <loc>http://yexiang.ml/tags/Paper-Reading/</loc>
-    <lastmod>2022-06-12</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>http://yexiang.ml/tags/Compile/</loc>
     <lastmod>2022-06-12</lastmod>
     <changefreq>daily</changefreq>
@@ -312,13 +305,6 @@
   </url>
   
   <url>
-    <loc>http://yexiang.ml/tags/Linux/</loc>
-    <lastmod>2022-06-12</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>http://yexiang.ml/tags/Revealjs/</loc>
     <lastmod>2022-06-12</lastmod>
     <changefreq>daily</changefreq>
@@ -327,6 +313,20 @@
   
   <url>
     <loc>http://yexiang.ml/tags/PPT/</loc>
+    <lastmod>2022-06-12</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://yexiang.ml/tags/Linux/</loc>
+    <lastmod>2022-06-12</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://yexiang.ml/tags/Paper-Reading/</loc>
     <lastmod>2022-06-12</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -384,14 +384,14 @@
   </url>
   
   <url>
-    <loc>http://yexiang.ml/categories/Programming/Open-Source-Project/</loc>
+    <loc>http://yexiang.ml/categories/Programming/Algorithm/</loc>
     <lastmod>2022-06-12</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>http://yexiang.ml/categories/Programming/Algorithm/</loc>
+    <loc>http://yexiang.ml/categories/Programming/Open-Source-Project/</loc>
     <lastmod>2022-06-12</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -419,7 +419,7 @@
   </url>
   
   <url>
-    <loc>http://yexiang.ml/categories/Programming/Tools/Git/</loc>
+    <loc>http://yexiang.ml/categories/Programming/Utile/</loc>
     <lastmod>2022-06-12</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -433,7 +433,7 @@
   </url>
   
   <url>
-    <loc>http://yexiang.ml/categories/Programming/Utile/</loc>
+    <loc>http://yexiang.ml/categories/Programming/Tools/Revealjs/</loc>
     <lastmod>2022-06-12</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -447,21 +447,14 @@
   </url>
   
   <url>
-    <loc>http://yexiang.ml/categories/Programming/Tools/Revealjs/</loc>
+    <loc>http://yexiang.ml/categories/Programming/Tools/Git/</loc>
     <lastmod>2022-06-12</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>http://yexiang.ml/categories/Programming/Tools/Vim/</loc>
-    <lastmod>2022-06-12</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>http://yexiang.ml/categories/Programming/Tools/Windows/</loc>
+    <loc>http://yexiang.ml/categories/Machine-Learning/Applications/</loc>
     <lastmod>2022-06-12</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -475,14 +468,21 @@
   </url>
   
   <url>
-    <loc>http://yexiang.ml/categories/Machine-Learning/Methods/</loc>
+    <loc>http://yexiang.ml/categories/Programming/Tools/Windows/</loc>
     <lastmod>2022-06-12</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>http://yexiang.ml/categories/Machine-Learning/Paper-Reading/</loc>
+    <loc>http://yexiang.ml/categories/Programming/Tools/Vim/</loc>
+    <lastmod>2022-06-12</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://yexiang.ml/categories/Machine-Learning/Methods/</loc>
     <lastmod>2022-06-12</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -503,7 +503,14 @@
   </url>
   
   <url>
-    <loc>http://yexiang.ml/categories/Machine-Learning/Applications/</loc>
+    <loc>http://yexiang.ml/categories/Machine-Learning/Paper-Reading/</loc>
+    <lastmod>2022-06-12</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://yexiang.ml/categories/Machine-Learning/Applications/Natural-Language-Processing/</loc>
     <lastmod>2022-06-12</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -532,13 +539,6 @@
   
   <url>
     <loc>http://yexiang.ml/categories/Machine-Learning/Methods/Generative-Adversarial-Network/</loc>
-    <lastmod>2022-06-12</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>http://yexiang.ml/categories/Machine-Learning/Applications/Natural-Language-Processing/</loc>
     <lastmod>2022-06-12</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
