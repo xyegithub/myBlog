@@ -609,7 +609,7 @@ gitalk:
   client_id: 04c4cf6b2c4c1b1762e9 # GitHub Application Client ID
   client_secret: 799875cdf35ced5325ab3b57c96f98b6d64b73b2 # GitHub Application Client Secret
   admin_user: xyegithub # GitHub repo owner and collaborators, only these guys can initialize gitHub issues
-  distraction_free_mode: true # Facebook-like distraction free mode
+  distraction_free_mode: false # Facebook-like distraction free mode
   # When the official proxy is not available, you can change it to your own proxy address
   proxy: https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token # This is official proxy address
   # proxy: /login/oauth/access_token
