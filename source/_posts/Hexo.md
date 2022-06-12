@@ -72,9 +72,12 @@ gitalk:
 > user. It only has access to the user's resources. Removing a user from a
 > repository will remove the application access.
 
-`repo` is your github repo which is used to store the comment date. So you
+`repo` is your github repo name which is used to store the comment data. So you
 should create a github repo at first. In my examples it is name with
 hexo_comment. `issues` should be enabled for `hexo_comment`.
+
+If your blog is hosted by github. You can just use your blog repo as the repo to
+store the comment data.
 
 `distraction_free_mode` should be set into `false`. When set into `true`, the
 other part of your blog will get black when one write his comment.
