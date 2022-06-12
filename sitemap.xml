@@ -270,14 +270,14 @@
   </url>
   
   <url>
-    <loc>http://yexiang.ml/tags/Paper-Reading/</loc>
+    <loc>http://yexiang.ml/tags/Compile/</loc>
     <lastmod>2022-06-12</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>http://yexiang.ml/tags/Compile/</loc>
+    <loc>http://yexiang.ml/tags/Paper-Reading/</loc>
     <lastmod>2022-06-12</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -433,6 +433,13 @@
   </url>
   
   <url>
+    <loc>http://yexiang.ml/categories/Programming/Tools/Windows/</loc>
+    <lastmod>2022-06-12</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>http://yexiang.ml/categories/Machine-Learning/Experiments/</loc>
     <lastmod>2022-06-12</lastmod>
     <changefreq>daily</changefreq>
@@ -447,14 +454,14 @@
   </url>
   
   <url>
-    <loc>http://yexiang.ml/categories/Machine-Learning/Paper-Reading/</loc>
+    <loc>http://yexiang.ml/categories/Programming/Utile/Compile/</loc>
     <lastmod>2022-06-12</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>http://yexiang.ml/categories/Programming/Utile/Compile/</loc>
+    <loc>http://yexiang.ml/categories/Machine-Learning/Paper-Reading/</loc>
     <lastmod>2022-06-12</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -504,13 +511,6 @@
   
   <url>
     <loc>http://yexiang.ml/categories/Machine-Learning/Applications/Natural-Language-Processing/</loc>
-    <lastmod>2022-06-12</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>http://yexiang.ml/categories/Programming/Tools/Windows/</loc>
     <lastmod>2022-06-12</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
