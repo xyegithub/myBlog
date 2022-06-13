@@ -4,9 +4,6 @@ top: false
 cover: false
 toc: true
 mathjax: true
-date: 2022-01-20 10:24:34
-password:
-summary:
 description: Vim Configuration
 categories:
   - Programming
@@ -14,6 +11,10 @@ categories:
   - Vim
 tags:
   - Vim
+abbrlink: 730c940e
+date: 2022-01-20 10:24:34
+password:
+summary:
 ---
 
 # 安装 anaconda

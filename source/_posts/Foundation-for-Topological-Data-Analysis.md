@@ -4,9 +4,6 @@ top: false
 cover: false
 toc: true
 mathjax: true
-date: 2021-12-30 09:07:39
-password:
-summary:
 description: An introduction to topological data analysis.
 categories:
   - Machine Learning
@@ -14,6 +11,10 @@ categories:
   - Topological Data Analysis
 tags:
   - Topological Data Analysis
+abbrlink: 617f6293
+date: 2021-12-30 09:07:39
+password:
+summary:
 ---
 
 # 持续同调

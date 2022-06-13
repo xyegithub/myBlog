@@ -4,16 +4,16 @@ top: false
 cover: false
 toc: true
 mathjax: true
-date: 2021-12-14 16:33:03
-password:
-summary:
 description: New things for paper reading.
 categories:
   - Machine Learning
   - Paper Reading
-
 tags:
   - Paper Reading
+abbrlink: c94b2364
+date: 2021-12-14 16:33:03
+password:
+summary:
 ---
 
 # Attention

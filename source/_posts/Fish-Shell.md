@@ -3,9 +3,6 @@ title: Fish Shell
 top: false
 cover: false
 toc: true
-date: 2022-05-04 09:43:16
-password:
-summary:
 description: everyday fish shell
 categories:
   - Programming
@@ -13,6 +10,10 @@ categories:
   - Shell
 tags:
   - Fish
+abbrlink: 5fb5d34d
+date: 2022-05-04 09:43:16
+password:
+summary:
 ---
 
 # Configuration of shortcuts for fish

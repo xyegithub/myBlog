@@ -4,9 +4,6 @@ top: false
 cover: false
 toc: true
 mathjax: true
-date: 2021-12-15 16:01:28
-password:
-summary:
 description: 记录自己在学术方面的一些想法。
 categories:
   - Machine Learning
@@ -15,6 +12,10 @@ tags:
   - Personal Thought
   - Paper Reading
   - private
+abbrlink: bf6e579a
+date: 2021-12-15 16:01:28
+password:
+summary:
 ---
 
 # Deep Learning

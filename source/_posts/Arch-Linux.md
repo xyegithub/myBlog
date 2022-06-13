@@ -3,16 +3,17 @@ title: Arch Linux
 top: false
 cover: false
 toc: true
-date: 2022-05-15 20:40:03
-password:
-summary:
-description: Arch Linux installation, Configuration
+description: 'Arch Linux installation, Configuration'
 categories:
   - Programming
   - Tools
   - Linux
 tags:
   - Arch Linux
+abbrlink: 38c4d001
+date: 2022-05-15 20:40:03
+password:
+summary:
 ---
 
 [A good Tutorial for Installing it!](https://archlinuxstudio.github.io/ArchLinuxTutorial/#/)

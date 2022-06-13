@@ -3,9 +3,6 @@ title: Hexo
 top: false
 cover: false
 toc: true
-date: 2022-06-12 16:53:47
-password:
-summary:
 description: Configure Hexo
 categories:
   - Programming
@@ -14,6 +11,10 @@ categories:
 tags:
   - Hexo
   - Blog
+abbrlink: b132932
+date: 2022-06-12 16:53:47
+password:
+summary:
 ---
 
 # Enable Gitalk
@@ -81,3 +82,29 @@ store the comment data.
 
 `distraction_free_mode` should be set into `false`. When set into `true`, the
 other part of your blog will get black when one write his comment.
+
+# Baidu/Google Search
+
+Two steps are needed.
+
+1. Add the site to baidu/google, which need a file verifying.
+2. Add the sitemap to baidu/google.
+
+To add the sitemap file.
+
+```bash
+# add the sitemap plugin which will create sitemap.xml or baidusitemap.xml when hexo d is ran
+npm install hexo-generator-sitemap --save
+npm install hexo-generator-baidu-sitemap --save
+# the plugin that fix the link of each blog in the sitemap file.
+npm install hexo-abbrlink --save
+```
+
+then change the `_config.yml`. This is the Configuration of `hexo-abbrlink`.
+
+```yml
+permalink: :year/:month:abbrlink.html
+abbrlink:
+  alg: crc32 #算法选项：crc16丨crc32
+  rep: hex #输出进制：dec为十进制，hex为十六进制
+```

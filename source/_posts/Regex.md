@@ -3,9 +3,6 @@ title: Regex
 top: false
 cover: false
 toc: true
-date: 2022-04-12 14:57:48
-password:
-summary:
 description: Learn Regex
 categories:
   - Programming
@@ -13,6 +10,10 @@ categories:
   - Regex
 tags:
   - Regex
+abbrlink: 83c5d7ce
+date: 2022-04-12 14:57:48
+password:
+summary:
 ---
 
 # Regular Expressions in Vim

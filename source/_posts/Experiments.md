@@ -4,9 +4,6 @@ top: false
 cover: false
 toc: true
 mathjax: true
-date: 2021-12-17 10:00:56
-password:
-summary:
 description: 发现统计规律，记录一些自己diy的实验。
 categories:
   - Machine Learning
@@ -15,6 +12,10 @@ tags:
   - Personal Thought
   - Experiments
   - private
+abbrlink: b8eefd24
+date: 2021-12-17 10:00:56
+password:
+summary:
 ---
 
 # Deep Learning

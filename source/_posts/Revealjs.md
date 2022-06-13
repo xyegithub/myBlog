@@ -3,9 +3,6 @@ title: Revealjs
 top: false
 cover: false
 toc: true
-date: 2022-06-11 09:25:44
-password:
-summary:
 description: Make PPT with Markdown
 comments: true
 categories:
@@ -15,6 +12,10 @@ categories:
 tags:
   - Revealjs
   - PPT
+abbrlink: b34f5ff8
+date: 2022-06-11 09:25:44
+password:
+summary:
 ---
 
 It is hard to use reveal.js when you want to draw something like flow chart.

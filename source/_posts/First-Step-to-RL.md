@@ -1,14 +1,14 @@
 ---
 title: First Step to Reinforcement Learning
-date: 2021-12-03 16:48:41
 description: An introduction to Reinforcement Learning
 tags:
   - Reinforcement Learning
-
 categories:
   - Machine Learning
   - Methods
   - Reinforcement Learning
+abbrlink: 1e331e4a
+date: 2021-12-03 16:48:41
 ---
 
 ### 什么是强化学习，关于强化学习的几点疑问

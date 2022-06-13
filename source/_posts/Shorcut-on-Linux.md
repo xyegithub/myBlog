@@ -4,9 +4,6 @@ top: false
 cover: false
 toc: true
 mathjax: true
-date: 2022-02-10 09:22:15
-password:
-summary:
 description: Describe the shortcuts of linux and how to set them
 categories:
   - Programming
@@ -14,6 +11,10 @@ categories:
   - Linux
 tags:
   - Linux
+abbrlink: 6d8ab470
+date: 2022-02-10 09:22:15
+password:
+summary:
 ---
 
 _Root in: I want to find out where the "kill shortcut", ctrl C, defined. I use

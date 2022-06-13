@@ -3,9 +3,6 @@ title: Windows
 top: false
 cover: false
 toc: true
-date: 2022-06-10 18:31:06
-password:
-summary:
 description: Some Configuration on Windows
 categories:
   - Programming
@@ -13,6 +10,10 @@ categories:
   - Windows
 tags:
   - Windows
+abbrlink: 2c5abc07
+date: 2022-06-10 18:31:06
+password:
+summary:
 ---
 
 # Proxy

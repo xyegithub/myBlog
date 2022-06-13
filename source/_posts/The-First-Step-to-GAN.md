@@ -3,9 +3,6 @@ title: The First Step to GAN
 top: false
 cover: false
 toc: true
-date: 2022-05-13 10:17:22
-password:
-summary:
 description: The first step for learning GAN
 categories:
   - Machine Learning
@@ -13,6 +10,10 @@ categories:
   - Generative Adversarial Network
 tags:
   - Generative Adversarial Network
+abbrlink: 5f500d1b
+date: 2022-05-13 10:17:22
+password:
+summary:
 ---
 
 # Some Characteristics

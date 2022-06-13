@@ -4,9 +4,6 @@ top: false
 cover: false
 toc: true
 mathjax: true
-date: 2022-01-10 14:34:19
-password:
-summary:
 description: 在多任务模型中，如何平衡多个 loss 函数。
 categories:
   - Machine Learning
@@ -14,6 +11,10 @@ categories:
   - Optimization
 tags:
   - Multi Task Training
+abbrlink: 6e9b1d38
+date: 2022-01-10 14:34:19
+password:
+summary:
 ---
 
 # 论文中有的方法

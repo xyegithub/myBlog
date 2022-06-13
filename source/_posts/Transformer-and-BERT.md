@@ -4,10 +4,7 @@ top: false
 cover: false
 toc: true
 mathjax: true
-date: 2021-12-18 10:00:56
-password:
-summary:
-description: NLP, Transformer and BERT.
+description: 'NLP, Transformer and BERT.'
 categories:
   - Machine Learning
   - Applications
@@ -16,6 +13,10 @@ tags:
   - Natural Language Processing
   - Transformer
   - BERT
+abbrlink: e537690a
+date: 2021-12-18 10:00:56
+password:
+summary:
 ---
 
 I will introduce transformer and BERT according to their original papers. [^1]

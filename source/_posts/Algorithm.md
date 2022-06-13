@@ -4,9 +4,6 @@ top: false
 cover: false
 toc: true
 mathjax: true
-date: 2021-12-17 16:26:10
-password:
-summary:
 description: 遇到过精巧的算法设计
 categories:
   - Programming
@@ -14,6 +11,10 @@ categories:
 tags:
   - Algorithm
   - Programming
+abbrlink: 17f44e1a
+date: 2021-12-17 16:26:10
+password:
+summary:
 ---
 
 # Depth First Search
@@ -388,6 +389,57 @@ class Solution:
 ```
 
 # Sort
+
+## K Highest Ranked Items Within a Price Range <font color=magenta>[2022-06-13]</font>
+
+The topic is
+[here](https://leetcode.cn/problems/k-highest-ranked-items-within-a-price-range/).
+
+```python
+class Solution:
+    def highestRankedKItems(self, grid: List[List[int]], pricing: List[int], start: List[int], k: int) -> List[List[int]]:
+        res = []
+
+        curs = [
+            [0, grid[start[0]][start[1]], start[0], start[1]]
+            ]
+
+# gird set to 0 is to avoid visiting a coordinate for multiple time.
+# The position to set the grid to be 0 is important.
+# in  this example, the price of a coordinate is set to 0 when it is visited by curs.
+# also can set the price to be 0, when it is checked if within the price range.
+# However, this is time expensive, for a position maybe append to curs many times before it is checked.
+# It is the best to set the price to be 0, once it is visited by curs. The curs will not visits it again.
+        grid[start[0]][start[1]] = 0
+
+        r = len(grid)
+        c = len(grid[0])
+
+        dirctions = [[0, 1], [1, 0], [0, -1], [-1, 0]]
+
+        while curs:
+            cur = curs.pop(0)
+            cur_step = cur[0]
+            cur_price = cur[1]
+            cur_row = cur[2]
+            cur_cln = cur[3]
+
+            if pricing[0] <= cur_price <= pricing[1]:
+               res.append(cur)
+
+            for dirction in dirctions:
+                next_step = cur_step + 1
+                next_row = cur_row + dirction[0]
+                next_cln = cur_cln + dirction[1]
+                if 0 <= next_row < r and 0 <= next_cln < c:
+                    next_price = grid[next_row][next_cln]
+                    grid[next_row][next_cln] = 0
+                    if next_price > 0:
+                        curs.append([next_step, next_price,next_row, next_cln])
+
+        res.sort()
+        return [res[2:] for res in res[:k]]
+```
 
 ## Wiggle Sort 2
 
