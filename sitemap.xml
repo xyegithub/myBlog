@@ -2,13 +2,6 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>http://yexiang.ml/baidu_verify_code-NGLrNArHX0.html</loc>
-    
-    <lastmod>2022-06-13</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://yexiang.ml/2021/12/17/Algorithm/</loc>
     
     <lastmod>2022-06-13</lastmod>
@@ -149,6 +142,13 @@
   </url>
   
   <url>
+    <loc>http://yexiang.ml/about/index.html</loc>
+    
+    <lastmod>2022-05-19</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://yexiang.ml/categories/index.html</loc>
     
     <lastmod>2022-05-19</lastmod>
@@ -157,13 +157,6 @@
   
   <url>
     <loc>http://yexiang.ml/tags/index.html</loc>
-    
-    <lastmod>2022-05-19</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://yexiang.ml/about/index.html</loc>
     
     <lastmod>2022-05-19</lastmod>
     
@@ -228,7 +221,7 @@
   </url>
   
   <url>
-    <loc>http://yexiang.ml/tags/Hexo/</loc>
+    <loc>http://yexiang.ml/tags/Vim/</loc>
     <lastmod>2022-06-13</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -256,14 +249,7 @@
   </url>
   
   <url>
-    <loc>http://yexiang.ml/tags/Reinforcement-Learning/</loc>
-    <lastmod>2022-06-13</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>http://yexiang.ml/tags/Vim/</loc>
+    <loc>http://yexiang.ml/tags/Hexo/</loc>
     <lastmod>2022-06-13</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -284,7 +270,7 @@
   </url>
   
   <url>
-    <loc>http://yexiang.ml/tags/Multi-Task-Training/</loc>
+    <loc>http://yexiang.ml/tags/Reinforcement-Learning/</loc>
     <lastmod>2022-06-13</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -298,7 +284,7 @@
   </url>
   
   <url>
-    <loc>http://yexiang.ml/tags/Compile/</loc>
+    <loc>http://yexiang.ml/tags/Multi-Task-Training/</loc>
     <lastmod>2022-06-13</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -306,6 +292,20 @@
   
   <url>
     <loc>http://yexiang.ml/tags/Paper-Reading/</loc>
+    <lastmod>2022-06-13</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://yexiang.ml/tags/Compile/</loc>
+    <lastmod>2022-06-13</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://yexiang.ml/tags/Regex/</loc>
     <lastmod>2022-06-13</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -326,13 +326,6 @@
   </url>
   
   <url>
-    <loc>http://yexiang.ml/tags/Linux/</loc>
-    <lastmod>2022-06-13</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>http://yexiang.ml/tags/Generative-Adversarial-Network/</loc>
     <lastmod>2022-06-13</lastmod>
     <changefreq>daily</changefreq>
@@ -340,14 +333,7 @@
   </url>
   
   <url>
-    <loc>http://yexiang.ml/tags/Regex/</loc>
-    <lastmod>2022-06-13</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>http://yexiang.ml/tags/Windows/</loc>
+    <loc>http://yexiang.ml/tags/Linux/</loc>
     <lastmod>2022-06-13</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -369,6 +355,13 @@
   
   <url>
     <loc>http://yexiang.ml/tags/BERT/</loc>
+    <lastmod>2022-06-13</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://yexiang.ml/tags/Windows/</loc>
     <lastmod>2022-06-13</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -426,13 +419,6 @@
   </url>
   
   <url>
-    <loc>http://yexiang.ml/categories/Programming/Utile/</loc>
-    <lastmod>2022-06-13</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>http://yexiang.ml/categories/Programming/Open-Source-Project/C/</loc>
     <lastmod>2022-06-13</lastmod>
     <changefreq>daily</changefreq>
@@ -440,49 +426,7 @@
   </url>
   
   <url>
-    <loc>http://yexiang.ml/categories/Programming/Tools/Revealjs/</loc>
-    <lastmod>2022-06-13</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>http://yexiang.ml/categories/Programming/Tools/Linux/</loc>
-    <lastmod>2022-06-13</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>http://yexiang.ml/categories/Programming/Tools/Git/</loc>
-    <lastmod>2022-06-13</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>http://yexiang.ml/categories/Programming/Tools/Windows/</loc>
-    <lastmod>2022-06-13</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>http://yexiang.ml/categories/Machine-Learning/Experiments/</loc>
-    <lastmod>2022-06-13</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>http://yexiang.ml/categories/Machine-Learning/Applications/</loc>
-    <lastmod>2022-06-13</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>http://yexiang.ml/categories/Machine-Learning/Methods/</loc>
+    <loc>http://yexiang.ml/categories/Programming/Utile/</loc>
     <lastmod>2022-06-13</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -496,7 +440,49 @@
   </url>
   
   <url>
-    <loc>http://yexiang.ml/categories/Programming/Utile/Compile/</loc>
+    <loc>http://yexiang.ml/categories/Programming/Tools/Revealjs/</loc>
+    <lastmod>2022-06-13</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://yexiang.ml/categories/Programming/Tools/Git/</loc>
+    <lastmod>2022-06-13</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://yexiang.ml/categories/Programming/Tools/Linux/</loc>
+    <lastmod>2022-06-13</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://yexiang.ml/categories/Machine-Learning/Applications/</loc>
+    <lastmod>2022-06-13</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://yexiang.ml/categories/Machine-Learning/Experiments/</loc>
+    <lastmod>2022-06-13</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://yexiang.ml/categories/Programming/Tools/Windows/</loc>
+    <lastmod>2022-06-13</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://yexiang.ml/categories/Machine-Learning/Methods/</loc>
     <lastmod>2022-06-13</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -504,6 +490,13 @@
   
   <url>
     <loc>http://yexiang.ml/categories/Machine-Learning/Paper-Reading/</loc>
+    <lastmod>2022-06-13</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://yexiang.ml/categories/Programming/Utile/Compile/</loc>
     <lastmod>2022-06-13</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -524,14 +517,14 @@
   </url>
   
   <url>
-    <loc>http://yexiang.ml/categories/Machine-Learning/Methods/Reinforcement-Learning/</loc>
+    <loc>http://yexiang.ml/categories/Machine-Learning/Methods/Topological-Data-Analysis/</loc>
     <lastmod>2022-06-13</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>http://yexiang.ml/categories/Machine-Learning/Methods/Topological-Data-Analysis/</loc>
+    <loc>http://yexiang.ml/categories/Machine-Learning/Methods/Reinforcement-Learning/</loc>
     <lastmod>2022-06-13</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
