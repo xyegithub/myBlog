@@ -96,6 +96,8 @@ To add the sitemap file.
 # add the sitemap plugin which will create sitemap.xml or baidusitemap.xml when hexo d is ran
 npm install hexo-generator-sitemap --save
 npm install hexo-generator-baidu-sitemap --save
+# the original link of each blog is related to the data creating the blog and the name of the blog.
+# which is not fixed (once the name of the blog changed.)
 # the plugin that fix the link of each blog in the sitemap file.
 npm install hexo-abbrlink --save
 ```
