@@ -201,6 +201,25 @@ class Solution(object):
 
 # Linked List
 
+## Reverse a Linked List <font color=magenta>[2022-06-16]</font>
+
+```python
+class Solution:
+    def reverseList(self, head: ListNode) -> ListNode:
+        if not head or not head.next:
+            return head
+        cur = head.next
+        start = head
+        # head is the last node
+        start.next = None
+        while cur:
+            next_cur = cur.next
+            cur.next = start
+            start = cur
+            cur = next_cur
+        return start
+```
+
 ## Reverse Nodes in K-Group <font color=magenta>[2022-06-10]</font>
 
 Given the head of a linked list, reverse the nodes of the list `k` at a time and
@@ -389,6 +408,49 @@ class Solution:
 ```
 
 # Sort
+
+## Sort Integers by the Number of 1 Bits <font color=magenta>[2022-06-16]</font>
+
+[here](https://leetcode.cn/problems/sort-integers-by-the-number-of-1-bits/)
+
+```python
+class Solution:
+    def sortByBits(self, arr: List[int]) -> List[int]:
+        res = []
+        for i in arr:
+            c = 0
+            for s in bin(i):
+                if s == '1':
+                    c += 1
+
+            res.append([c, i])
+        res.sort()
+        return [a[1] for a in res]
+```
+
+```python
+from collections import defaultdict as d
+
+class Solution:
+    def sortByBits(self, arr: List[int]) -> List[int]:
+        dic = d(list)
+
+        for i in arr:
+            c = 0
+            for s in str(bin(i)):
+                if s == "1":
+                    c += 1
+            dic[c].append(i)
+
+        output = []
+# The range of integer is less than 0b111111111111111.
+        for j in range(15):
+            if dic[j]:
+                for temp in sorted(dic[j]):
+                    output.append(temp)
+
+        return output
+```
 
 ## K Highest Ranked Items Within a Price Range <font color=magenta>[2022-06-13]</font>
 
@@ -661,7 +723,175 @@ class Solution:
         return [x, y]
 ```
 
+# Flip the Char
+
+## Flip the Char <font color=magenta>[2022-06-16]</font>
+
+[here](https://leetcode.cn/problems/cyJERH/)
+
+The position 'max_idx' that the number of `0` on the left hand - the number of
+`1` on the left hand get the maximum is the dividing line of `0` and `1`.
+
+```python
+class Solution:
+    def minFlipsMonoIncr(self, s: str) -> int:
+        num_0 = 0
+        num_1 = 0
+        max_off_set = 0
+        max_num_0 = 0
+        max_num_1 = 0
+        for idx, num in enumerate(s):
+            if num == "0":
+                num_0 += 1
+                off_set = num_0 - num_1
+                if off_set > max_off_set:
+                    max_off_set = off_set
+                    max_idx = idx
+                    max_num_0 = num_0
+                    max_num_1 = num_1
+            else:
+                num_1 += 1
+        return num_0 - max_num_0 + max_num_1
+```
+
+# Stack
+
+## Valid Parentheses <font color=magenta>[2022-06-17]</font>
+
+[here](https://leetcode.cn/problems/valid-parentheses/)
+
+```python
+class Solution:
+    def isValid(self, s: str) -> bool:
+        dic = {')' : '(',
+        '}' : '{',
+        ']' : '['
+        }
+        res = []
+        for i in s:
+            if i in dic:
+                if not res:
+                    return False
+                cur = res.pop()
+                if cur != dic[i]:
+                    return False
+            else:
+                res.append(i)
+        if res:
+            return False
+        return True
+```
+
 # Other
+
+## Number of Different Integers in a String <font color=magenta>[2022-06-17]</font>
+
+[here](https://leetcode.cn/problems/number-of-different-integers-in-a-string/)
+
+```python
+class Solution:
+    def numDifferentIntegers(self, word: str) -> int:
+        res = set()
+        cur = 0
+        word += 'a'
+        flag = False
+        for i in word:
+            if i.isdigit():
+                flag = True
+                cur = cur * 10 + int(i)
+            else:
+                if flag:
+                    res.add(cur)
+                    cur = 0
+                    flag = False
+        return len(res)
+```
+
+## Max Length of Pair Chain <font color=magenta>[2022-06-16]</font>
+
+[here](https://leetcode.cn/problems/maximum-length-of-pair-chain/)
+
+```python
+class Solution:
+    def findLongestChain(self, pairs: List[List[int]]) -> int:
+        res  = sorted(pairs, key = lambda a: a[1])
+        ans = [res[0]]
+        n = len(res)
+        for i in range(1, n):
+            if ans[-1][-1] < res[i][0]:
+                ans.append(res[i])
+        return len(ans)
+```
+
+## Two City Scheduling <font color=magenta>[2022-06-16]</font>
+
+[here](https://leetcode.cn/problems/two-city-scheduling/)
+
+Think about how to divide these people.
+
+- The gain of changing the people from one city to another is only related to
+  the difference between the costs of a and b.
+- Thus, we can set the cost of a always 0, and set the cost of b to cost(b) -
+  cost(a).
+- The cost of a is always 0 and we only need to pick n people to b which reach
+  the minimum cost.
+
+```python
+class Solution:
+    def twoCitySchedCost(self, costs: List[List[int]]) -> int:
+        res = [a[1] - a[0] for a in costs]
+        nn = len(res)
+        sort_idx = sorted(range(nn), key = lambda k: res[k], reverse = False)
+        cost = 0
+        for i in range(nn // 2):
+            cost += costs[sort_idx[i]][1]
+        for i in range(nn // 2, nn):
+            cost += costs[sort_idx[i]][0]
+        return cost
+```
+
+## Exchange LCCI <font color=magenta>[2022-06-16]</font>
+
+[here](https://leetcode.cn/problems/exchange-lcci/)
+
+```python
+class Solution:
+    def exchangeBits(self, num: int) -> int:
+        num_bin = bin(num)
+        n = len(num_bin)
+        res = ''
+        start = 2
+        if n % 2:
+            res += '10'
+            start = 3
+        for i in range(start, n, 2):
+            res += num_bin[i + 1]
+            res += num_bin[i]
+        return int(res, 2)
+```
+
+## The First Char which Only Appears once <font color=magenta>[2022-06-16]</font>
+
+The topic is
+[here](https://leetcode.cn/problems/di-yi-ge-zhi-chu-xian-yi-ci-de-zi-fu-lcof/).
+
+```python
+class Solution:
+    def firstUniqChar(self, s: str) -> str:
+        res = collections.defaultdict(lambda: [0, 1])
+        for idx, c in enumerate(s):
+            if not c in res:
+                res[c][0] = idx
+            else:
+                res[c][1] += 1
+        ans = " "
+        min_idx = len(s)
+        for i in res:
+            if res[i][1] == 1 and res[i][0] < min_idx:
+                min_idx = res[i][0]
+                ans = i
+        return ans
+```
 
 ## The Gas Station
 

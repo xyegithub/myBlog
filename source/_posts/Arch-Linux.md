@@ -3,7 +3,7 @@ title: Arch Linux
 top: false
 cover: false
 toc: true
-description: 'Arch Linux installation, Configuration'
+description: "Arch Linux installation, Configuration"
 categories:
   - Programming
   - Tools
@@ -179,6 +179,12 @@ You may use any multi-boot supporting BIOS boot loader, such as 'grub'.
 3. Use Windows bootloader to start said copy of the Linux bootloader
 
 # Configuration
+
+## Default applications
+
+To set the default applications, one needs to modify the file
+`~/.config/mimeapps.list`. In the right side of `=` can be the file name in
+`/usr/share/applications/`.
 
 ## Thunderbird
 
