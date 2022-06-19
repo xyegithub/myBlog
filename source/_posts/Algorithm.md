@@ -201,6 +201,39 @@ class Solution(object):
 
 # Linked List
 
+## Find The Minimum and Maximum Number of Nodes Between Critical Points <font color=magenta>[2022-06-18]</font>
+
+[Medium](https://leetcode.cn/problems/find-the-minimum-and-maximum-number-of-nodes-between-critical-points/)
+
+```python
+class Solution:
+    def nodesBetweenCriticalPoints(self, head: Optional[ListNode]) -> List[int]:
+        import numpy as np
+        cur = head
+        left_sign = 0
+        pre_idx = None
+        start_idx = None
+        min_distance = float('inf')
+        idx = 0
+
+        while cur.next:
+            right_sign = np.sign(cur.next.val - cur.val)
+            if left_sign * right_sign == -1:
+                if not start_idx:
+                    start_idx = idx
+                if pre_idx and idx - pre_idx < min_distance:
+                    min_distance = idx - pre_idx
+
+                pre_idx = idx
+            cur = cur.next
+            left_sign = right_sign
+            idx += 1
+
+        if pre_idx != start_idx:
+            return [min_distance, pre_idx - start_idx]
+        return [-1, -1]
+```
+
 ## Reverse a Linked List <font color=magenta>[2022-06-16]</font>
 
 ```python
@@ -669,7 +702,71 @@ class Solution:
         return res
 ```
 
+# Greedy
+
+## Longest Chunked Palindrome Decomposition <font color=magenta>[2022-06-19]</font>
+
+[hard](https://leetcode.cn/problems/longest-chunked-palindrome-decomposition/)
+
+```python
+class Solution:
+    def longestDecomposition(self, text: str) -> int:
+        def get_sub_str(s):
+            n = len(s)
+            for i in range(1 , n // 2 + 1):
+                if s[ : i] == s[n - i : ]:
+                    return i
+            return 0
+
+        ans = 0
+        while text:
+            cur_sub_length = get_sub_str(text)
+            if not cur_sub_length:
+                return ans + 1
+
+            text_length = len(text)
+            text = text[cur_sub_length : text_length  - cur_sub_length]
+            ans += 2
+        return ans
+```
+
+## Orderly Queue <font color=magenta>[2022-06-17]</font>
+
+[Hard](https://leetcode.cn/problems/orderly-queue/)
+
+When K >= 2 the minimum queue can be obtained, thus only need to sort it and do
+not need to know how the minimum queue is obtained.
+
+```python
+class Solution(object):
+    def orderlyQueue(self, S, K):
+        if K == 1:
+            return min(S[i:] + S[:i] for i in range(len(S)))
+        return "".join(sorted(S))
+```
+
 # Brute Force Search
+
+## Number of String That Appear as Substrings in Word <font color=magenta>[2022-06-17]</font>
+
+[Simple](https://leetcode.cn/problems/number-of-strings-that-appear-as-substrings-in-word/)
+
+```python
+class Solution:
+    def numOfStrings(self, patterns: List[str], word: str) -> int:
+        ans = 0
+        n = len(word)
+        def check(pa):
+            m = len(pa)
+            for i in range(n - m + 1):
+                if word[i : i + m] == pa:
+                    return 1
+            return 0
+
+        for pa in patterns:
+            ans += check(pa)
+        return ans
+```
 
 ## Coordinate with Maximum Network Quality <font color=magenta>[2022-05-10]</font>
 
@@ -783,6 +880,48 @@ class Solution:
 ```
 
 # Other
+
+## Maximum Number of Visible Points <font color=magenta>[2022-06-19]</font>
+
+[hard](https://leetcode.cn/problems/maximum-number-of-visible-points/)
+
+```python
+class Solution:
+    def visiblePoints(self, points: List[List[int]], angle: int, location: List[int]) -> int:
+        sameCnt = 0
+        polarDegrees = []
+        for p in points:
+            if p == location:
+                sameCnt += 1
+            else:
+                # obain all the angles the range is (-pi, pi]
+                polarDegrees.append(atan2(p[1] - location[1], p[0] - location[0]))
+
+        polarDegrees.sort()
+
+        n = len(polarDegrees)
+        # and 2 pi, the -pi will changed to pi, and thus -pi and pi
+        # will be adjoined to each other
+        # deg and deg + 2pi are both counted only if the angle is 2pi
+        polarDegrees += [deg + 2 * pi for deg in polarDegrees]
+
+        # change the degree into pi
+        degree = angle * pi / 180
+        # bisect_right/bisect_left require from bisect import xxxx
+        # both bisect_right or bisect_left return the index that the val
+        # placed in to the array and keeps the array ranked.
+
+        # when there are numbers equal to val bisect_right places the val to the right
+        # side of the equaled numbers, thus the returned value is the number of digits
+        # smaller and equil to val in the array
+
+        # bisect_left places the val to the left side of the equaled numbers. Thus the
+        # returned value is the number of digits smaller to the val in the array
+
+        # here bisect_right should be used
+        maxCnt = max((bisect_right(polarDegrees, polarDegrees[i] + degree) - i for i in range(n)), default=0)
+        return maxCnt + sameCnt
+```
 
 ## Number of Different Integers in a String <font color=magenta>[2022-06-17]</font>
 
