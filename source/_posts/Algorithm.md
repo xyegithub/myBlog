@@ -17,6 +17,69 @@ password:
 summary:
 ---
 
+# Backtrack
+
+We can crop only simple tasks. But there is only a complex task.
+
+If we can transfer it into a relative simpler one, do it again and again till we
+can crop it.
+
+When transfer, the simpler task may have some relationship with the complex one,
+e.g., the complex task gives some restrictions to to the simpler one.
+
+## N-Queens II <font color=magenta>[2022-06-20]</font>
+
+[Hard](https://leetcode.cn/problems/n-queens-ii/)
+
+```python
+class Solution:
+    def totalNQueens(self, n: int) -> int:
+        def backtrack(row: int) -> int:
+            # fill the row
+            # two kinds of return
+
+            # when row == n, the last row (n - 1) is filled
+            # thus it must be only 1 solution to reach here so return 1
+
+            # if row < n - 1, the solution there is may be multiple solutions
+            # clear the count (count = 0), then find the number of solutions
+            # and return it
+
+            # thus this function calculates the number of  solutions when the first
+            # row - 1 rows is filled, how they are filled are recorded by columns,
+            # diagonal1 and giagonal2
+
+            # two key points:
+            # 1. How the backtrack end: that is the condition return 1
+            # 2. How to transfer the task to a smaller one, that is else.
+
+            # we can crop it if  and only if row == n, thus we only need
+            # to transfer the task to a simpler one till we can crop it
+            if row == n:
+                return 1
+            else:
+                count = 0
+                for i in range(n):
+                    # i is the columns if it is used continue
+                    # two position A and B, if their row -/+ i is the same number
+                    # they are in one diagonal then continue
+                    if i in columns or row - i in diagonal1 or row + i in diagonal2:
+                        continue
+                    columns.add(i)
+                    diagonal1.add(row - i)
+                    diagonal2.add(row + i)
+                    count += backtrack(row + 1)
+                    columns.remove(i)
+                    diagonal1.remove(row - i)
+                    diagonal2.remove(row + i)
+                return count
+
+        columns = set()
+        diagonal1 = set()
+        diagonal2 = set()
+        return backtrack(0)
+```
+
 # Depth First Search
 
 ## Longest Increasing Path in a Matrix
@@ -880,6 +943,51 @@ class Solution:
 ```
 
 # Other
+
+## Check if There is a Valid Path in a Grid <font color=magenta>[2022-06-21]</font>
+
+[medium](https://leetcode.cn/problems/check-if-there-is-a-valid-path-in-a-grid/)
+
+```python
+class Solution:
+    def hasValidPath(self, grid: List[List[int]]) -> bool:
+        res = {
+        1 :[[0, -1], [0, 1]],
+        2: [[-1, 0], [1, 0]],
+        3: [[0, -1], [1, 0]],
+        4: [[0, 1], [1, 0]],
+        5: [[0, -1], [-1, 0]],
+        6: [[0, 1], [-1, 0]],
+        }
+        n = len(grid)
+        m = len(grid[0])
+        if n == m == 1:
+            return True
+
+        def to_position(position, direction):
+            return [position[0] + direction[0], position[1] + direction[1]]
+
+        def reach(cur):
+            pre = [0, 0]
+            while cur != [0, 0] and 0 <= cur[0] < n and 0 <= cur[1] < m:
+                nex1 = to_position(cur, res[grid[cur[0]][cur[1]]][0])
+                nex2 = to_position(cur, res[grid[cur[0]][cur[1]]][1])
+                if nex1 != pre and nex2 != pre:
+                    return False
+                # be careful about the position of checking if reach the destination
+                # can not be after `cur = nex`, because it can be reachable only
+                 # checked nex1 or nex2 == pre
+                if cur == [n - 1, m - 1]:
+                    return True
+                nex = nex1 if nex1 != pre else nex2
+                pre = cur
+                cur = nex
+            return False
+        start = [0, 0]
+        cur1 = to_position(start, res[grid[0][0]][0])
+        cur2 = to_position(start, res[grid[0][0]][1])
+        return reach(cur1) or reach(cur2)
+```
 
 ## Maximum Number of Visible Points <font color=magenta>[2022-06-19]</font>
 
