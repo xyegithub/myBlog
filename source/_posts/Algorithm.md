@@ -82,6 +82,35 @@ class Solution:
 
 # Depth First Search
 
+## Find All Possible Recipes from Given Supplies <font color=magenta>[2022-06-24]</font>
+
+[Medium](https://leetcode.cn/problems/find-all-possible-recipes-from-given-supplies/)
+
+```python
+class Solution:
+    def findAllRecipes(self, recipes: List[str], ingredients: List[List[str]], supplies: List[str]) -> List[str]:
+        res = []
+        def remove_cur(cur_supplies):
+            nex_supplies = set()
+            for i, cur_ingredients in enumerate(ingredients):
+                if cur_ingredients:
+                   # Be careful. How to remove items in a loop
+                    # https://segmentfault.com/a/1190000007214571
+                    cur_ingredients = list(filter(lambda x: x not in cur_supplies, cur_ingredients))
+                    ingredients[i] = cur_ingredients
+                    if not cur_ingredients:
+                        nex_supplies.add(recipes[i])
+                        res.append(recipes[i])
+                        recipes[i] = None
+                        ingredients[i] = None
+            return nex_supplies
+
+        supplies = set(supplies)
+        while supplies:
+            supplies = remove_cur(supplies)
+        return res
+```
+
 ## Longest Increasing Path in a Matrix
 
 Given an $m \times n$ integers matrix, return the length of the longest
@@ -481,6 +510,44 @@ class Solution:
 
 # String
 
+## Strong Password Checker II <font color=magenta>[2022-06-22]</font>
+
+[Simple](https://leetcode.cn/problems/strong-password-checker-ii/)
+
+```python
+class Solution:
+    def strongPasswordCheckerII(self, password: str) -> bool:
+        n = len(password)
+
+        if_length = n >= 8
+
+        contain_lower = False
+        contain_upper = False
+        contain_number = False
+        contain_special = False
+        contain_twosame = False
+
+        special = set("!@#$%^&*()-+")
+        pre_char = ''
+        for i in password:
+            if i == pre_char:
+                contain_twosame = True
+            pre_char = i
+            if not contain_lower and i.islower():
+                contain_lower = True
+                continue
+            if not contain_upper and i.isupper():
+                contain_upper = True
+                continue
+            if not contain_number and i.isdigit():
+                contain_number = True
+                continue
+            if not contain_special and i in special:
+                contain_special = True
+                continue
+        return if_length and contain_lower and contain_upper and contain_number and contain_special and not contain_twosame
+```
+
 ## Minimum Changes to Make Alternating Binary String
 
 You are given a string `s` consisting only of the characters `0` and `1`. In one
@@ -763,6 +830,26 @@ class Solution:
             medianFinder.add(normalized)
             res.append(int(medianFinder.getDiffSum() % MOD))
         return res
+```
+
+# Dichotomy
+
+## Minimum Garden Perimeter to Collect Enough Apples <font color=magenta>[2022-06-22]</font>
+
+[Medium](https://leetcode.cn/problems/minimum-garden-perimeter-to-collect-enough-apples/)
+
+```python
+class Solution:
+    def minimumPerimeter(self, neededApples: int) -> int:
+        left, right, ans = 1, 100000, 0
+        while left <= right:
+            mid = (left + right) // 2
+            if 2 * mid * (mid + 1) * (mid * 2 + 1) >= neededApples:
+                ans = mid
+                right = mid - 1
+            else:
+                left = mid + 1
+        return ans * 8
 ```
 
 # Greedy
