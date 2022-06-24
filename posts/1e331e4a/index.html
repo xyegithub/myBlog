@@ -29,7 +29,7 @@
 <meta property="og:description" content="An introduction to Reinforcement Learning">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2021-12-03T08:48:41.000Z">
-<meta property="article:modified_time" content="2022-06-24T08:56:57.983Z">
+<meta property="article:modified_time" content="2022-06-24T08:58:53.073Z">
 <meta property="article:author" content="Xiang Ye">
 <meta property="article:tag" content="Reinforcement Learning">
 <meta name="twitter:card" content="summary">
@@ -224,7 +224,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">Edited on</span>
-      <time title="Modified: 2022-06-24 16:56:57" itemprop="dateModified" datetime="2022-06-24T16:56:57+08:00">2022-06-24</time>
+      <time title="Modified: 2022-06-24 16:58:53" itemprop="dateModified" datetime="2022-06-24T16:58:53+08:00">2022-06-24</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -440,7 +440,7 @@ action，再在这个相对好的 action 的基础上，在探索探索出更好
 一些随机，探索更好的知识。</p>
 <h4 id="估值网络value-networkq-learning"><span class="post-title-index">.2.2. </span><a class="markdownIt-Anchor" href="#估值网络value-networkq-learning"></a> 估值网络(Value Network，Q-learning)</h4>
 <p>Q-Learing 用神经网络实现，得到的模型就是估值网络。</p>
-<p>也看一个例子，<a href="policy_network.py">Value_Network.py</a></p>
+<p>也看一个例子，<a href="q_learning.py">Value_Network.py</a></p>
 <p>学习每个 Action 所对应的 reward 的期望。</p>
 <p>我们先看看数据集的结构</p>
 <figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">###Save the experience to our episode buffer.</span></span><br><span class="line">episodeBuffer.add(np.reshape(np.array([s,a,r,s1,d]),[<span class="number">1</span>,<span class="number">5</span>]))</span><br><span class="line"><span class="comment">### 其中s是当前时刻的环境状态，a是当前随机采取的Action，r是这个Action的当前reward</span></span><br><span class="line"><span class="comment">### s1是采取Action之后的下一状态，d是布尔型表示是否任务结束。</span></span><br></pre></td></tr></tbody></table></figure>
