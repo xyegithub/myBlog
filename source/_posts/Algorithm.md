@@ -19,10 +19,10 @@ summary:
 
 # Backtrack
 
-We can crop only simple tasks. But there is only a complex task.
+We can cope with only simple tasks. But there is only a complex task.
 
 If we can transfer it into a relative simpler one, do it again and again till we
-can crop it.
+can cope with it.
 
 When transfer, the simpler task may have some relationship with the complex one,
 e.g., the complex task gives some restrictions to to the simpler one.
